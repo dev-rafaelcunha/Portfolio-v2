@@ -1,0 +1,57 @@
+.header {
+    height: 100px;
+    background-color: #111;
+    padding: 0 300px;
+}
+
+.link {
+    text-decoration: none;
+    color: #ddd;
+    cursor: pointer;
+    font-size: 30px;
+    font-weight: bold;
+    font-family:cursive;
+    position: absolute;
+}
+
+.left {
+    animation: up infinite alternate;
+    animation-timing-function: ease-in-out;
+    animation-duration: 1.5s;
+    cursor: default;
+    font-size: 30px;
+    font-weight: bold;
+    font-family:cursive;
+    position: absolute;
+    left: 270px;
+}
+
+.right {
+    animation: lower infinite alternate;
+    animation-timing-function: ease-in-out;
+    animation-duration: 1.5s;
+    cursor: default;
+    font-size: 30px;
+    font-weight: bold;
+    font-family:cursive;
+    position: relative;
+    left: 205px;
+}
+
+@keyframes up {
+    from {
+        transform: translate3d(0, -.3rem, 0);
+    }
+    to {
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+@keyframes lower {
+    from {
+        transform: translate3d(0, .3rem, 0);
+    }
+    to {
+        transform: translate3d(0, 0, 0);
+    }
+}

@@ -1,0 +1,28 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  background-color: #efefef;
+  overflow: hidden;
+}
+
+/* CORES */
+.text-purple {
+  color: #966cf9;
+}
+
+.text-gray {
+  color: #ccc
+}
+
+.text-gray:hover {
+  color: #eee;
+}
+
+.text-gray:focus {
+  color: #966cf9;
+}
