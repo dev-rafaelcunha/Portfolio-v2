@@ -4,6 +4,7 @@
 }
 
 .title {
+    height: 100px;
     margin: 0 0 20vh 250px;
     background-image: linear-gradient(to right, rgb(233, 233, 233), #966cf9);
     background-clip: text;
@@ -112,5 +113,28 @@
     to {
         opacity: 0;
 
+    }
+}
+
+@media (max-width: 1600px) {
+
+    .title {
+        margin: 0 0 20vh 150px !important;
+    }
+
+    .h1 {
+        font-size: 50px;
+    }
+
+    .btn {
+        left: 350px;
+    }
+
+    .btn2 {
+        left: 100px;
+    }
+
+    .btn3 {
+        left: -150px;
     }
 }
