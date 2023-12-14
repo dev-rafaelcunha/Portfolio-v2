@@ -1,11 +1,11 @@
 import styles from './Header.module.css'
 import Nav from './Nav'
 
-function Header({ nome, left, right }) {
+function Header() {
 
-    nome = 'Rafael Cunha'
-    left = '< '
-    right = ' />'
+    const nome = 'Rafael Cunha'
+    const left = '<'
+    const right = '/>'
 
     return (
 

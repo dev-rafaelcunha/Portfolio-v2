@@ -1,0 +1,20 @@
+.link {
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    letter-spacing: 1px;
+}
+
+.link::after {
+    content: '';
+    width: 100%;
+    height: 1px;
+    display: block;
+    background-image: linear-gradient(to right, #966cf900, #966cf9d7, #966cf9);
+    transform-origin: right;
+    transform: scaleX(0);
+    transition: transform 0.5s;
+}
+
+.link:hover::after {
+    transform-origin: left;
+    transform: scaleX(1);
+}

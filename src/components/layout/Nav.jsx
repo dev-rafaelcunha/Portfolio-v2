@@ -1,25 +1,27 @@
+import styles from './Nav.module.css'
+
 function Nav() {
 
     return (
 
-        <nav class="navbar navbar-expand-lg">
-            <div class="container-fluid">
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav">
-                        <li class="nav-item">
-                            <a class="nav-link text-gray" aria-current="page" href="#">Início</a>
+        <nav className="navbar navbar-expand-lg">
+            <div className="container-fluid">
+                <div className="collapse navbar-collapse" id="navbarNav">
+                    <ul className="navbar-nav">
+                        <li className="nav-item">
+                            <a className={`${[styles.link]} nav-link text-gray`} aria-current="page" href="#">Início</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-gray" aria-current="page" href="#">Sobre mim</a>
+                        <li className="nav-item">
+                            <a className={`${[styles.link]} nav-link text-gray ps-4`} aria-current="page" href="#">Sobre mim</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-gray" href="#">Habilidades</a>
+                        <li className="nav-item">
+                            <a className={`${[styles.link]} nav-link text-gray ps-4`} href="#">Habilidades</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-gray" href="#">Projetos</a>
+                        <li className="nav-item">
+                            <a className={`${[styles.link]} nav-link text-gray ps-4`} href="#">Projetos</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-gray" href="#">Contato</a>
+                        <li className="nav-item">
+                            <a className={`${[styles.link]} nav-link text-gray ps-4`} href="#">Contato</a>
                         </li>
                     </ul>
                 </div>
