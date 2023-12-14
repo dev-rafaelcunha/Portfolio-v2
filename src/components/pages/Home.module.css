@@ -1,4 +1,116 @@
 .main {
-    height: 100vh;
+    height: 90vh;
     background-color: #111;
+}
+
+.title {
+    margin: 0 0 20vh 250px;
+    background-image: linear-gradient(to right, rgb(233, 233, 233), #966cf9);
+    background-clip: text;
+    color: transparent;
+}
+
+.typingAnimation {
+  font-size: 15px;
+  letter-spacing: .5px;
+  color: #ccc;
+}
+
+.typingAnimation::after {
+  content: '|';
+  opacity: 1;
+  animation: blink .5s infinite;
+  color: #966cf9;
+  font-weight: bold;
+}
+
+.h1 {
+    font-size: 60px;
+}
+
+.btn {
+    animation: desceSecao;
+    animation-timing-function: ease-in-out;
+    animation-duration: 2s;
+    position: relative;
+    left: 400px;
+    bottom: 140px;
+    padding: 20px;
+    width: 250px;
+    font-size: 20px;
+    letter-spacing: .5px;
+    text-transform: UPPERCASE;
+}
+
+.btn2 {
+    animation: desceSecao2;
+    animation-timing-function: ease-in-out;
+    animation-duration: 2s;
+    position: relative;
+    left: 150px;
+    bottom: -60px;
+    padding: 20px;
+    width: 250px;
+    font-size: 20px;
+    letter-spacing: .5px;
+    text-transform: UPPERCASE;
+}
+
+.btn3 {
+    animation: desceSecao3;
+    animation-timing-function: ease-in-out;
+    animation-duration: 2s;
+    position: relative;
+    left: -100px;
+    bottom: -260px;
+    padding: 20px;
+    width: 250px;
+    font-size: 20px;
+    letter-spacing: .5px;
+    text-transform: UPPERCASE;
+}
+
+@keyframes desceSecao {
+
+    from {
+        transform: translate3d(0, -10.75rem, 0);
+    }
+
+    to {
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+@keyframes desceSecao2 {
+
+    from {
+        transform: translate3d(0, -15.75rem, 0);
+    }
+
+    to {
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+@keyframes desceSecao3 {
+
+    from {
+        transform: translate3d(0, -20.75rem, 0);
+    }
+
+    to {
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+@keyframes blink {
+    from {
+        opacity: 1;
+
+    }
+
+    to {
+        opacity: 0;
+
+    }
 }

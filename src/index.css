@@ -16,10 +16,14 @@ body {
 }
 
 .text-gray {
-  color: #ccc
+  color: #ccc;
 }
 
-.text-gray:hover {
+.text-gray-hover {
+  color: #ccc;
+}
+
+.text-gray-hover:hover {
   color: #fff;
 }
 
