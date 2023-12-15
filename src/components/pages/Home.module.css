@@ -5,11 +5,13 @@
 
 .firstColumn {
     height: 76vh;
+    width: 60vw;
 }
 
 .title {
     padding: 0 11%;
     color: #ccc;
+    height: 140px;
 }
 
 .h1 {
