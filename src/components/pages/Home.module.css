@@ -34,14 +34,15 @@
   font-size: 19px;
 }
 
-/* .btn {
+.btn {
     animation: desceSecao;
     animation-timing-function: ease-in-out;
     animation-duration: 2s;
     font-size: 20px;
     letter-spacing: .5px;
     text-transform: UPPERCASE;
-} */
+    width: 200px;
+}
 
 @keyframes desceSecao {
 
