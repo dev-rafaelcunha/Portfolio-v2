@@ -6,7 +6,7 @@ function Home() {
 
     return (
 
-        <>
+        <div className="container-fluid p-0">
             <Header />
             <main className={`${[styles.main]} d-flex flex-column justify-content-center`}>
                 <div className="row">
@@ -17,13 +17,11 @@ function Home() {
                         </div>
                     </div>
                     <div className={`${[styles.secondColumn]} col`}>
-                        <a href="#" type="button" className={`${[styles.btn]} btn btn-outline-primary border border-light shadow`}>Linkedin</a>
-                        <a href="#" type="button" className={`${[styles.btn2]} btn btn-outline-light border border-light shadow`}>GitHub</a>
-                        <a href="#" type="button" className={`${[styles.btn3]} btn btn-outline-danger border border-light shadow`}>Instagram</a>
+
                     </div>
                 </div>
             </main>
-        </>
+        </div>
     )
 }
 

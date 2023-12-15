@@ -54,3 +54,22 @@
         transform: translate3d(0, 0, 0);
     }
 }
+
+@media (max-width: 1360px) {
+
+    .header {
+        padding: 0 200px;
+    }
+
+    .link {
+        left: 50px;
+    }
+    
+    .left {
+        left: 21px;
+    }
+    
+    .right {
+        left: 55px;
+    }
+}
