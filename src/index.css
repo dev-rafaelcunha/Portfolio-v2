@@ -15,6 +15,10 @@ body {
   color: #966cf9;
 }
 
+.text-red {
+  color: #eb3850;
+}
+
 .text-gray {
   color: #ccc;
 }
@@ -25,8 +29,4 @@ body {
 
 .text-gray-hover:hover {
   color: #fff;
-}
-
-.text-gray:focus {
-  color: #966cf9;
 }

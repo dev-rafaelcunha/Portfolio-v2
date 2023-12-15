@@ -6,17 +6,17 @@ function Home() {
 
     return (
 
-        <div className="container-fluid p-0">
+        <div className={`${[styles.container]} container-fluid p-0`}>
             <Header />
-            <main className={`${[styles.main]} d-flex flex-column justify-content-center`}>
-                <div className="row">
-                    <div className={`${[styles.firstColumn]} col`}>
+            <main className={`${[styles.main]}`}>
+                <div className={`${[styles.grid]} row`}>
+                    <div className={`${[styles.firstColumn]} col-8 d-flex flex-column justify-content-center`}>
                         <div className={styles.title}>
                             <h1 className={styles.h1}>Desenvolvedor FullStack</h1>
                             <span><TypingAnimation className={styles.typingAnimation} text="Profissional que abrange as duas áreas, todavia me considero com destaques em Front-End." /></span>
                         </div>
                     </div>
-                    <div className={`${[styles.secondColumn]} col`}>
+                    <div className={`${[styles.secondColumn]} col d-flex align-items-center`}>
 
                     </div>
                 </div>

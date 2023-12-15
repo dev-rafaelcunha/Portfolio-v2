@@ -18,6 +18,9 @@ function Nav() {
                             <a className={`${[styles.link]} nav-link text-gray-hover ps-4`} href="#">Habilidades</a>
                         </li>
                         <li className="nav-item">
+                            <a className={`${[styles.link]} nav-link text-gray-hover ps-4`} href="#">Experiência</a>
+                        </li>
+                        <li className="nav-item">
                             <a className={`${[styles.link]} nav-link text-gray-hover ps-4`} href="#">Projetos</a>
                         </li>
                         <li className="nav-item">

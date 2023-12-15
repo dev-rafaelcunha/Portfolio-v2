@@ -3,100 +3,48 @@
     background-color: #111;
 }
 
+.firstColumn {
+    height: 76vh;
+}
+
 .title {
-    height: 100px;
-    margin: 0 0 20vh 250px;
-    background-image: linear-gradient(to right, rgb(233, 233, 233), #966cf9);
-    background-clip: text;
-    color: transparent;
+    padding: 0 11%;
+    color: #ccc;
+}
+
+.h1 {
+    font-size: 3.75rem;
 }
 
 .typingAnimation {
-  font-size: 15px;
+  font-size: 18px;
   letter-spacing: .5px;
-  color: #ccc;
+  color: #999;
 }
 
 .typingAnimation::after {
   content: '|';
   opacity: 1;
-  animation: blink .5s infinite;
+  animation: blink 1s infinite;
   color: #966cf9;
   font-weight: bold;
+  padding: 0 10px;
+  font-size: 25px;
 }
 
-.h1 {
-    font-size: 60px;
-}
-
-.btn {
+/* .btn {
     animation: desceSecao;
     animation-timing-function: ease-in-out;
     animation-duration: 2s;
-    position: relative;
-    left: 400px;
-    bottom: 140px;
-    padding: 20px;
-    width: 250px;
     font-size: 20px;
     letter-spacing: .5px;
     text-transform: UPPERCASE;
-}
-
-.btn2 {
-    animation: desceSecao2;
-    animation-timing-function: ease-in-out;
-    animation-duration: 2s;
-    position: relative;
-    left: 150px;
-    bottom: -60px;
-    padding: 20px;
-    width: 250px;
-    font-size: 20px;
-    letter-spacing: .5px;
-    text-transform: UPPERCASE;
-}
-
-.btn3 {
-    animation: desceSecao3;
-    animation-timing-function: ease-in-out;
-    animation-duration: 2s;
-    position: relative;
-    left: -100px;
-    bottom: -260px;
-    padding: 20px;
-    width: 250px;
-    font-size: 20px;
-    letter-spacing: .5px;
-    text-transform: UPPERCASE;
-}
+} */
 
 @keyframes desceSecao {
 
     from {
         transform: translate3d(0, -10.75rem, 0);
-    }
-
-    to {
-        transform: translate3d(0, 0, 0);
-    }
-}
-
-@keyframes desceSecao2 {
-
-    from {
-        transform: translate3d(0, -15.75rem, 0);
-    }
-
-    to {
-        transform: translate3d(0, 0, 0);
-    }
-}
-
-@keyframes desceSecao3 {
-
-    from {
-        transform: translate3d(0, -20.75rem, 0);
     }
 
     to {
@@ -116,25 +64,14 @@
     }
 }
 
-@media (max-width: 1600px) {
+@media (max-width: 1024px) {
 
     .title {
-        margin: 0 0 20vh 150px !important;
+        position: relative;
+        left: 80px;
     }
 
     .h1 {
-        font-size: 50px;
-    }
-
-    .btn {
-        left: 350px;
-    }
-
-    .btn2 {
-        left: 100px;
-    }
-
-    .btn3 {
-        left: -150px;
+        font-size: 40px;
     }
 }

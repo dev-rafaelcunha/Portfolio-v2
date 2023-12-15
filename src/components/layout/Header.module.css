@@ -1,75 +1,23 @@
 .header {
     height: 10vh;
     background-color: #111;
-    padding: 0 300px;
+    padding: 0 7%;
 }
 
-.link {
+.name {
     text-decoration: none;
-    color: #ddd;
+    color: #ccc;
     font-size: 30px;
     font-weight: bold;
-    font-family:cursive;
+    font-family: cursive;
     position: absolute;
 }
 
-.left {
-    animation: up infinite alternate;
-    animation-timing-function: ease-in-out;
-    animation-duration: 1.5s;
-    cursor: default;
-    font-size: 30px;
-    font-weight: bold;
-    font-family:cursive;
-    position: absolute;
-    left: 270px;
-}
-
-.right {
-    animation: lower infinite alternate;
-    animation-timing-function: ease-in-out;
-    animation-duration: 1.5s;
-    cursor: default;
-    font-size: 30px;
-    font-weight: bold;
-    font-family:cursive;
+.logo {
     position: relative;
-    left: 205px;
-}
-
-@keyframes up {
-    from {
-        transform: translate3d(0, -.3rem, 0);
-    }
-    to {
-        transform: translate3d(0, 0, 0);
-    }
-}
-
-@keyframes lower {
-    from {
-        transform: translate3d(0, .3rem, 0);
-    }
-    to {
-        transform: translate3d(0, 0, 0);
-    }
-}
-
-@media (max-width: 1360px) {
-
-    .header {
-        padding: 0 200px;
-    }
-
-    .link {
-        left: 50px;
-    }
-    
-    .left {
-        left: 21px;
-    }
-    
-    .right {
-        left: 55px;
-    }
+    font-size: 30px;
+    color: #966cf9;
+    left: 215px;
+    font-family: cursive;
+    font-weight: bold;
 }
