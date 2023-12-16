@@ -4,7 +4,7 @@ import Nav from './Nav'
 function Header() {
 
     const name = 'Rafael Cunha'
-    const logo = '{>'
+    const logo = '</>'
 
     return (
 
