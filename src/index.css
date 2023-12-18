@@ -42,7 +42,6 @@ body {
   height: 60px;
   color: #fff;
   border-radius: 5px;
-  padding: 10px 25px;
   font-family: 'Lato', sans-serif;
   font-weight: 500;
   background: transparent;
@@ -101,7 +100,6 @@ body {
   animation: downBtn2;
   animation-timing-function: ease-in-out;
   animation-duration: 2s;
-  padding: 0;
   border: none;
   background: #f0094a;
   background: linear-gradient(0deg, #f0094a 0%, #f0094a 100%);
