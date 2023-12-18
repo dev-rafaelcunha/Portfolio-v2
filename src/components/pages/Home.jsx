@@ -1,6 +1,7 @@
 import Header from "../layout/Header";
 import TypingAnimation from "../utils/TypingAnimation";
 import styles from "./Home.module.css";
+// import img from "../../img/tech.png"
 
 function Home() {
 
@@ -15,14 +16,14 @@ function Home() {
                             <h1 className={styles.h1}>Desenvolvedor FullStack</h1>
                             <span><TypingAnimation className={styles.typingAnimation} text="Profissional que abrange as duas áreas, todavia me considero com destaques em Front-End." /></span>
                         </div>
-                        <div className={`${[styles.btnHome]} d-lg-flex d-none`}>
-                            <a href="#" type="button" className={`${[styles.btn]} btn btn-outline-primary border border-light mt-5 me-5 shadow`}>Linkedin</a>
-                            <a href="#" type="button" className={`${[styles.btn2]} btn btn-outline-light border border-light mt-5 mx-5 shadow`}>Github</a>
-                            <a href="#" type="button" className={`${[styles.btn3]} btn btn-outline-danger border border-light mt-5 ms-5 shadow`}>Instagram</a>
+                        <div className={`${[styles.btn]} d-lg-flex d-none`}>
+                            <a href="#" type="button" className="custom-btn btn-1 mt-5 me-5">Linkedin</a>
+                            <a href="#" type="button" className="custom-btn btn-2 mt-5 mx-5">Github</a>
+                            <a href="#" type="button" className="custom-btn btn-3 mt-5 mx-5">Instagram</a>
                         </div>
                     </div>
                     <div className={`${[styles.secondColumn]} col d-flex align-items-center`}>
-
+                        {/* <img src={img} className={styles.img} alt="Imagem de alta tecnologia." /> */}
                     </div>
                 </div>
             </main>

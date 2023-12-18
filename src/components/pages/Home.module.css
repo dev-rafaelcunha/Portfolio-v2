@@ -21,56 +21,36 @@
 }
 
 .typingAnimation {
-  font-size: 18px;
-  letter-spacing: .5px;
-  color: #999;
+    font-size: 18px;
+    letter-spacing: .5px;
+    color: #999;
 }
 
 .typingAnimation::after {
-  content: '|';
-  opacity: 1;
-  animation: blink 1s infinite;
-  color: #966cf9;
-  font-weight: bold;
-  padding: 0 10px;
-  font-size: 19px;
-}
-
-.btnHome {
-    padding: 0 11%;
+    content: '|';
+    opacity: 1;
+    animation: blink 1s infinite;
+    color: #f0094a;
+    font-weight: bold;
+    padding: 0 10px;
+    font-size: 19px;
 }
 
 .btn {
-    animation: desceSecaoBtn;
-    animation-timing-function: ease-in-out;
-    animation-duration: 2s;
-    font-size: 20px;
-    letter-spacing: .5px;
-    text-transform: UPPERCASE;
-    width: 200px;
+    padding: 0 11%;
 }
 
-.btn2 {
-    animation: desceSecaoBtn2;
-    animation-timing-function: ease-in-out;
-    animation-duration: 2s;
-    font-size: 20px;
-    letter-spacing: .5px;
-    text-transform: UPPERCASE;
-    width: 200px;
+.frame {
+    width: 90%;
+    margin: 40px auto;
+    text-align: center;
 }
 
-.btn3 {
-    animation: desceSecaoBtn3;
-    animation-timing-function: ease-in-out;
-    animation-duration: 2s;
-    font-size: 20px;
-    letter-spacing: .5px;
-    text-transform: UPPERCASE;
-    width: 200px;
+.img {
+    height: 500px;
 }
 
-@keyframes desceSecao {
+@keyframes downSection {
 
     from {
         transform: translate3d(0, -10.75rem, 0);
@@ -81,7 +61,7 @@
     }
 }
 
-@keyframes desceSecaoBtn {
+@keyframes downBtn {
     from {
         transform: translate3d(0, -6.75rem, 0);
     }
@@ -91,7 +71,7 @@
     }
 }
 
-@keyframes desceSecaoBtn2 {
+@keyframes downBtn2 {
     from {
         transform: translate3d(0, -8.75rem, 0);
     }
@@ -101,7 +81,7 @@
     }
 }
 
-@keyframes desceSecaoBtn3 {
+@keyframes downBtn3 {
     from {
         transform: translate3d(0, -10.75rem, 0);
     }
@@ -137,7 +117,7 @@
 
 @media (max-width: 1522px) {
 
-    .btnHome {
+    .btn {
         position: relative;
         top: 80px;
     }
