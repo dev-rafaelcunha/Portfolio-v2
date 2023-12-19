@@ -103,6 +103,7 @@ body {
   border: none;
   background: #f52754;
   background: linear-gradient(0deg, #f52754 0%, #f52754 100%);
+  margin: 0 10%;
 }
 
 .btn-2:hover {
