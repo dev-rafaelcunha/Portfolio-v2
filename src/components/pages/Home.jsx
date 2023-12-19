@@ -1,9 +1,10 @@
 import Header from "../layout/Header";
 import TypingAnimation from "../utils/TypingAnimation";
 import styles from "./Home.module.css";
-// import img from "../../img/tech.png"
 
 function Home() {
+
+    const logo = '</>'
 
     return (
 
@@ -22,8 +23,8 @@ function Home() {
                             <a href="#" type="button" className="custom-btn btn-3 mt-5 mx-5">Instagram</a>
                         </div>
                     </div>
-                    <div className={`${[styles.secondColumn]} col d-flex align-items-center`}>
-                        {/* <img src={img} className={styles.img} alt="Imagem de alta tecnologia." /> */}
+                    <div className={`${[styles.secondColumn]} col-4 d-xl-flex d-none align-items-center`}>
+                        <span className={styles.logo}>{logo}</span>
                     </div>
                 </div>
             </main>

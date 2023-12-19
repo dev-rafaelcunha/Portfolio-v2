@@ -4,7 +4,7 @@
 }
 
 .firstColumn {
-    height: 76vh;
+    height: 80vh;
     width: 60vw;
 }
 
@@ -40,8 +40,12 @@
     padding: 0 11%;
 }
 
-.img {
-    height: 500px;
+.logo {
+    font-size: 360px;
+    font-family: monospace;
+    font-weight: bold;
+    -webkit-text-stroke: 3px #f0094a;
+    color: transparent;
 }
 
 @keyframes downSection {
