@@ -101,25 +101,22 @@
     }
 }
 
-@media (max-width: 767px) {
+@media (max-width: 991px) {
 
     .firstColumn {
-        position: relative;
-        left: 85px;
+        position: absolute;
+        padding: 0 35px;
+        text-align: center;
     }
 
     .h1 {
-        font-size: 40px;
+        font-size: 45px;
     }
-}
-
-/* @media (max-width: 1522px) {
 
     .btn {
-        position: relative;
-        top: 80px;
+        justify-content: center;
     }
-} */
+}
 
 @media (max-width: 1545px) {
 
