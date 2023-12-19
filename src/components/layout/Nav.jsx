@@ -4,7 +4,7 @@ function Nav() {
 
     return (
 
-        <nav className="navbar navbar-expand-lg">
+        <nav className={`${[styles.nav]} navbar navbar-expand-lg`}>
             <div className="container-fluid">
                 <div className="collapse navbar-collapse" id="navbarNav">
                     <ul className="navbar-nav">
