@@ -118,7 +118,13 @@
     }
 }
 
-@media (max-width: 1545px) {
+@media (max-width: 1600px) {
+    .logo {
+        font-size: 350px;
+    }
+}
+
+@media (max-width: 991px) {
 
     .logo {
         display: none;
