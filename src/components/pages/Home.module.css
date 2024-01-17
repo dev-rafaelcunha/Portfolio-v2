@@ -45,7 +45,6 @@
     font-family: monospace;
     font-weight: bold;
     color: transparent;
-    -webkit-text-stroke: 3px #f52754;
     background-image: linear-gradient(to left, transparent, #f52754);
     -webkit-background-clip: text;
     background-clip: text;
