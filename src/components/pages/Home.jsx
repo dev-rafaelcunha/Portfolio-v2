@@ -10,19 +10,21 @@ function Home() {
 
         <div className="container-fluid p-0">
             <Header />
-            <main className={`${[styles.main]}`}>
-                <div className={`${[styles.grid]} d-flex align-items-center`}>
-                    <div className={`${[styles.firstColumn]}`}>
-                        <h1 className={styles.h1}>Desenvolvedor FullStack</h1>
-                        <span><TypingAnimation className={styles.typingAnimation} text="Profissional que abrange as duas áreas, todavia me considero com destaques em Front-End." /></span>
-                        <div className={`${[styles.btn]} d-flex`}>
-                            <a href="https://www.linkedin.com/in/devrafaelcunha/" target="blank" type="button" className="custom-btn btn-1 mt-5">Linkedin</a>
-                            <a href="https://github.com/dev-rafaelcunha" target="blank" type="button" className="custom-btn btn-2 mt-5">Github</a>
-                            <a href="https://www.instagram.com/dev.rafaelcunha/?next=%2F" target="blank" type="button" className="custom-btn btn-3 mt-5">Instagram</a>
+            <main className={`${[styles.main]} px-5`}>
+                <div className="grid-layout">
+                    <div className={`${[styles.grid]} d-flex align-items-center`}>
+                        <div className={`${[styles.firstColumn]}`}>
+                            <h1 className={`${[styles.h1]} text-nowrap mb-4`}>Desenvolvedor FullStack</h1>
+                            <span><TypingAnimation className={styles.typingAnimation} text="Profissional que abrange as duas áreas, todavia me considero com destaques em Front-End." /></span>
+                            <div className={`${[styles.btn]} d-flex`}>
+                                <a href="https://www.linkedin.com/in/devrafaelcunha/" target="blank" type="button" className="custom-btn btn-1 mt-5">Linkedin</a>
+                                <a href="https://github.com/dev-rafaelcunha" target="blank" type="button" className="custom-btn btn-2 mt-5">Github</a>
+                                <a href="https://www.instagram.com/dev.rafaelcunha/?next=%2F" target="blank" type="button" className="custom-btn btn-3 mt-5">Instagram</a>
+                            </div>
                         </div>
-                    </div>
-                    <div className="w-100 d-flex justify-content-end">
-                        <span className={`${[styles.logo]}`}>{logo}</span>
+                        <div className={`${[styles.secondColumn]} position-absolute`}>
+                            <span className={`${[styles.logo]}`}>{logo}</span>
+                        </div>
                     </div>
                 </div>
             </main>

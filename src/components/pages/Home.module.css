@@ -11,12 +11,11 @@
 .firstColumn {
     background-color: #111;
     z-index: 100;
-    padding-left: 7%;
-    width: 100vw;
+    width: 40% !important;
 }
 
 .h1 {
-    font-size: 3.75rem;
+    font-size: 3rem;
     color: #fff;
 }
 
@@ -24,6 +23,7 @@
     font-size: 18px;
     letter-spacing: .5px;
     color: #9ca3af;
+    width: 600px;
 }
 
 .typingAnimation::after {
@@ -36,16 +36,24 @@
     font-size: 19px;
 }
 
+.secondColumn {
+    right: 0;
+}
+
 .logo {
-    font-size: 430px;
+    font-size: 330px;
     font-family: monospace;
     font-weight: bold;
     color: transparent;
     -webkit-text-stroke: 3px #f52754;
-    background-image: linear-gradient(to right, transparent, #f52754); /* Gradiente para a borda */
+    background-image: linear-gradient(to left, transparent, #f52754);
     -webkit-background-clip: text;
     background-clip: text;
   }
+
+.btn {
+    width: 590px;
+}
   
 
 @keyframes downSection {
@@ -103,30 +111,38 @@
 
 @media (max-width: 991px) {
 
+    .main {
+        padding: 0 !important;
+    }
+
+    .grid {
+        display: flex !important;
+        padding: 0 30px;
+    }
+
     .firstColumn {
-        position: absolute;
-        padding: 0 35px;
-        text-align: center;
+        text-align: center !important;
+        width: 100% !important;
     }
 
     .h1 {
-        font-size: 45px;
+        font-size: 2.5rem;
+        white-space: normal !important;
     }
 
     .btn {
-        justify-content: center;
+        justify-content: center !important;
+        width: auto !important;
+    }
+
+    .typingAnimation {
+        width: inherit !important;
     }
 }
 
-@media (max-width: 1600px) {
-    .logo {
-        font-size: 350px;
-    }
-}
-
-@media (max-width: 991px) {
+@media (max-width: 1200px) {
 
     .logo {
-        display: none;
+        display: none !important;
     }
 }

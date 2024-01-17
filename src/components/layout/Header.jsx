@@ -8,10 +8,14 @@ function Header() {
 
     return (
 
-        <header className={`${styles['header']} d-flex align-items-center justify-content-between`}>
-            <span className={styles.name}>{name}</span>
-            <span className={styles.logo}>{logo}</span>
-            <Nav />
+        <header className={`${styles['header']} px-5 py-3`}>
+            <div className="grid-layout">
+                <div className='d-flex align-items-center justify-content-between'>
+                    <span className={styles.name}>{name}</span>
+                    <span className={styles.logo}>{logo}</span>
+                    <Nav />
+                </div>
+            </div>
         </header>
     )
 }

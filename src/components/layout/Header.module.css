@@ -1,7 +1,6 @@
 .header {
     height: 10vh;
     background-color: #111;
-    padding: 0 7%;
 }
 
 .name {
@@ -9,7 +8,7 @@
     color: #fff;
     font-size: 30px;
     font-weight: bold;
-    font-family: cursive;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     position: absolute;
 }
 

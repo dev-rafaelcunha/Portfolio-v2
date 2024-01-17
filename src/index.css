@@ -4,11 +4,21 @@
   box-sizing: border-box;
 }
 
+@font-face {
+  font-family: 'Open-Sans';
+  src: local('Open-Sans'), url(./fonts/OpenSans/OpenSans-Regular.ttf) format('truetype');
+}
+
 body {
   font-family: 'Open Sans', sans-serif;
   background-color: #efefef;
   overflow-y: auto;
   overflow-x: hidden;
+}
+
+.grid-layout {
+  max-width: 1440px;
+  margin: 0 auto;
 }
 
 /* CORES */
