@@ -1,4 +1,4 @@
-import Nav from './Nav'
+import Nav from './Nav';
 import styled from 'styled-components';
 
 const Heading = styled.header`
@@ -42,8 +42,8 @@ function Header() {
 
     return (
 
-        <Heading className="px-5 py-3">
-            <div className="grid-layout">
+        <Heading className='px-5 py-3'>
+            <div className='grid-layout'>
                 <div className='d-flex align-items-center justify-content-between'>
                     <Name>{name}</Name>
                     <Logo>{logo}</Logo>

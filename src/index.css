@@ -30,22 +30,6 @@ body {
   color: #eb3850;
 }
 
-.text-gray {
-  color: #ccc;
-}
-
-.text-gray-hover {
-  color: #ccc;
-}
-
-.text-gray-hover:hover {
-  color: #fff;
-}
-
-.text-gray-hover:focus {
-  color: #f0094a;
-}
-
 /* BOTÕES PERSONALIZADOS */
 .custom-btn {
   width: 205px;
