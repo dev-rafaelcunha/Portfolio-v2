@@ -16,6 +16,44 @@ body {
   overflow-x: hidden;
 }
 
+/* ANIMAÇÕES - LIB*/
+.typingAnimation {
+  font-size: 18px;
+  letter-spacing: .5px;
+  color: #9ca3af;
+  width: 600px;
+}
+
+.typingAnimation::after {
+  content: '|';
+  opacity: 1;
+  animation: blink 1s infinite;
+  color: #f52754;
+  font-weight: bold;
+  padding: 0 10px;
+  font-size: 19px;
+}
+
+@media (max-width: 991px) {
+
+  .typingAnimation {
+      width: inherit !important;
+      padding: 0 15px;
+  }
+}
+
+@keyframes blink {
+  from {
+      opacity: 1;
+
+  }
+
+  to {
+      opacity: 0;
+
+  }
+}
+
 .grid-layout {
   max-width: 1140px;
   margin: 0 auto;
