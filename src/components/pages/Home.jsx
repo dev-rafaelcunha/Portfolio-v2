@@ -1,6 +1,7 @@
 import Header from "../layout/Header";
 import TypingAnimation from "../utils/TypingAnimation";
 import styled from "styled-components";
+import SocialButton from "../common/SocialButton";
 
 const Main = styled.main`
 
@@ -70,7 +71,7 @@ const Logo = styled.main`
     }
 `
 
-const SocialButton = styled.main`
+const ContainerSocial = styled.main`
 
     width: 590px;
     display: flex;
@@ -84,25 +85,25 @@ const SocialButton = styled.main`
 
 function Home() {
 
-    const logo = '</>'
+    const logo = "</>"
 
     return (
 
         <div className="container-fluid p-0">
             <Header />
-            <Main className='px-5'>
+            <Main className="px-5">
                 <div className="grid-layout">
-                    <Grid className='d-flex align-items-center'>
+                    <Grid className="d-flex align-items-center">
                         <FirstColumn>
-                            <Title className='text-nowrap mb-4'>Desenvolvedor FullStack</Title>
-                            <TypingAnimation className='typingAnimation' text="Profissional que abrange as duas áreas, todavia me considero com destaques em Front-End." />
-                            <SocialButton>
-                                <a href="https://www.linkedin.com/in/devrafaelcunha/" target="blank" type="button" className="custom-btn btn-1 mt-5">Linkedin</a>
-                                <a href="https://github.com/dev-rafaelcunha" target="blank" type="button" className="custom-btn btn-2 mt-5">Github</a>
-                                <a href="https://www.instagram.com/dev.rafaelcunha/?next=%2F" target="blank" type="button" className="custom-btn btn-3 mt-5">Instagram</a>
-                            </SocialButton>
+                            <Title className="text-nowrap mb-4">Desenvolvedor FullStack</Title>
+                            <TypingAnimation className="typingAnimation" text="Profissional que abrange as duas áreas, todavia me considero com destaques em Front-End." />
+                            <ContainerSocial>
+                                <SocialButton href="https://www.linkedin.com/in/devrafaelcunha/" target="blank" className="btn-1 mt-5" text="Linkedin"></SocialButton>
+                                <SocialButton href="https://github.com/dev-rafaelcunha" target="blank" className="btn-2 mt-5" text="Github"></SocialButton>
+                                <SocialButton href="https://www.instagram.com/dev.rafaelcunha/?next=%2F" target="blank" className="btn-3 mt-5" text="Instagram"></SocialButton>
+                            </ContainerSocial>
                         </FirstColumn>
-                        <SecondColumn className='position-absolute'>
+                        <SecondColumn className="position-absolute">
                             <Logo>{logo}</Logo>
                         </SecondColumn>
                     </Grid>

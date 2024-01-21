@@ -1,5 +1,5 @@
-import Nav from './Nav';
-import styled from 'styled-components';
+import Nav from "./Nav";
+import styled from "styled-components";
 
 const Heading = styled.header`
 
@@ -12,7 +12,7 @@ const Name = styled.header`
     color: #fff;
     font-size: 30px;
     font-weight: bold;
-    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-family:"Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
     position: absolute;
 `
 
@@ -37,14 +37,14 @@ const Logo = styled.header`
 
 function Header() {
 
-    const name = 'Rafael Cunha'
-    const logo = '</>'
+    const name = "Rafael Cunha"
+    const logo = "</>"
 
     return (
 
-        <Heading className='px-5 py-3'>
-            <div className='grid-layout'>
-                <div className='d-flex align-items-center justify-content-between'>
+        <Heading className="px-5 py-3">
+            <div className="grid-layout">
+                <div className="d-flex align-items-center justify-content-between">
                     <Name>{name}</Name>
                     <Logo>{logo}</Logo>
                     <Nav />
