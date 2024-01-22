@@ -6,6 +6,7 @@ const Link = styled.a`
     letter-spacing: .5px;
     color: #9ca3af;
     font-size: 1.1rem;
+    margin: 0 5px;
     
     &::after {
         content: "";

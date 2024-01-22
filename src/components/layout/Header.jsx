@@ -44,7 +44,7 @@ function Header() {
 
     return (
 
-        <Heading className="px-5 py-3">
+        <Heading className="px-5 py-3 fixed-top">
             <GridLayout>
                 <div className="d-flex align-items-center justify-content-between">
                     <Name>{name}</Name>

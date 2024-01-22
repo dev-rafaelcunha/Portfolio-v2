@@ -12,6 +12,24 @@ const GlobalStyle = createGlobalStyle`
     overflow-y: auto;
     overflow-x: hidden;
   }
+
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: #f52754;
+    border-radius: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+      background-color: #111;
+  }
+
+  ::selection {
+      background-color: #f52754;
+      color: #fff;
+  }
 `;
 
 export default GlobalStyle;

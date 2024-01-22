@@ -8,7 +8,7 @@ import CustomButton03 from "../common/CustomButton03";
 
 const Main = styled.main`
 
-    height: 90vh;
+    height: 95vh;
     background-color: #111;
 
     @media (max-width: 991px) {
@@ -19,7 +19,7 @@ const Main = styled.main`
 
 const Grid = styled.main`
 
-    height: 80vh;
+    height: 100vh;
     width: 100vw;
 
     @media (max-width: 991px) {
