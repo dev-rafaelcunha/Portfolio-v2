@@ -19,7 +19,6 @@ const Button = styled.a`
     border-radius: 5px;
     font-family: "Lato", sans-serif;
     font-weight: 500;
-    background: transparent;
     cursor: pointer;
     transition: all 0.3s ease;
     position: relative;
@@ -32,14 +31,14 @@ const Button = styled.a`
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #f52754;
     animation: ${downBtn};
     animation-timing-function: ease-in-out;
     animation-duration: 2s;
     background-color: #f52754;
-    background-image: linear-gradient(315deg, #f52754 0%, #f52754 74%);
     border: none;
     z-index: 1;
+    font-weight: bold;
+    letter-spacing: 1px;
 
     &:after {
         position: absolute;
@@ -50,7 +49,6 @@ const Button = styled.a`
         left: 0;
         z-index: -1;
         border-radius: 5px;
-        background-color: #f52754;
         background-image: linear-gradient(315deg, #da0c38 0%, #da0c38 74%);
         transition: ease-in-out 0.3s;
     }
@@ -66,10 +64,7 @@ const Button = styled.a`
       
     &:active {
         top: 2px;
-    }
-
-    @keyframes downBtn {
-        
+    }     
 `;
 
 function CustomButton({ href, target, className, text }) {

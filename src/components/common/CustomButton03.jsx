@@ -19,7 +19,6 @@ const Button = styled.a`
     border-radius: 5px;
     font-family: "Lato", sans-serif;
     font-weight: 500;
-    background: transparent;
     cursor: pointer;
     transition: all 0.3s ease;
     position: relative;
@@ -32,13 +31,14 @@ const Button = styled.a`
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #f52754;
     animation: ${downBtn};
     animation-timing-function: ease-in-out;
     animation-duration: 2s;
-    background: #f52754;
+    background-color: #f52754;
     border: none;
     z-index: 1;
+    font-weight: bold;
+    letter-spacing: 1px;
 
     &:after {
         position: absolute;

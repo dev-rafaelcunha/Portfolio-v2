@@ -103,7 +103,7 @@ function Home() {
                             <TypingAnimation text="Profissional que abrange as duas áreas, todavia me considero com destaques em Front-End." />
                             <ContainerSocial>
                                 <CustomButton href="https://www.linkedin.com/in/devrafaelcunha/" target="blank" className="mt-5" text="Linkedin"></CustomButton>
-                                <CustomButton02 href="https://github.com/dev-rafaelcunha" target="blank" className="btn-2 mt-5" text="Github"></CustomButton02>
+                                <CustomButton02 href="https://github.com/dev-rafaelcunha" target="blank" className="btn-2 mt-5" text="GitHub"></CustomButton02>
                                 <CustomButton03 href="https://www.instagram.com/dev.rafaelcunha/?next=%2F" target="blank" className="btn-3 mt-5" text="Instagram"></CustomButton03>
                             </ContainerSocial>
                         </FirstColumn>

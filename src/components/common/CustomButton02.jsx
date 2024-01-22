@@ -19,7 +19,6 @@ const Button = styled.a`
     border-radius: 5px;
     font-family: "Lato", sans-serif;
     font-weight: 500;
-    background: transparent;
     cursor: pointer;
     transition: all 0.3s ease;
     position: relative;
@@ -37,14 +36,14 @@ const Button = styled.a`
     animation-timing-function: ease-in-out;
     animation-duration: 2s;
     border: none;
-    background: #f52754;
-    background: linear-gradient(0deg, #f52754 0%, #f52754 100%);
     margin: 0 10%;
-
+    font-weight: bold;
+    letter-spacing: 1px;
+    
     &:hover {
         background: transparent;
         box-shadow: none;
-      }
+    }
       
     &:before,
     &:after {
