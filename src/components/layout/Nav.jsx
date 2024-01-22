@@ -30,7 +30,7 @@ const Link = styled.a`
     &:focus {
         color: #f0094a;
     }
-`
+`;
 
 function Nav() {
 
@@ -44,7 +44,7 @@ function Nav() {
                             <Link className="nav-link shadow-none" aria-current="page" href="#">Início</Link>
                         </li>
                         <li className="nav-item">
-                            <Link className="nav-link shadow-none ps-3" aria-current="page" href="#">Sobre mim</Link>
+                            <Link className="nav-link shadow-none" aria-current="page" href="#">Sobre mim</Link>
                         </li>
                         <li className="nav-item">
                             <Link className="nav-link shadow-none" aria-current="page" href="#">Habilidades</Link>

@@ -1,6 +1,38 @@
 import React, { useEffect, useState } from "react";
+import styled, { keyframes } from 'styled-components';
 
-function TypingAnimation({ text, className }) {
+const blink = keyframes`
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+`;
+
+const Typing = styled.div`
+  font-size: 18px;
+  letter-spacing: .5px;
+  color: #9ca3af;
+  width: 600px;
+
+  &::after {
+    content: "|";
+    opacity: 1;
+    animation: ${blink} 1s infinite;
+    color: #f52754;
+    font-weight: bold;
+    padding: 0 10px;
+    font-size: 19px;
+  }
+
+  @media (max-width: 991px) {
+    width: inherit !important;
+    padding: 0 15px;
+  }
+`;
+
+function TypingAnimation({ text }) {
   const [displayText, setDisplayText] = useState('');
 
   useEffect(() => {
@@ -14,7 +46,7 @@ function TypingAnimation({ text, className }) {
     });
   }, [text]);
 
-  return <div className={className}>{displayText}</div>;
+  return <Typing>{displayText}</Typing>;
 }
 
 export default TypingAnimation;

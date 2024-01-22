@@ -1,7 +1,10 @@
 import Header from "../layout/Header";
 import TypingAnimation from "../utils/TypingAnimation";
 import styled from "styled-components";
-import SocialButton from "../common/SocialButton";
+import { GridLayout } from "../../global/GridLayout";
+import CustomButton from "../common/CustomButton";
+import CustomButton02 from "../common/CustomButton02";
+import CustomButton03 from "../common/CustomButton03";
 
 const Main = styled.main`
 
@@ -12,7 +15,7 @@ const Main = styled.main`
 
         padding: 0 !important;
     }
-`
+`;
 
 const Grid = styled.main`
 
@@ -24,7 +27,8 @@ const Grid = styled.main`
         display: flex !important;
         padding: 0 30px;
     }
-`
+`;
+
 const FirstColumn = styled.main`
 
     background-color: #111;
@@ -36,7 +40,7 @@ const FirstColumn = styled.main`
         text-align: center !important;
         width: 100% !important;
     }
-`
+`;
 
 const Title = styled.main`
 
@@ -48,12 +52,12 @@ const Title = styled.main`
         font-size: 2.5rem;
         white-space: normal !important;
     }
-`
+`;
 
 const SecondColumn = styled.main`
 
     right: 0;
-`
+`;
 
 const Logo = styled.main`
 
@@ -69,7 +73,7 @@ const Logo = styled.main`
         
         display: none !important;
     }
-`
+`;
 
 const ContainerSocial = styled.main`
 
@@ -81,36 +85,36 @@ const ContainerSocial = styled.main`
         justify-content: center !important;
         width: auto !important;
     }
-`
+`;
 
 function Home() {
 
-    const logo = "</>"
+    const logo = "</>";
 
     return (
 
-        <div className="container-fluid p-0">
+        <>
             <Header />
             <Main className="px-5">
-                <div className="grid-layout">
+                <GridLayout>
                     <Grid className="d-flex align-items-center">
                         <FirstColumn>
                             <Title className="text-nowrap mb-4">Desenvolvedor FullStack</Title>
-                            <TypingAnimation className="typingAnimation" text="Profissional que abrange as duas áreas, todavia me considero com destaques em Front-End." />
+                            <TypingAnimation text="Profissional que abrange as duas áreas, todavia me considero com destaques em Front-End." />
                             <ContainerSocial>
-                                <SocialButton href="https://www.linkedin.com/in/devrafaelcunha/" target="blank" className="btn-1 mt-5" text="Linkedin"></SocialButton>
-                                <SocialButton href="https://github.com/dev-rafaelcunha" target="blank" className="btn-2 mt-5" text="Github"></SocialButton>
-                                <SocialButton href="https://www.instagram.com/dev.rafaelcunha/?next=%2F" target="blank" className="btn-3 mt-5" text="Instagram"></SocialButton>
+                                <CustomButton href="https://www.linkedin.com/in/devrafaelcunha/" target="blank" className="mt-5" text="Linkedin"></CustomButton>
+                                <CustomButton02 href="https://github.com/dev-rafaelcunha" target="blank" className="btn-2 mt-5" text="Github"></CustomButton02>
+                                <CustomButton03 href="https://www.instagram.com/dev.rafaelcunha/?next=%2F" target="blank" className="btn-3 mt-5" text="Instagram"></CustomButton03>
                             </ContainerSocial>
                         </FirstColumn>
                         <SecondColumn className="position-absolute">
                             <Logo>{logo}</Logo>
                         </SecondColumn>
                     </Grid>
-                </div>
+                </GridLayout>
             </Main>
-        </div>
-    )
+        </>
+    );
 }
 
 export default Home;
