@@ -84,6 +84,7 @@ const ContainerSocial = styled.main`
 
         justify-content: center !important;
         width: auto !important;
+        padding: 0 15px !important;
     }
 `;
 
