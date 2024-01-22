@@ -1,10 +1,11 @@
 import styled from "styled-components";
+import { useState } from 'react';
 
-const Link = styled.a`
+const LinkNav = styled.a`
 
     font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
     letter-spacing: .5px;
-    color: #9ca3af;
+    color: #9ca3af !important;
     font-size: 1.1rem;
     margin: 0 5px;
     
@@ -29,11 +30,22 @@ const Link = styled.a`
     }
 
     &:focus {
-        color: #f0094a;
+        color: #f0094a !important;
+    }
+
+    &.active {
+        color: #f0094a !important;
     }
 `;
 
 function Nav() {
+
+    const [activeLink, setActiveLink] = useState('Início');
+
+    const handleLinkClick = (link) => {
+
+        setActiveLink(link);
+    };
 
     return (
 
@@ -42,22 +54,52 @@ function Nav() {
                 <div className="collapse navbar-collapse" id="navbarNav">
                     <ul className="navbar-nav">
                         <li className="nav-item">
-                            <Link className="nav-link shadow-none" aria-current="page" href="#">Início</Link>
+                            <LinkNav
+                                className={`nav-link shadow-none ${activeLink === 'Início' ? 'active' : ''}`}
+                                onClick={() => handleLinkClick('Início')}
+                                href="#">
+                                Início
+                            </LinkNav>
                         </li>
                         <li className="nav-item">
-                            <Link className="nav-link shadow-none" aria-current="page" href="#">Sobre mim</Link>
+                            <LinkNav
+                                className={`nav-link shadow-none ${activeLink === 'Sobre mim' ? 'active' : ''}`}
+                                onClick={() => handleLinkClick('Sobre mim')}
+                                href="#about">
+                                Sobre mim
+                            </LinkNav>
                         </li>
                         <li className="nav-item">
-                            <Link className="nav-link shadow-none" aria-current="page" href="#">Habilidades</Link>
+                            <LinkNav
+                                className={`nav-link shadow-none ${activeLink === 'Habilidades' ? 'active' : ''}`}
+                                onClick={() => handleLinkClick('Habilidades')}
+                                href="#skills">
+                                Habilidades
+                            </LinkNav>
                         </li>
                         <li className="nav-item">
-                            <Link className="nav-link shadow-none" aria-current="page" href="#">Experiência</Link>
+                            <LinkNav
+                                className={`nav-link shadow-none ${activeLink === 'Experiências' ? 'active' : ''}`}
+                                onClick={() => handleLinkClick('Experiências')}
+                                href="#experiences">
+                                Experiências
+                            </LinkNav>
                         </li>
                         <li className="nav-item">
-                            <Link className="nav-link shadow-none" aria-current="page" href="#">Projetos</Link>
+                            <LinkNav
+                                className={`nav-link shadow-none ${activeLink === 'Projetos' ? 'active' : ''}`}
+                                onClick={() => handleLinkClick('Projetos')}
+                                href="#projects">
+                                Projetos
+                            </LinkNav>
                         </li>
                         <li className="nav-item">
-                            <Link className="nav-link shadow-none" aria-current="page" href="#">Contato</Link>
+                            <LinkNav
+                                className={`nav-link shadow-none ${activeLink === 'Contatos' ? 'active' : ''}`}
+                                onClick={() => handleLinkClick('Contatos')}
+                                href="#contacts">
+                                Contatos
+                            </LinkNav>
                         </li>
                     </ul>
                 </div>

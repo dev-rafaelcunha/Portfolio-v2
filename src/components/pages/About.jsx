@@ -15,7 +15,7 @@ function About() {
 
     return (
 
-        <Section>
+        <Section id="about">
             <div className="grid-layout">
                 <div className="d-flex align-items-center justify-content-center">
                     <h1 className="text-secondary">Sobre mim</h1>
