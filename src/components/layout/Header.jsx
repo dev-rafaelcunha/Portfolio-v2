@@ -25,7 +25,7 @@ const Logo = styled.header`
     transition: 1s ease-in-out;
     position: relative;
     font-size: 30px;
-    color: #f52754;
+    color: #f83f67;
     left: 215px;
     font-family: monospace;
     font-weight: bold;

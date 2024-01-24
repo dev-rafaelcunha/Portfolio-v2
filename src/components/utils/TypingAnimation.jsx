@@ -15,6 +15,7 @@ const Typing = styled.div`
   letter-spacing: .5px;
   color: #9ca3af;
   width: 600px;
+  padding-top: 15px;
 
   &::after {
     content: "|";
@@ -26,9 +27,13 @@ const Typing = styled.div`
     font-size: 19px;
   }
 
+  @media (max-width: 1200px) {
+    padding: 15 0px;
+  }
+
   @media (max-width: 991px) {
     width: inherit !important;
-    padding: 0 15px;
+    padding: 15px;
   }
 `;
 

@@ -21,7 +21,7 @@ const LinkNav = styled.a`
     }
 
     &:hover {
-        color: #fff;
+        color: #fff !important;
     }
 
     &:hover::after {
@@ -29,12 +29,8 @@ const LinkNav = styled.a`
         transform: scaleX(1);
     }
 
-    &:focus {
-        color: #f0094a !important;
-    }
-
     &.active {
-        color: #f0094a !important;
+        color: #f83f67 !important;
     }
 `;
 
