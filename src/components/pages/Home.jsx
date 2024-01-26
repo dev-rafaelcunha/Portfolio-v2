@@ -6,18 +6,12 @@ import CustomButton02 from "../common/CustomButton02";
 
 const Main = styled.main`
 
-    height: 98vh;
+    height: 89.5vh;
     background-color: #111;
-
-    @media (max-width: 1199px) {
-
-        height: 87.6vh;
-    }
 
     @media (max-width: 991px) {
 
         padding: 0 !important;
-        height: 87.6vh;
     }
 `;
 

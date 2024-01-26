@@ -4,14 +4,9 @@ import img from '../../img/photo03.jpeg';
 
 const Section = styled.section`
     
-    height: 70vh;
+    height: auto;
+    padding: 5rem 0;
     background-color: #111;
-
-    @media (max-width: 1199px) {
-
-        height: auto;
-        padding: 6rem 0;
-    }
 `;
 
 const Container = styled.div`
