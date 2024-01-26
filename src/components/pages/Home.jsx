@@ -21,7 +21,7 @@ const Main = styled.main`
     }
 `;
 
-const Grid = styled.main`
+const Grid = styled.div`
 
     height: 100vh;
     width: 100vw;
@@ -33,7 +33,7 @@ const Grid = styled.main`
     }
 `;
 
-const FirstColumn = styled.main`
+const FirstColumn = styled.div`
 
     background-color: #111;
     z-index: 100;
@@ -46,15 +46,16 @@ const FirstColumn = styled.main`
     }
 `;
 
-const Title = styled.main`
+const Title = styled.span`
 
     font-size: 3rem;
     color: #fff;
     margin-bottom: 20px;
+    display: block;
 
     @media (max-width: 991px) {
 
-        font-size: 2.5rem;
+        font-size: 2.2rem;
         white-space: normal !important;
     }
 `;
@@ -71,12 +72,12 @@ const SubTitle = styled.span`
     }
 `;
 
-const SecondColumn = styled.main`
+const SecondColumn = styled.div`
 
     right: 0;
 `;
 
-const Logo = styled.main`
+const Logo = styled.span`
 
     font-size: 330px;
     font-family: monospace;
@@ -92,7 +93,7 @@ const Logo = styled.main`
     }
 `;
 
-const ContainerSocial = styled.main`
+const ContainerSocial = styled.div`
 
     width: 590px;
     display: flex;
@@ -117,7 +118,7 @@ function Home() {
                 <GridLayout>
                     <Grid className="d-flex align-items-center">
                         <FirstColumn>
-                            <Title className="text-nowrap">Desenvolvedor<br />Front-end</Title>
+                            <Title className="text-nowrap">Desenvolvedor Front-end</Title>
                             <SubTitle>Portfólio 2.0</SubTitle>
                             <TypingAnimation text={`Este portfólio é uma versão moderna, com as tecnologias atuais do mercado, responsivo e reativo para melhor experiência do usuário.`} />
                             <ContainerSocial>
