@@ -29,6 +29,7 @@ const LinkNav = styled.a`
 
     &.active {
         color: #f83f67 !important;
+        font-weight: 600;
     }
 `;
 
