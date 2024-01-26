@@ -3,9 +3,7 @@ import { useState } from 'react';
 
 const LinkNav = styled.a`
 
-    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-    letter-spacing: .5px;
-    color: #9ca3af !important;
+    color: #9ca3af;
     font-size: 1.1rem;
     margin: 0 5px;
     

@@ -8,7 +8,7 @@ const Heading = styled.header`
     background-color: #111;
 `;
 
-const Name = styled.header`
+const Name = styled.span`
 
     text-decoration: none;
     color: #fff;
@@ -18,7 +18,7 @@ const Name = styled.header`
     position: absolute;
 `;
 
-const Logo = styled.header`
+const Logo = styled.span`
 
     animation: move 3s infinite ease-in-out;
     animation-duration: 2s;
@@ -26,7 +26,7 @@ const Logo = styled.header`
     position: relative;
     font-size: 30px;
     color: #f83f67;
-    left: 215px;
+    left: 110px;
     font-family: monospace;
     font-weight: bold;
 
@@ -39,7 +39,7 @@ const Logo = styled.header`
 
 function Header() {
 
-    const name = "Rafael Cunha";
+    const name = "Rafael";
     const logo = "</>";
 
     return (

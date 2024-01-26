@@ -2,18 +2,22 @@ import Header from "../layout/Header";
 import TypingAnimation from "../utils/TypingAnimation";
 import styled from "styled-components";
 import { GridLayout } from "../../global/GridLayout";
-import CustomButton from "../common/CustomButton";
 import CustomButton02 from "../common/CustomButton02";
-import CustomButton03 from "../common/CustomButton03";
 
 const Main = styled.main`
 
-    height: 95vh;
+    height: 98vh;
     background-color: #111;
+
+    @media (max-width: 1199px) {
+
+        height: 87.6vh;
+    }
 
     @media (max-width: 991px) {
 
         padding: 0 !important;
+        height: 87.6vh;
     }
 `;
 
@@ -50,7 +54,7 @@ const Title = styled.main`
 
     @media (max-width: 991px) {
 
-        font-size: 2.8rem;
+        font-size: 2.5rem;
         white-space: normal !important;
     }
 `;
@@ -113,13 +117,11 @@ function Home() {
                 <GridLayout>
                     <Grid className="d-flex align-items-center">
                         <FirstColumn>
-                            <Title className="text-nowrap">Desenvolvedor Front-end</Title>
+                            <Title className="text-nowrap">Desenvolvedor<br />Front-end</Title>
                             <SubTitle>Portfólio 2.0</SubTitle>
-                            <TypingAnimation text={`Este portfólio é uma versão moderna, com as tecnologias atuais do mercado, responsivo e reativo para melhor experiência do usuário.`}/>
+                            <TypingAnimation text={`Este portfólio é uma versão moderna, com as tecnologias atuais do mercado, responsivo e reativo para melhor experiência do usuário.`} />
                             <ContainerSocial>
                                 <CustomButton02 href="https://www.linkedin.com/in/devrafaelcunha/" target="blank" className="mt-5 mx-0" text="Linkedin"></CustomButton02>
-                                {/* <CustomButton02 href="https://github.com/dev-rafaelcunha" target="blank" className="mt-5" text="GitHub"></CustomButton02> */}
-                                {/* <CustomButton03 href="https://www.instagram.com/dev.rafaelcunha/?next=%2F" target="blank" className="mt-5" text="Instagram"></CustomButton03> */}
                             </ContainerSocial>
                         </FirstColumn>
                         <SecondColumn className="position-absolute">
