@@ -39,6 +39,7 @@ const Button = styled.a`
     margin: 0 10%;
     font-weight: bold;
     letter-spacing: 1px;
+    margin-top: 40px;
     
     &:hover {
         background: transparent;

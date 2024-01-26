@@ -116,7 +116,7 @@ function Home() {
                             <SubTitle>Portfólio 2.0</SubTitle>
                             <TypingAnimation text={`Este portfólio é uma versão moderna, com as tecnologias atuais do mercado, responsivo e reativo para melhor experiência do usuário.`} />
                             <ContainerSocial>
-                                <CustomButton02 href="https://www.linkedin.com/in/devrafaelcunha/" target="blank" className="mt-5 mx-0" text="Linkedin"></CustomButton02>
+                                <CustomButton02 href="https://www.linkedin.com/in/devrafaelcunha/" target="blank" className="mx-0" text="Linkedin"></CustomButton02>
                             </ContainerSocial>
                         </FirstColumn>
                         <SecondColumn className="position-absolute">

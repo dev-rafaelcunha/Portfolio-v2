@@ -14,8 +14,8 @@ const Typing = styled.div`
   font-size: 18px;
   letter-spacing: .5px;
   color: #9ca3af;
-  width: 600px;
-  padding-top: 15px;
+  width: 650px;
+  padding-top: 10px;
 
   &::after {
     content: "|";
