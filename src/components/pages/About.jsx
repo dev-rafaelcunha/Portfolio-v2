@@ -1,10 +1,8 @@
 import styled from 'styled-components';
 import { GridLayout } from '../../global/GridLayout';
 import img from '../../img/photo03.jpeg';
-import linkedin from '../../img/linkedin.png';
-import instagram from '../../img/instagram.png';
-import github from '../../img/github.png';
-import wpp from '../../img/wpp.png';
+import { FaLinkedinIn, FaInstagram, FaWhatsapp } from "react-icons/fa";
+import { TbBrandGithubFilled } from "react-icons/tb";
 
 const Section = styled.section`
     
@@ -106,10 +104,13 @@ const Social = styled.div`
 
 const Card = styled.a`
     
-    padding: 10px;
+    padding: 20px;
     background-color: #111;
     display: flex;
     border: 2px solid #1f1f1f;
+    align-items: center;
+    font-size: 1.7rem;
+    color: #f83f67;
 
     &:hover {
 
@@ -139,10 +140,10 @@ function About() {
                             e buscando novos desafios para carreira.
                         </Text>
                         <Social>
-                            <Card href="https://www.linkedin.com/in/devrafaelcunha/" target="_blank" className="rounded"><img src={linkedin} alt="Linkedin" className="rounded" /></Card>
-                            <Card href="https://www.instagram.com/dev.rafaelcunha/" target="_blank" className="rounded ms-3"><img src={instagram} alt="Instagram" className="rounded" /></Card>
-                            <Card href="https://github.com/dev-rafaelcunha" target="_blank" className="rounded ms-3"><img src={github} alt="GitHub" className="rounded" /></Card>
-                            <Card href="https://contate.me/rafaelcunha" target="_blank" className="rounded ms-3"><img src={wpp} alt="WhatsApp" className="rounded" /></Card>
+                            <Card href="https://www.linkedin.com/in/devrafaelcunha/" target="_blank" className="rounded"><FaLinkedinIn /></Card>
+                            <Card href="https://www.instagram.com/dev.rafaelcunha/" target="_blank" className="rounded ms-3"><FaInstagram /></Card>
+                            <Card href="https://github.com/dev-rafaelcunha" target="_blank" className="rounded ms-3"><TbBrandGithubFilled /></Card>
+                            <Card href="https://contate.me/rafaelcunha" target="_blank" className="rounded ms-3"><FaWhatsapp /></Card>
                         </Social>
                     </SecondColumn>
                 </Container>
