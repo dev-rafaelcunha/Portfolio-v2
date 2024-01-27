@@ -1,11 +1,15 @@
 import styled from 'styled-components';
 import { GridLayout } from '../../global/GridLayout';
 import img from '../../img/photo03.jpeg';
+import linkedin from '../../img/linkedin.png';
+import instagram from '../../img/instagram.png';
+import github from '../../img/github.png';
+import wpp from '../../img/wpp.png';
 
 const Section = styled.section`
     
     height: auto;
-    padding: 5rem 0;
+    padding: 5rem;
     background-color: #111;
 `;
 
@@ -17,10 +21,9 @@ const Container = styled.div`
 
 const Photo = styled.img`
     
-    height: 500px;
-    width: 400px;
+    height: 550px;
+    width: 430px;
     max-width: 100%;
-    height: auto;
 
     @media (max-width: 991px) {
         width: 250px;
@@ -42,7 +45,12 @@ const FirstColumn = styled.div`
 
 const SecondColumn = styled.div`
     
-    padding: 4rem 2rem;
+    padding: 4rem 1.5rem 4rem;
+
+    @media (max-width: 1199px) {
+
+        padding: 4rem 1.5rem 1.5rem;
+    }
 `;
 
 const Title = styled.span`
@@ -86,6 +94,27 @@ const Text = styled.p`
     color: #9ca3af;
     line-height: 1.5rem;
     letter-spacing: .5px;
+    margin-top: 40px;
+    margin-bottom: 0 !important;
+`;
+
+const Social = styled.div`
+    
+    margin-top: 40px;
+    display: flex;
+`;
+
+const Card = styled.a`
+    
+    padding: 10px;
+    background-color: #111;
+    display: flex;
+    border: 2px solid #1f1f1f;
+
+    &:hover {
+
+        border: 2px solid #f83f67;
+    }
 `;
 
 function About() {
@@ -102,13 +131,19 @@ function About() {
                         <Title>Sobre mim</Title>
                         <Name className="text-light mt-2">Rafael Cunha</Name>
                         <Description className='text-light mt-2'>Front-End Developer</Description>
-                        <Text className="mt-5">
+                        <Text>
                             Meu nome é <strong>Rafael Cunha</strong>, tenho 27 anos, atualmente estou trabalhando na empresa <strong>Tork Company</strong> como
                             <strong> Desenvolvedor Júnior</strong> e cursando <strong>Engenharia de Software</strong> pela <strong>UNINTER</strong>.<br /><br />
                             Passei minha vida buscando algo que realmente fizesse sentido,
                             até me deparar com o mundo de desenvolvimento, onde estou feliz, empolgado e totalmente focado, me aperfeiçoando
                             e buscando novos desafios para carreira.
                         </Text>
+                        <Social>
+                            <Card href="https://www.linkedin.com/in/devrafaelcunha/" target="_blank" className="rounded"><img src={linkedin} alt="Linkedin" className="rounded" /></Card>
+                            <Card href="https://www.instagram.com/dev.rafaelcunha/" target="_blank" className="rounded ms-3"><img src={instagram} alt="Instagram" className="rounded" /></Card>
+                            <Card href="https://github.com/dev-rafaelcunha" target="_blank" className="rounded ms-3"><img src={github} alt="GitHub" className="rounded" /></Card>
+                            <Card href="https://contate.me/rafaelcunha" target="_blank" className="rounded ms-3"><img src={wpp} alt="WhatsApp" className="rounded" /></Card>
+                        </Social>
                     </SecondColumn>
                 </Container>
             </GridLayout>
