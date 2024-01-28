@@ -24,9 +24,8 @@ const Photo = styled.img`
     max-width: 100%;
 
     @media (max-width: 991px) {
-        width: 250px;
-        height: 250px;
-        border-radius: 50% !important;
+        width: 320px;
+        height: 390px;
     }
 `;
 
@@ -118,6 +117,13 @@ const Card = styled.a`
     }
 `;
 
+const socialLinks = [
+    { href: "https://www.linkedin.com/in/devrafaelcunha/", icon: <FaLinkedinIn />, className: "rounded" },
+    { href: "https://www.instagram.com/dev.rafaelcunha/", icon: <FaInstagram />, className: "rounded ms-3" },
+    { href: "https://github.com/dev-rafaelcunha", icon: <TbBrandGithubFilled />, className: "rounded ms-3" },
+    { href: "https://contate.me/rafaelcunha", icon: <FaWhatsapp />, className: "rounded ms-3" }
+];
+
 function About() {
 
     return (
@@ -140,10 +146,11 @@ function About() {
                             e buscando novos desafios para carreira.
                         </Text>
                         <Social>
-                            <Card href="https://www.linkedin.com/in/devrafaelcunha/" target="_blank" className="rounded"><FaLinkedinIn /></Card>
-                            <Card href="https://www.instagram.com/dev.rafaelcunha/" target="_blank" className="rounded ms-3"><FaInstagram /></Card>
-                            <Card href="https://github.com/dev-rafaelcunha" target="_blank" className="rounded ms-3"><TbBrandGithubFilled /></Card>
-                            <Card href="https://contate.me/rafaelcunha" target="_blank" className="rounded ms-3"><FaWhatsapp /></Card>
+                            {socialLinks.map((link, index) => (
+                                <Card key={index} href={link.href} target="_blank" className={link.className}>
+                                    {link.icon}
+                                </Card>
+                            ))}
                         </Social>
                     </SecondColumn>
                 </Container>
