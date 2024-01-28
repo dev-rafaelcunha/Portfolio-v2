@@ -100,6 +100,13 @@ const Text = styled.p`
     letter-spacing: .5px;
     margin-top: 40px;
     margin-bottom: 0 !important;
+    padding-right: 20px;
+
+    @media (max-width: 991px) {
+
+        text-align: center;
+        padding: 0 20px;
+    }
 `;
 
 const Social = styled.div`
