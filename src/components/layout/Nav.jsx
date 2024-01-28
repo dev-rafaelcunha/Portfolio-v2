@@ -3,7 +3,7 @@ import { useState } from 'react';
 
 const LinkNav = styled.a`
 
-    color: #555;
+    color: #444;
     font-size: 1rem;
     margin: 0 5px;
     letter-spacing: .5px;

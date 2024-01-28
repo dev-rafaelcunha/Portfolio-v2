@@ -42,7 +42,7 @@ const FirstColumn = styled.div`
 const Title = styled.span`
 
     font-size: 3rem;
-    color: #555;
+    color: #444;
     margin-bottom: 20px;
     display: block;
 

@@ -14,7 +14,7 @@ const Section = styled.section`
 const Container = styled.div`
     
     background-color: #fff;
-    border: 2px solid #555;
+    border: 2px solid #444;
 `;
 
 const Photo = styled.img`
@@ -70,7 +70,7 @@ const Title = styled.span`
 const Name = styled.h1`
     
     font-size: 2.5rem;
-    color: #555;
+    color: #444;
 
     @media (max-width: 991px) {
 
@@ -83,7 +83,7 @@ const Name = styled.h1`
 const Description = styled.span`
     
     font-size: 1.2rem;
-    color: #555;
+    color: #444;
 
     @media (max-width: 991px) {
 
@@ -95,7 +95,7 @@ const Description = styled.span`
 const Text = styled.p`
     
     font-size: 1.1rem;
-    color: #555;
+    color: #444;
     line-height: 1.5rem;
     letter-spacing: .5px;
     margin-top: 40px;

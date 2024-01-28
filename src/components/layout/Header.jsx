@@ -12,7 +12,7 @@ const Heading = styled.header`
 const Name = styled.span`
 
     text-decoration: none;
-    color: #555;
+    color: #444;
     font-size: 30px;
     font-weight: bold;
     font-family:"Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
