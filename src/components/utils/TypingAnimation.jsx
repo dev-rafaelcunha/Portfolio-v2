@@ -13,7 +13,7 @@ const blink = keyframes`
 const Typing = styled.div`
   font-size: 18px;
   letter-spacing: .5px;
-  color: #9ca3af;
+  color: #555;
   width: 650px;
   padding-top: 10px;
 

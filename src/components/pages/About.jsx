@@ -8,13 +8,13 @@ const Section = styled.section`
     
     height: auto;
     padding: 5rem;
-    background-color: #111;
+    background-color: #03172d;
 `;
 
 const Container = styled.div`
     
-    background-color: #151515;
-    border: 2px solid #1f1f1f;
+    background-color: #fff;
+    border: 2px solid #555;
 `;
 
 const Photo = styled.img`
@@ -42,11 +42,15 @@ const FirstColumn = styled.div`
 
 const SecondColumn = styled.div`
     
-    padding: 4rem 1.5rem 4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 
-    @media (max-width: 1199px) {
+    @media (max-width: 991px) {
 
-        padding: 4rem 1.5rem 1.5rem;
+        padding-bottom: 20px;
+        display: flex;
+        align-items: center;
     }
 `;
 
@@ -65,6 +69,7 @@ const Title = styled.span`
 const Name = styled.h1`
     
     font-size: 2.5rem;
+    color: #555;
 
     @media (max-width: 991px) {
 
@@ -77,6 +82,7 @@ const Name = styled.h1`
 const Description = styled.span`
     
     font-size: 1.2rem;
+    color: #555;
 
     @media (max-width: 991px) {
 
@@ -88,7 +94,7 @@ const Description = styled.span`
 const Text = styled.p`
     
     font-size: 1.1rem;
-    color: #9ca3af;
+    color: #555;
     line-height: 1.5rem;
     letter-spacing: .5px;
     margin-top: 40px;
@@ -104,16 +110,18 @@ const Social = styled.div`
 const Card = styled.a`
     
     padding: 20px;
-    background-color: #111;
+    background-color: #fff;
     display: flex;
-    border: 2px solid #1f1f1f;
+    border: 1px solid #f83f67;
     align-items: center;
     font-size: 1.7rem;
     color: #f83f67;
+    border-radius: 50% !important;
 
     &:hover {
 
-        border: 2px solid #f83f67;
+        background-color: #f83f67;
+        color: #fff;
     }
 `;
 
@@ -136,8 +144,8 @@ function About() {
                     </FirstColumn>
                     <SecondColumn className="col-lg">
                         <Title>Sobre mim</Title>
-                        <Name className="text-light mt-2">Rafael Cunha</Name>
-                        <Description className='text-light mt-2'>Front-End Developer</Description>
+                        <Name className="mt-2">Rafael Cunha</Name>
+                        <Description className='mt-2'>Front-End Developer</Description>
                         <Text>
                             Meu nome é <strong>Rafael Cunha</strong>, tenho 27 anos, atualmente estou trabalhando na empresa <strong>Tork Company</strong> como
                             <strong> Desenvolvedor Júnior</strong> e cursando <strong>Engenharia de Software</strong> pela <strong>UNINTER</strong>.<br /><br />

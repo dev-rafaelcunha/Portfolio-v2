@@ -5,13 +5,14 @@ import { GridLayout } from "../../global/GridLayout";
 const Heading = styled.header`
 
     height: 10vh;
-    background-color: #111;
+    background-color: #fff;
+    z-index: 101;
 `;
 
 const Name = styled.span`
 
     text-decoration: none;
-    color: #fff;
+    color: #555;
     font-size: 30px;
     font-weight: bold;
     font-family:"Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;

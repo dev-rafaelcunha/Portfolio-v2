@@ -3,23 +3,13 @@ import { useState } from 'react';
 
 const LinkNav = styled.a`
 
-    color: #9ca3af;
-    font-size: 1.1rem;
+    color: #555;
+    font-size: 1rem;
     margin: 0 5px;
+    letter-spacing: .5px;
     
-    &::after {
-        content: "";
-        width: 100%;
-        height: 1px;
-        display: block;
-        background-image: linear-gradient(to right, #966cf900, #f52754, #f52754);
-        transform-origin: right;
-        transform: scaleX(0);
-        transition: transform 0.5s;
-    }
-
     &:hover {
-        color: #fff !important;
+        color: #f83f67 !important;
     }
 
     &:hover::after {
@@ -30,6 +20,7 @@ const LinkNav = styled.a`
     &.active {
         color: #f83f67 !important;
         font-weight: 600;
+        pointer-events: none;
     }
 `;
 

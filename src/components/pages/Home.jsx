@@ -7,7 +7,7 @@ import CustomButton02 from "../common/CustomButton02";
 const Main = styled.main`
 
     height: 89.5vh;
-    background-color: #111;
+    background-color: #fff;
 
     @media (max-width: 991px) {
 
@@ -18,7 +18,7 @@ const Main = styled.main`
 const Grid = styled.div`
 
     height: 100vh;
-    width: 100vw;
+    /* width: 100vw; */
 
     @media (max-width: 991px) {
 
@@ -29,9 +29,8 @@ const Grid = styled.div`
 
 const FirstColumn = styled.div`
 
-    background-color: #111;
+    background-color: #fff;
     z-index: 100;
-    width: 40% !important;
 
     @media (max-width: 991px) {
 
@@ -43,7 +42,7 @@ const FirstColumn = styled.div`
 const Title = styled.span`
 
     font-size: 3rem;
-    color: #fff;
+    color: #555;
     margin-bottom: 20px;
     display: block;
 
@@ -59,6 +58,7 @@ const SubTitle = styled.span`
     font-size: 1.5rem;
     letter-spacing: .5px;
     color: #f83f67;
+    font-weight: 600;
 
     @media (max-width: 991px) {
 
@@ -102,7 +102,7 @@ const ContainerSocial = styled.div`
 
 function Home() {
 
-    const logo = "</>";
+    const logo = "";
 
     return (
 
@@ -110,7 +110,7 @@ function Home() {
             <Header />
             <Main className="px-5">
                 <GridLayout>
-                    <Grid className="d-flex align-items-center">
+                    <Grid className="d-flex align-items-center justify-content-center">
                         <FirstColumn>
                             <Title className="text-nowrap">Desenvolvedor Front-end</Title>
                             <SubTitle>Portfólio 2.0</SubTitle>
@@ -119,9 +119,9 @@ function Home() {
                                 <CustomButton02 href="https://www.linkedin.com/in/devrafaelcunha/" target="blank" className="mx-0" text="Linkedin"></CustomButton02>
                             </ContainerSocial>
                         </FirstColumn>
-                        <SecondColumn className="position-absolute">
+                        {/* <SecondColumn className="position-absolute">
                             <Logo>{logo}</Logo>
-                        </SecondColumn>
+                        </SecondColumn> */}
                     </Grid>
                 </GridLayout>
             </Main>

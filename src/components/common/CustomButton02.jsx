@@ -44,6 +44,7 @@ const Button = styled.a`
     &:hover {
         background: transparent;
         box-shadow: none;
+        color: #555;
     }
       
     &:before,
