@@ -79,14 +79,6 @@ function Nav() {
                                 Projetos
                             </LinkNav>
                         </li>
-                        <li className="nav-item">
-                            <LinkNav
-                                className={`nav-link shadow-none ${activeLink === 'Contatos' ? 'active' : ''}`}
-                                onClick={() => handleLinkClick('Contatos')}
-                                href="#contacts">
-                                Contatos
-                            </LinkNav>
-                        </li>
                     </ul>
                 </div>
             </div>
