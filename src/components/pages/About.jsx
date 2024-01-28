@@ -57,6 +57,7 @@ const SecondColumn = styled.div`
 const Title = styled.span`
     
     color: #f83f67;
+    font-weight: 600;
     font-size: 22px;
 
     @media (max-width: 991px) {
