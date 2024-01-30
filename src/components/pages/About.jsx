@@ -21,7 +21,7 @@ const Section = styled.section`
 
 const Container = styled.div`
     
-    background-color: #fffbfb;
+    background-color: #fff;
     border: 2px solid #444;
 `;
 

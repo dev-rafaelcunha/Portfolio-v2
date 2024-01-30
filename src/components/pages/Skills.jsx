@@ -9,7 +9,7 @@ import { FiTrello } from "react-icons/fi";
 
 const Section = styled.section`
     
-    background-color: #fffbfb;
+    background-color: #fff;
     padding: 0 40px 80px;
 
     @media (max-width: 1199px) {
