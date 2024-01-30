@@ -115,23 +115,34 @@ const DescriptionSkills = styled.span`
     }
 `;
 
+const skillsData = [
+    { icon: <AiOutlineHtml5 />, title: "HTML5", description: "Marcação de Texto.", fontSize: "5rem" },
+    { icon: <FaCss3 />, title: "CSS3", description: "Estilização.", fontSize: "5rem" },
+    { icon: <BsBootstrap />, title: "Bootstrap", description: "Framework para Estilização.", fontSize: "5rem" },
+    { icon: <IoLogoJavascript />, title: "JavaScript", description: "Interatividade.", fontSize: "5rem" },
+    { icon: <FaReact />, title: "React", description: "Reatividade.", fontSize: "5rem" },
+    { icon: <SiStyledcomponents />, title: "Styled Components", description: "Biblioteca para Estilizar Components React.", fontSize: "8rem" },
+    { icon: <FaPhp />, title: "PHP", description: "Linguagem de Programação.", fontSize: "8rem" },
+    { icon: <FaDatabase />, title: "Banco de Dados", description: "MySQL e PostgreSQL", fontSize: "5rem"},
+    { icon: <IoMdGitMerge />, title: "Git", description: "Versionamento de Códigos.", fontSize: "5rem" },
+    { icon: <FiTrello />, title: "Trello", description: "Métodologias Ágeis", fontSize: "5rem" }
+];
+
 function Skills() {
+    
     return (
         <Section id="skills">
             <GridLayout>
                 <Title>Habilidades<Point> .</Point></Title>
                 <Container>
                     <CardSkills>
-                        <Card fontSize="5rem" className="rounded"><AiOutlineHtml5 /><TitleSkills>HTML5</TitleSkills><DescriptionSkills>Marcação de Texto.</DescriptionSkills></Card>
-                        <Card fontSize="5rem" className="rounded"><FaCss3 /><TitleSkills>CSS3</TitleSkills><DescriptionSkills>Estilização.</DescriptionSkills></Card>
-                        <Card fontSize="5rem" className="rounded"><BsBootstrap /><TitleSkills>Bootstrap</TitleSkills><DescriptionSkills>Framework para Estilização.</DescriptionSkills></Card>
-                        <Card fontSize="5rem" className="rounded"><IoLogoJavascript /><TitleSkills>JavaScript</TitleSkills><DescriptionSkills>Interatividade.</DescriptionSkills></Card>
-                        <Card fontSize="5rem" className="rounded"><FaReact /><TitleSkills>ReactJS</TitleSkills><DescriptionSkills>Reatividade.</DescriptionSkills></Card>
-                        <Card fontSize="8rem" className="rounded"><SiStyledcomponents /><TitleSkills>Styled Components</TitleSkills><DescriptionSkills>Biblioteca para estilizar components React.</DescriptionSkills></Card>
-                        <Card fontSize="8rem" className="rounded"><FaPhp /><TitleSkills>PHP</TitleSkills><DescriptionSkills>Linguagem de Programação.</DescriptionSkills></Card>
-                        <Card fontSize="5rem" className="rounded"><FaDatabase /><TitleSkills>Banco de Dados</TitleSkills><DescriptionSkills>MySQL e PostgreSQL.</DescriptionSkills></Card>
-                        <Card fontSize="5rem" className="rounded"><IoMdGitMerge /><TitleSkills>Git</TitleSkills><DescriptionSkills>Versionamento de Códigos.</DescriptionSkills></Card>
-                        <Card fontSize="5rem" className="rounded"><FiTrello /><TitleSkills>Trello</TitleSkills><DescriptionSkills>Métodologias Ágeis</DescriptionSkills></Card>
+                        {skillsData.map((skill, index) => (
+                            <Card key={index} fontSize={skill.fontSize} className="rounded">
+                                {skill.icon}
+                                <TitleSkills>{skill.title}</TitleSkills>
+                                <DescriptionSkills>{skill.description}</DescriptionSkills>
+                            </Card>
+                        ))}
                     </CardSkills>
                 </Container>
             </GridLayout>
