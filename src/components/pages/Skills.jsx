@@ -93,6 +93,7 @@ const TitleSkills = styled.span`
     color: #fff;
     font-weight: bold;
     top: 3px;
+    padding: 5px;
 
     @media (max-width: 480px) {
         
@@ -108,6 +109,7 @@ const DescriptionSkills = styled.span`
     text-align: center;
     color: #fff;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    padding: 5px 14px;
 
     @media (max-width: 480px) {
         
