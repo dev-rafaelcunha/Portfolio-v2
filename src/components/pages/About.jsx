@@ -6,7 +6,6 @@ import { TbBrandGithubFilled } from "react-icons/tb";
 
 const Section = styled.section`
     
-    height: 82.5vh;
     padding: 5rem;
     background-color: #03172d;
     display: flex;

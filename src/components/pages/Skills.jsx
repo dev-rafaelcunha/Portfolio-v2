@@ -9,9 +9,8 @@ import { FiTrello } from "react-icons/fi";
 
 const Section = styled.section`
     
-    height: 79vh;
     background-color: #fffbfb;
-    padding: 0 40px;
+    padding: 0 40px 80px;
 
     @media (max-width: 1199px) {
 
@@ -30,7 +29,6 @@ const Title = styled.h1`
 
 const Container = styled.div`
     
-    height: 50vh;
     display: flex;
 
     @media (max-width: 1199px) {
