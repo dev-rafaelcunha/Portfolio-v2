@@ -18,7 +18,6 @@ const Main = styled.main`
 const Grid = styled.div`
 
     height: 89.5vh;
-    /* width: 100vw; */
 
     @media (max-width: 991px) {
 

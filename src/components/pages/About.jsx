@@ -14,6 +14,8 @@ const Section = styled.section`
     @media (max-width: 991px) {
 
         height: auto;
+        display: flex;
+        justify-content: center;
     }
 `;
 

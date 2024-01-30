@@ -79,6 +79,11 @@ const Card = styled.a`
         height: 190px;
         width: 190px;
     }
+
+    @media (max-width: 480px) {
+        height: 150px;
+        width: 150px;
+    }
 `;
 
 const TitleSkills = styled.span`
@@ -88,6 +93,11 @@ const TitleSkills = styled.span`
     color: #fff;
     font-weight: bold;
     top: 3px;
+
+    @media (max-width: 480px) {
+        
+        display: none;
+    }
 `;
 
 const DescriptionSkills = styled.span`
@@ -98,6 +108,11 @@ const DescriptionSkills = styled.span`
     text-align: center;
     color: #fff;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+    @media (max-width: 480px) {
+        
+        display: none;
+    }
 `;
 
 function Skills() {
