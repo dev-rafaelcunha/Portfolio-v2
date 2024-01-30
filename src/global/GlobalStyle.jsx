@@ -23,7 +23,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   ::-webkit-scrollbar-track {
-      background-color: #111;
+      background-color: #444;
   }
 
   ::selection {

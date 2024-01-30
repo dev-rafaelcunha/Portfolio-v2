@@ -6,14 +6,21 @@ import { TbBrandGithubFilled } from "react-icons/tb";
 
 const Section = styled.section`
     
-    height: auto;
+    height: 82.5vh;
     padding: 5rem;
     background-color: #03172d;
+    display: flex;
+    align-items: center;
+
+    @media (max-width: 991px) {
+
+        height: auto;
+    }
 `;
 
 const Container = styled.div`
     
-    background-color: #fff;
+    background-color: #fffbfb;
     border: 2px solid #444;
 `;
 

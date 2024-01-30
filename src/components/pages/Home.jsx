@@ -7,7 +7,7 @@ import CustomButton02 from "../common/CustomButton02";
 const Main = styled.main`
 
     height: 89.5vh;
-    background-color: #fff;
+    background-color: #fffbfb;
 
     @media (max-width: 991px) {
 
@@ -17,7 +17,7 @@ const Main = styled.main`
 
 const Grid = styled.div`
 
-    height: 100vh;
+    height: 89.5vh;
     /* width: 100vw; */
 
     @media (max-width: 991px) {
@@ -29,7 +29,7 @@ const Grid = styled.div`
 
 const FirstColumn = styled.div`
 
-    background-color: #fff;
+    background-color: #fffbfb;
     z-index: 100;
 
     @media (max-width: 991px) {

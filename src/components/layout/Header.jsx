@@ -5,7 +5,7 @@ import { GridLayout } from "../../global/GridLayout";
 const Heading = styled.header`
 
     height: 10vh;
-    background-color: #fff;
+    background-color: #fffbfb;
     z-index: 101;
 `;
 
