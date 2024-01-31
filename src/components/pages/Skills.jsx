@@ -81,8 +81,9 @@ const Card = styled.a`
     }
 
     @media (max-width: 480px) {
-        height: 150px;
-        width: 150px;
+        height: 155px;
+        width: 46.6%;
+        white-space: nowrap;
     }
 `;
 
@@ -125,13 +126,13 @@ const skillsData = [
     { icon: <FaReact />, title: "React", description: "Reatividade.", fontSize: "5rem" },
     { icon: <SiStyledcomponents />, title: "Styled Components", description: "Biblioteca para Estilizar Components React.", fontSize: "8rem" },
     { icon: <FaPhp />, title: "PHP", description: "Linguagem de Programação.", fontSize: "8rem" },
-    { icon: <FaDatabase />, title: "Banco de Dados", description: "MySQL e PostgreSQL", fontSize: "5rem"},
+    { icon: <FaDatabase />, title: "Banco de Dados", description: "MySQL e PostgreSQL", fontSize: "5rem" },
     { icon: <IoMdGitMerge />, title: "Git", description: "Versionamento de Códigos.", fontSize: "5rem" },
     { icon: <FiTrello />, title: "Trello", description: "Métodologias Ágeis", fontSize: "5rem" }
 ];
 
 function Skills() {
-    
+
     return (
         <Section id="skills">
             <GridLayout>

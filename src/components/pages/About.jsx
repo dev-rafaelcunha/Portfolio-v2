@@ -35,6 +35,11 @@ const Photo = styled.img`
         width: 320px;
         height: 390px;
     }
+
+    @media (max-width: 480px) {
+
+        height: 300px;
+    }
 `;
 
 const FirstColumn = styled.div`
@@ -121,6 +126,7 @@ const Social = styled.div`
     
     margin-top: 40px;
     display: flex;
+    padding: 0 10px;
 `;
 
 const Card = styled.a`
@@ -136,6 +142,13 @@ const Card = styled.a`
 
     &:hover {
 
+        background-color: #f83f67;
+        color: #fff;
+    }
+
+    @media (max-width: 480px) {
+
+        font-size: 1rem;
         background-color: #f83f67;
         color: #fff;
     }
