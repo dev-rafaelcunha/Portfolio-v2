@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import styled from 'styled-components';
 import { GridLayout } from '../../global/GridLayout';
+import moment from 'moment';
+
 
 const Section = styled.section`
     
@@ -142,10 +144,21 @@ const TextCardData = styled.span`
 `;
 
 function Experiences() {
+
+    // Ativar/Mostrar conteúdo ao clicar na empresa.
     const [activeTitleCard, setActiveTitleCard] = useState('Tork Company');
 
     const handleLinkClick = (card) => {
         setActiveTitleCard(card);
+    };
+
+    // Mostrar período da experiência de forma automática
+    const calculateWorkPeriod = (startDate) => {
+        const start = moment(startDate, 'DD/MM/YYYY'); // Supondo que a data de início esteja no formato DD/MM/YYYY
+        const end = moment(); // Data atual
+        const duration = moment.duration(end.diff(start));
+        const months = duration.asMonths();
+        return Math.round(months) + ' Meses';
     };
 
     return (
@@ -168,7 +181,7 @@ function Experiences() {
                     {activeTitleCard === 'Tork Company' && (
                         <CardData>
                             <TitleCardData>Desenvolvedor <span className="ps-1">FullStack</span></TitleCardData>
-                            <Date>Atualmente (10 Meses)</Date>
+                            <Date>{`Atualmente (${calculateWorkPeriod('10/04/2023')})`}</Date>
                             <SubtitleCardData>Tork Company</SubtitleCardData>
                             <TextCardData>Aqui vai a descrição da Tork Company, sobre as stecks e skills, etc...</TextCardData>
                         </CardData>
