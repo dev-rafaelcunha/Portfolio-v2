@@ -154,7 +154,7 @@ function Experiences() {
 
     // Mostrar período da experiência de forma automática
     const calculateWorkPeriod = (startDate) => {
-        const start = moment(startDate, 'DD/MM/YYYY'); // Supondo que a data de início esteja no formato DD/MM/YYYY
+        const start = moment(startDate, 'DD/MM/YYYY');
         const end = moment(); // Data atual
         const duration = moment.duration(end.diff(start));
         const months = duration.asMonths();
@@ -183,7 +183,12 @@ function Experiences() {
                             <TitleCardData>Desenvolvedor <span className="ps-1">FullStack</span></TitleCardData>
                             <Date>{`Atualmente (${calculateWorkPeriod('10/04/2023')})`}</Date>
                             <SubtitleCardData>Tork Company</SubtitleCardData>
-                            <TextCardData>Aqui vai a descrição da Tork Company, sobre as stecks e skills, etc...</TextCardData>
+                            <TextCardData>
+                                Desenvolvo aplicações web, manutenção nos softwares existentes e dashboards utilizando bibliotecas JavaScript. <br /><br />
+                                <span className="fs-6 fw-semibold text-light">Linguagens utilizadas: <br /></span>
+                                <span className="fs-6 d-block mt-1">HTML - CSS - Bootstrap - JavaScript - PHP</span>
+
+                            </TextCardData>
                         </CardData>
                     )}
                     {activeTitleCard === 'Sem Registro' && (
