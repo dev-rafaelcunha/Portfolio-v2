@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import styled from "styled-components";
 import { GridLayout } from "../../global/GridLayout";
 import project01 from "../../img/project01.png";
@@ -55,6 +55,12 @@ const Card = styled.div`
     &:hover {
         background: #fff;
     }
+
+    @media (max-width: 480px) {
+
+        background-image: none;
+        background-color: inherit;
+    }
 `;
 
 const CardProjects = styled.div`
@@ -86,6 +92,11 @@ const Repository = styled.a`
         
         color: #f83f67;
         cursor: pointer;
+    }
+
+    @media (max-width: 480px) {
+
+        color: #f83f67;
     }
 `;
 
@@ -122,22 +133,77 @@ const ButtonCard = styled.a`
     &:hover {
        background-color: ${props => props.hover}
     }
+
+    @media (max-width: 480px) {
+
+        background-color: ${props => props.backGroundMobile}
+    }
 `;
 
 function Projects() {
+
     const [hovered, setHovered] = useState([false, false, false]);
+    const [cardHovered, setCardHovered] = useState(null);
 
     const handleMouseOver = (index) => {
-        const newHovered = [...hovered];
-        newHovered[index] = true;
-        setHovered(newHovered);
+        if (!window.matchMedia("(max-width: 480px)").matches) {
+            const newHovered = [...hovered];
+            newHovered[index] = true;
+            setHovered(newHovered);
+        }
     };
 
     const handleMouseOut = (index) => {
-        const newHovered = [...hovered];
-        newHovered[index] = false;
-        setHovered(newHovered);
+        if (!window.matchMedia("(max-width: 480px)").matches) {
+            const newHovered = [...hovered];
+            newHovered[index] = false;
+            setHovered(newHovered);
+        }
     };
+
+    useEffect(() => {
+        function handleResize() {
+            if (window.matchMedia("(max-width: 480px)").matches) {
+                setHovered([true, true, true]);
+            } else {
+                setHovered([false, false, false]);
+            }
+        }
+
+        window.addEventListener('resize', handleResize);
+
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
+    }, []);
+
+    const myProjects = [
+        {
+            title: "Portfólio",
+            description: "Meu primeiro Portfólio, onde utilizei HTML, CSS, Bootstrap, JavaScript e PHP.",
+            borderColor: "#f83f67",
+            image: project01,
+            link: "http://localhost/portfolio/",
+            backgroundColor: "#dc3545"
+        },
+        {
+            title: "Netflix Clone",
+            description: "Clone da Netflix feito em HTML, CSS e Bootstrap, juntamente com a Hcode Treinamentos.",
+            borderColor: "#e50914",
+            image: project02,
+            link: "http://localhost/estudos/netflix-clone/",
+            backgroundColor: "#e50914"
+        },
+        {
+            title: "WhatsApp Web Clone",
+            description: "Clone do WhatsApp feito em HTML, CSS e Bootstrap, juntamente com a Hcode Treinamentos.",
+            borderColor: "#09d261",
+            image: project03,
+            link: "http://localhost/estudos/hcode-bootstrap/Whatsapp/",
+            backgroundColor: "#09d261"
+        }
+    ];
+
 
     return (
         <Section id="projects">
@@ -145,51 +211,31 @@ function Projects() {
                 <Title>Projetos<Point> .</Point></Title>
                 <Container>
                     <CardProjects>
-                        <Card
-                            className="rounded shadow"
-                            Border="solid 2px #f83f67"
-                            backGroundImage={project01}
-                            onMouseOver={() => handleMouseOver(0)}
-                            onMouseOut={() => handleMouseOut(0)}
-                        >
-                            {hovered[0] ?
-                                <div>
-                                    <TitleCard>Portfólio</TitleCard>
-                                    <DescriptionCard>Meu primeiro Portfólio, onde utilizei HTML, CSS, Bootstrap, JavaScript e PHP.</DescriptionCard>
-                                    <ButtonCard href="http://localhost/portfolio/" target="_blank" backGroundColor="#dc3545c7" hover="#dc3545">Visualizar Projeto</ButtonCard>
-                                </div>
-                                : null}
-                        </Card>
-                        <Card
-                            className="rounded shadow"
-                            Border="solid 2px #e50914"
-                            backGroundImage={project02}
-                            onMouseOver={() => handleMouseOver(1)}
-                            onMouseOut={() => handleMouseOut(1)}
-                        >
-                            {hovered[1] ?
-                                <div>
-                                    <TitleCard>Netflix Clone</TitleCard>
-                                    <DescriptionCard>Clone da Netflix feito em HTML, CSS e Bootstrap, juntamente com a Hcode Treinamentos.</DescriptionCard>
-                                    <ButtonCard href="http://localhost/estudos/netflix-clone/" target="_blank" backGroundColor="#e50914c7" hover="#e50914">Visualizar Projeto</ButtonCard>
-                                </div>
-                                : null}
-                        </Card>
-                        <Card
-                            className="rounded shadow"
-                            Border="solid 2px #09d261"
-                            backGroundImage={project03}
-                            onMouseOver={() => handleMouseOver(2)}
-                            onMouseOut={() => handleMouseOut(2)}
-                        >
-                            {hovered[2] ?
-                                <div>
-                                    <TitleCard>WhatsApp Web Clone</TitleCard>
-                                    <DescriptionCard>Clone do WhatsApp feito em HTML, CSS e Bootstrap, juntamente com a Hcode Treinamentos.</DescriptionCard>
-                                    <ButtonCard href="http://localhost/estudos/hcode-bootstrap/Whatsapp/" target="_blank" backGroundColor="#09d261c7" hover="#09d261">Visualizar Projeto</ButtonCard>
-                                </div>
-                                : null}
-                        </Card>
+                        {myProjects.map((myProject, index) => (
+                            <Card
+                                key={index}
+                                className="rounded shadow"
+                                Border={`solid 2px ${myProject.borderColor}`}
+                                backGroundImage={myProject.image}
+                                onMouseOver={() => handleMouseOver(index)}
+                                onMouseOut={() => handleMouseOut(index)}
+                            >
+                                {hovered[index] ?
+                                    <div>
+                                        <TitleCard>{myProject.title}</TitleCard>
+                                        <DescriptionCard>{myProject.description}</DescriptionCard>
+                                        <ButtonCard
+                                            href={myProject.link}
+                                            target="_blank"
+                                            backGroundColor={`${myProject.backgroundColor}c7`}
+                                            backGroundMobile={myProject.backgroundColor}
+                                            hover={myProject.backgroundColor}
+                                        >Visualizar Projeto
+                                        </ButtonCard>
+                                    </div>
+                                    : null}
+                            </Card>
+                        ))}
                     </CardProjects>
                 </Container>
                 <div className="d-flex justify-content-center">
@@ -198,6 +244,7 @@ function Projects() {
             </GridLayout>
         </Section>
     );
+
 }
 
 export default Projects;

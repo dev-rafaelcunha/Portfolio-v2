@@ -71,6 +71,40 @@ const Button = styled.a`
         width: 100%;
         transition: 800ms ease all;
     }
+
+    @media (max-width: 480px) {
+
+        &:before,
+        &:after {
+            content: inherit;
+            position: inherit;
+            top: inherit;
+            right: inherit;
+            height: inherit;
+            width: inherit;
+            background: inherit;
+            transition: inherit;
+        }
+
+        &:after {
+            right: inherit;
+            top: inherit;
+            left: inherit;
+            bottom: inherit;
+        }
+
+        &:hover {
+            background: #f52754;
+            box-shadow: inherit;
+            color: #fff;
+        }
+
+        &:hover:before,
+        &:hover:after {
+            width: inherit;
+            transition: inherit;
+        }
+    }
 `;
 
 function CustomButton02({ href, target, className, text }) {
