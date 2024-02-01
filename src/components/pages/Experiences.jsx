@@ -187,7 +187,6 @@ function Experiences() {
                                 Desenvolvo aplicações web, manutenção nos softwares existentes e dashboards utilizando bibliotecas JavaScript. <br /><br />
                                 <span className="fs-6 fw-semibold text-light">Linguagens utilizadas: <br /></span>
                                 <span className="fs-6 d-block mt-1">HTML - CSS - Bootstrap - JavaScript - PHP</span>
-
                             </TextCardData>
                         </CardData>
                     )}
