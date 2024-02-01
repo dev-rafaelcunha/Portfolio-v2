@@ -97,6 +97,7 @@ const Description = styled.span`
     
     font-size: 1.2rem;
     color: #444;
+    font-weight: 600;
 
     @media (max-width: 991px) {
 
