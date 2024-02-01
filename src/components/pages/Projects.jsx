@@ -80,7 +80,7 @@ const CardProjects = styled.div`
 const Repository = styled.a`
     
     color: #444;
-    padding: 40px 0;
+    margin: 40px 0 0;
     display: flex;
     font-size: 1.2rem;
     justify-content: center;
