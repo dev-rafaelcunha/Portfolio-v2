@@ -154,7 +154,7 @@ function Projects() {
                         >
                             {hovered[0] ?
                                 <div>
-                                    <TitleCard>Portfólio 1.0</TitleCard>
+                                    <TitleCard>Portfólio</TitleCard>
                                     <DescriptionCard>Meu primeiro Portfólio, onde utilizei HTML, CSS, Bootstrap, JavaScript e PHP.</DescriptionCard>
                                     <ButtonCard href="http://localhost/portfolio/" target="_blank" backGroundColor="#dc3545c7" hover="#dc3545">Visualizar Projeto</ButtonCard>
                                 </div>
