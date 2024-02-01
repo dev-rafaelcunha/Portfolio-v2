@@ -4,6 +4,9 @@ import { GridLayout } from "../../global/GridLayout";
 import project01 from "../../img/project01.png";
 import project02 from "../../img/project02.png";
 import project03 from "../../img/project03.png";
+import project04 from "../../img/project04.png";
+import project05 from "../../img/project05.png";
+import project06 from "../../img/project06.png";
 
 const Section = styled.section`
     
@@ -127,7 +130,6 @@ const ButtonCard = styled.a`
     color: #fff;
     position: absolute;
     bottom: 20px;
-    transition: .5s all ease;
     text-decoration: none;
 
     &:hover {
@@ -181,14 +183,14 @@ function Projects() {
         {
             title: "Portfólio",
             description: "Meu primeiro Portfólio, onde utilizei HTML, CSS, Bootstrap, JavaScript e PHP.",
-            borderColor: "#f83f67",
+            borderColor: "#dc3545",
             image: project01,
             link: "http://localhost/portfolio/",
             backgroundColor: "#dc3545"
         },
         {
             title: "Netflix Clone",
-            description: "Clone da Netflix feito em HTML, CSS e Bootstrap, juntamente com a Hcode Treinamentos.",
+            description: "Clone da Netflix feito em HTML, CSS e Bootstrap, junto com a escola Hcode Treinamentos.",
             borderColor: "#e50914",
             image: project02,
             link: "http://localhost/estudos/netflix-clone/",
@@ -196,11 +198,37 @@ function Projects() {
         },
         {
             title: "WhatsApp Web Clone",
-            description: "Clone do WhatsApp feito em HTML, CSS e Bootstrap, juntamente com a Hcode Treinamentos.",
+            description: "Clone do WhatsApp feito em HTML, CSS e Bootstrap, junto com a escola Hcode Treinamentos.",
             borderColor: "#09d261",
             image: project03,
             link: "http://localhost/estudos/hcode-bootstrap/Whatsapp/",
             backgroundColor: "#09d261"
+        },
+        {
+            title: "Calculadora Hcode",
+            description: "Calculadora feita em JavaScript junto com a escola Hcode Treinamentos.",
+            borderColor: "#f88a3f",
+            image: project04,
+            link: "http://localhost/estudos/calculadora-clone/",
+            backgroundColor: "#f88a3f"
+        },
+
+        {
+            title: "Sistema",
+            description: "Sistema básico para treinar conceitos de back-end, feito por mim com HTML, Bootstrap, PHP e MySQL",
+            borderColor: "#a9dae5",
+            image: project05,
+            link: "http://localhost/estudos/calculadora-clone/",
+            backgroundColor: "#a9dae5"
+        },
+
+        {
+            title: "Costs",
+            description: "Sistema para criar Projetos, feito com ReactJS e Bootstrap, junto com o treinamento Hora de Codar.",
+            borderColor: "#ffbb33",
+            image: project06,
+            link: "http://localhost:3001/",
+            backgroundColor: "#ffbb33"
         }
     ];
 
