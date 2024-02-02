@@ -144,7 +144,7 @@ const ButtonCard = styled.a`
 
 function Projects() {
 
-    const [hovered, setHovered] = useState([false, false, false]);
+    const [hovered, setHovered] = useState([false, false, false, false, false, false]);
     const [cardHovered, setCardHovered] = useState(null);
 
     const handleMouseOver = (index) => {
@@ -166,9 +166,9 @@ function Projects() {
     useEffect(() => {
         function handleResize() {
             if (window.matchMedia("(max-width: 480px)").matches) {
-                setHovered([true, true, true]);
+                setHovered([true, true, true, true, true, true]);
             } else {
-                setHovered([false, false, false]);
+                setHovered([false, false, false, false, false, false]);
             }
         }
 
@@ -218,7 +218,7 @@ function Projects() {
             description: "Sistema básico para treinar conceitos de back-end, feito por mim com HTML, Bootstrap, PHP e MySQL",
             borderColor: "#a9dae5",
             image: project05,
-            link: "http://localhost/estudos/calculadora-clone/",
+            link: "http://localhost/sistema-php/index.php",
             backgroundColor: "#a9dae5"
         },
 

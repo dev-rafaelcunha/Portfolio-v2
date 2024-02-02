@@ -1,3 +1,4 @@
+import Footer from "./components/layout/Footer";
 import About from "./components/pages/About";
 import Experiences from "./components/pages/Experiences";
 import Home from "./components/pages/Home";
@@ -16,6 +17,7 @@ function App() {
       <Skills />
       <Experiences />
       <Projects />
+      <Footer />
     </>
   )
 }
