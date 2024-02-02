@@ -60,6 +60,7 @@ const VersionNumber = styled.span`
     color: #f83f67;
     font-size: 1rem;
     font-weight: 600;
+    letter-spacing: 1px;
 
     @media (max-width: 767px) {
 
