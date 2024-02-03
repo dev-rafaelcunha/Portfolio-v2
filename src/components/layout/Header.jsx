@@ -1,6 +1,7 @@
 import Nav from "./Nav";
 import styled from "styled-components";
 import { GridLayout } from "../../global/GridLayout";
+import NavMobile from "./NavMobile";
 
 const Heading = styled.header`
 
@@ -51,6 +52,7 @@ function Header() {
                     <Name>{name}</Name>
                     <Logo>{logo}</Logo>
                     <Nav />
+                    <NavMobile />
                 </div>
             </GridLayout>
         </Heading>

@@ -31,7 +31,7 @@ const Typing = styled.div`
     padding: 15 0px;
   }
 
-  @media (max-width: 991px) {
+  @media (max-width: 993px) {
     width: inherit !important;
     padding: 15px;
   }

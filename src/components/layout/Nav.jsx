@@ -1,6 +1,14 @@
 import styled from "styled-components";
 import { useState } from 'react';
 
+const Navbar = styled.nav`
+    
+    @media(max-width: 992px) {
+
+        display: none;
+    }
+`;
+
 const LinkNav = styled.a`
 
     color: #444;
@@ -34,7 +42,7 @@ function Nav() {
 
     return (
 
-        <nav className="navbar navbar-expand-lg p-0">
+        <Navbar className="navbar navbar-expand-lg p-0">
             <div className="container-fluid p-0">
                 <div className="collapse navbar-collapse" id="navbarNav">
                     <ul className="navbar-nav">
@@ -81,7 +89,7 @@ function Nav() {
                     </ul>
                 </div>
             </div>
-        </nav>
+        </Navbar>
     )
 }
 

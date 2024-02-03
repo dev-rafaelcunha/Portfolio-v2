@@ -9,7 +9,7 @@ const Main = styled.main`
     height: 89.5vh;
     background-color: #fff;
 
-    @media (max-width: 991px) {
+    @media (max-width: 992px) {
 
         padding: 0 !important;
     }
@@ -19,7 +19,7 @@ const Grid = styled.div`
 
     height: 89.5vh;
 
-    @media (max-width: 991px) {
+    @media (max-width: 992px) {
 
         display: flex !important;
         padding: 0 30px;
@@ -31,7 +31,7 @@ const FirstColumn = styled.div`
     background-color: #fff;
     z-index: 100;
 
-    @media (max-width: 991px) {
+    @media (max-width: 992px) {
 
         text-align: center !important;
         width: 100% !important;
@@ -45,7 +45,7 @@ const Title = styled.span`
     margin-bottom: 20px;
     display: block;
 
-    @media (max-width: 991px) {
+    @media (max-width: 992px) {
 
         font-size: 2.2rem;
         white-space: normal !important;
@@ -59,7 +59,7 @@ const SubTitle = styled.span`
     color: #f83f67;
     font-weight: 600;
 
-    @media (max-width: 991px) {
+    @media (max-width: 992px) {
 
         white-space: normal !important;
     }
@@ -91,7 +91,7 @@ const ContainerSocial = styled.div`
     width: 590px;
     display: flex;
 
-    @media (max-width: 991px) {
+    @media (max-width: 992px) {
 
         justify-content: center !important;
         width: auto !important;
