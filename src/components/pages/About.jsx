@@ -127,7 +127,11 @@ const Social = styled.div`
     
     margin-top: 40px;
     display: flex;
-    padding: 0 10px;
+
+    @media (max-width: 480px) {
+
+        padding: 0 10px;
+    }
 `;
 
 const Card = styled.a`
@@ -135,7 +139,7 @@ const Card = styled.a`
     padding: 20px;
     background-color: #fff;
     display: flex;
-    border: 1px solid #f83f67;
+    border: 2px solid #f83f67;
     align-items: center;
     font-size: 1.7rem;
     color: #f83f67;
@@ -150,8 +154,12 @@ const Card = styled.a`
     @media (max-width: 480px) {
 
         font-size: 1rem;
-        background-color: #f83f67;
-        color: #fff;
+        
+        &:hover {
+
+            background-color: inherit;
+            color: #f83f67;
+        }
     }
 `;
 
