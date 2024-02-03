@@ -4,9 +4,9 @@ import { GridLayout } from "../../global/GridLayout";
 
 const Heading = styled.header`
 
-    height: 10vh;
     background-color: #fff;
     z-index: 101;
+    padding: 25px;
 `;
 
 const Name = styled.span`
@@ -45,7 +45,7 @@ function Header() {
 
     return (
 
-        <Heading className="px-5 py-3 fixed-top">
+        <Heading className="fixed-top">
             <GridLayout>
                 <div className="d-flex align-items-center justify-content-between">
                     <Name>{name}</Name>

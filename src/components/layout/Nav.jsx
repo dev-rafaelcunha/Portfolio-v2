@@ -34,7 +34,7 @@ function Nav() {
 
     return (
 
-        <nav className="navbar navbar-expand-lg">
+        <nav className="navbar navbar-expand-lg p-0">
             <div className="container-fluid p-0">
                 <div className="collapse navbar-collapse" id="navbarNav">
                     <ul className="navbar-nav">
