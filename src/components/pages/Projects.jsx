@@ -144,40 +144,15 @@ const ButtonCard = styled.a`
 
 function Projects() {
 
-    const [hovered, setHovered] = useState([false, false, false, false, false, false]);
-    const [cardHovered, setCardHovered] = useState(null);
+    const [hovered, setHovered] = useState(null);
 
     const handleMouseOver = (index) => {
-        if (!window.matchMedia("(max-width: 480px)").matches) {
-            const newHovered = [...hovered];
-            newHovered[index] = true;
-            setHovered(newHovered);
-        }
+        setHovered(index);
     };
 
-    const handleMouseOut = (index) => {
-        if (!window.matchMedia("(max-width: 480px)").matches) {
-            const newHovered = [...hovered];
-            newHovered[index] = false;
-            setHovered(newHovered);
-        }
+    const handleMouseOut = () => {
+        setHovered(null);
     };
-
-    useEffect(() => {
-        function handleResize() {
-            if (window.matchMedia("(max-width: 480px)").matches) {
-                setHovered([true, true, true, true, true, true]);
-            } else {
-                setHovered([false, false, false, false, false, false]);
-            }
-        }
-
-        window.addEventListener('resize', handleResize);
-
-        return () => {
-            window.removeEventListener('resize', handleResize);
-        };
-    }, []);
 
     const myProjects = [
         {
@@ -232,7 +207,6 @@ function Projects() {
         }
     ];
 
-
     return (
         <Section id="projects">
             <GridLayout>
@@ -246,9 +220,9 @@ function Projects() {
                                 Border={`solid 2px ${myProject.borderColor}`}
                                 backGroundImage={myProject.image}
                                 onMouseOver={() => handleMouseOver(index)}
-                                onMouseOut={() => handleMouseOut(index)}
+                                onMouseOut={handleMouseOut}
                             >
-                                {hovered[index] ?
+                                {(hovered === index || window.matchMedia("(max-width: 480px)").matches) && (
                                     <div>
                                         <TitleCard>{myProject.title}</TitleCard>
                                         <DescriptionCard>{myProject.description}</DescriptionCard>
@@ -258,21 +232,23 @@ function Projects() {
                                             backGroundColor={`${myProject.backgroundColor}c7`}
                                             backGroundMobile={myProject.backgroundColor}
                                             hover={myProject.backgroundColor}
-                                        >Visualizar Projeto
+                                        >
+                                            Visualizar Projeto
                                         </ButtonCard>
                                     </div>
-                                    : null}
+                                )}
                             </Card>
                         ))}
                     </CardProjects>
                 </Container>
                 <div className="d-flex justify-content-center">
-                    <Repository href="https://github.com/dev-rafaelcunha?tab=repositories" target="_blank">Repositórios no GitHub.</Repository>
+                    <Repository href="https://github.com/dev-rafaelcunha?tab=repositories" target="_blank">
+                        Repositórios no GitHub.
+                    </Repository>
                 </div>
             </GridLayout>
         </Section>
     );
-
 }
 
 export default Projects;
