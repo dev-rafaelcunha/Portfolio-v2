@@ -33,12 +33,12 @@ const LinkNav = styled.a`
 
 function Nav() {
 
-    const [activeLink, setActiveLink] = useState('Início');
+    // const [activeLink, setActiveLink] = useState('Início');
 
-    const handleLinkClick = (link) => {
+    // const handleLinkClick = (link) => {
 
-        setActiveLink(link);
-    };
+    //     setActiveLink(link);
+    // };
 
     return (
 
@@ -48,40 +48,45 @@ function Nav() {
                     <ul className="navbar-nav">
                         <li className="nav-item">
                             <LinkNav
-                                className={`nav-link shadow-none ${activeLink === 'Início' ? 'active' : ''}`}
-                                onClick={() => handleLinkClick('Início')}
+                                // className={`nav-link shadow-none ${activeLink === 'Início' ? 'active' : ''}`}
+                                // onClick={() => handleLinkClick('Início')}
+                                className="nav-link shadow-none"
                                 href="#">
                                 Início
                             </LinkNav>
                         </li>
                         <li className="nav-item">
                             <LinkNav
-                                className={`nav-link shadow-none ${activeLink === 'Sobre mim' ? 'active' : ''}`}
-                                onClick={() => handleLinkClick('Sobre mim')}
+                                // className={`nav-link shadow-none ${activeLink === 'Sobre mim' ? 'active' : ''}`}
+                                // onClick={() => handleLinkClick('Sobre mim')}
+                                className="nav-link shadow-none"
                                 href="#about">
                                 Sobre mim
                             </LinkNav>
                         </li>
                         <li className="nav-item">
                             <LinkNav
-                                className={`nav-link shadow-none ${activeLink === 'Habilidades' ? 'active' : ''}`}
-                                onClick={() => handleLinkClick('Habilidades')}
+                                // className={`nav-link shadow-none ${activeLink === 'Habilidades' ? 'active' : ''}`}
+                                // onClick={() => handleLinkClick('Habilidades')}
+                                className="nav-link shadow-none"
                                 href="#skills">
                                 Habilidades
                             </LinkNav>
                         </li>
                         <li className="nav-item">
                             <LinkNav
-                                className={`nav-link shadow-none ${activeLink === 'Experiências' ? 'active' : ''}`}
-                                onClick={() => handleLinkClick('Experiências')}
+                                // className={`nav-link shadow-none ${activeLink === 'Experiências' ? 'active' : ''}`}
+                                // onClick={() => handleLinkClick('Experiências')}
+                                className="nav-link shadow-none"
                                 href="#experiences">
                                 Experiências
                             </LinkNav>
                         </li>
                         <li className="nav-item">
                             <LinkNav
-                                className={`nav-link shadow-none ${activeLink === 'Projetos' ? 'active' : ''}`}
-                                onClick={() => handleLinkClick('Projetos')}
+                                // className={`nav-link shadow-none ${activeLink === 'Projetos' ? 'active' : ''}`}
+                                // onClick={() => handleLinkClick('Projetos')}
+                                className="nav-link shadow-none"
                                 href="#projects">
                                 Projetos
                             </LinkNav>

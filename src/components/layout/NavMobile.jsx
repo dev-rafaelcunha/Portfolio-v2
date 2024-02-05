@@ -22,7 +22,7 @@ const Line1 = styled.div`
   
   @media(max-width: 480px) {
 
-    height: 1px;
+    height: .6px;
   }
 `;
 
@@ -36,7 +36,7 @@ const Line2 = styled.div`
 
   @media(max-width: 480px) {
 
-    height: .5px;
+    height: 1px;
   }
 `;
 
@@ -47,6 +47,11 @@ const Line3 = styled.div`
   margin: 8px;
   transition: .4s;
   transform: ${({ active }) => active ? 'rotate(45deg) translate(-5px, -5px)' : 'none'};
+
+  @media(max-width: 480px) {
+
+height: .6px;
+}
 `;
 
 const NavContent = styled.nav`
@@ -88,7 +93,7 @@ const NavItem = styled.a`
 
   @media(max-width: 480px) {
 
-    color: #f83f67;
+    color: #fff;
   }
 `;
 

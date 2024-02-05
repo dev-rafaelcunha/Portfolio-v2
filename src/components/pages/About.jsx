@@ -27,7 +27,7 @@ const Container = styled.div`
 
 const Photo = styled.img`
     
-    height: 550px;
+    height: 500px;
     width: 430px;
     max-width: 100%;
 
@@ -136,38 +136,31 @@ const Social = styled.div`
 
 const Card = styled.a`
     
-    padding: 20px;
-    background-color: #fff;
+    padding: 17px;
     display: flex;
-    border: 2px solid #f83f67;
+    border: 2px solid #999;
     align-items: center;
     font-size: 1.7rem;
-    color: #f83f67;
-    border-radius: 50% !important;
+    color: ${props => props.Color};
 
     &:hover {
 
-        background-color: #f83f67;
-        color: #fff;
+        color: ${props => props.Color};
+        border: 2px solid ${props => props.BorderHover};
     }
 
     @media (max-width: 480px) {
 
         font-size: 1rem;
-        
-        &:hover {
-
-            background-color: inherit;
-            color: #f83f67;
-        }
+        border: 2px solid ${props => props.BorderHover};
     }
 `;
 
 const socialLinks = [
-    { href: "https://www.linkedin.com/in/devrafaelcunha/", icon: <FaLinkedinIn />, className: "rounded" },
-    { href: "https://www.instagram.com/dev.rafaelcunha/", icon: <FaInstagram />, className: "rounded ms-3" },
-    { href: "https://github.com/dev-rafaelcunha", icon: <TbBrandGithubFilled />, className: "rounded ms-3" },
-    { href: "https://contate.me/rafaelcunha", icon: <FaWhatsapp />, className: "rounded ms-3" }
+    { href: "https://www.linkedin.com/in/devrafaelcunha/", icon: <FaLinkedinIn />, className: "rounded", Color: "#0a66c2", BorderHover: "#0a66c2" },
+    { href: "https://www.instagram.com/dev.rafaelcunha/", icon: <FaInstagram />, className: "rounded ms-3", Color: "#d62976", BorderHover: "#d62976" },
+    { href: "https://github.com/dev-rafaelcunha", icon: <TbBrandGithubFilled />, className: "rounded ms-3", Color: "#010101", BorderHover: "#010101" },
+    { href: "https://contate.me/rafaelcunha", icon: <FaWhatsapp />, className: "rounded ms-3", Color: "#25d366", BorderHover: "#25d366" }
 ];
 
 function About() {
@@ -193,7 +186,7 @@ function About() {
                         </Text>
                         <Social>
                             {socialLinks.map((link, index) => (
-                                <Card key={index} href={link.href} target="_blank" className={link.className}>
+                                <Card key={index} href={link.href} target="_blank" className={link.className} Color={link.Color}>
                                     {link.icon}
                                 </Card>
                             ))}
