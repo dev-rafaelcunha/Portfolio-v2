@@ -5,7 +5,7 @@ const NavIcon = styled.div`
 
   position: absolute;
   right: 25px;
-  top: 25px;
+  top: 29px;
   
   @media(min-width: 993px) {
     display: none;
@@ -51,11 +51,16 @@ const Line3 = styled.div`
 
 const NavContent = styled.nav`
 
-  height: 100vh;
-  position: relative;
-  top: 20vh;
-  display: flex;
-  justify-content: center;
+    height: 90vh;
+    position: relative;
+    top: 25px;
+    display: flex;
+    justify-content: center;
+    width: 100vw;
+    padding: 0;
+    right: 25px;
+    background: #03172d;
+    padding: 150px 0;
 
   @media(min-width: 993px) {
     display: none;
@@ -74,6 +79,7 @@ const NavItem = styled.a`
   color: #444;
   font-size: 1.3rem;
   margin: 5px;
+  color: #fff;
 
   &:hover {
 
