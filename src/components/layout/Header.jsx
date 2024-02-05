@@ -10,6 +10,18 @@ const Heading = styled.header`
     padding: 25px;
 `;
 
+const HeadingData = styled.div`
+    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @media (max-width: 993px) {
+
+        display: inherit !important;
+    }
+`;
+
 const Name = styled.span`
 
     text-decoration: none;
@@ -48,12 +60,12 @@ function Header() {
 
         <Heading className="fixed-top">
             <GridLayout>
-                <div className="d-flex align-items-center justify-content-between">
+                <HeadingData>
                     <Name>{name}</Name>
                     <Logo>{logo}</Logo>
                     <Nav />
                     <NavMobile />
-                </div>
+                </HeadingData>
             </GridLayout>
         </Heading>
     );
