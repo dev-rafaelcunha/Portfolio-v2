@@ -1,7 +1,14 @@
 import Nav from "./Nav";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import { GridLayout } from "../../global/GridLayout";
 import NavMobile from "./NavMobile";
+
+const Move = keyframes`
+    
+    0% { transform: translate(0); }
+    50% { transform: translate(2px, 3px); }
+    100% { transform: translate(0); }
+`;
 
 const Heading = styled.header`
 
@@ -34,21 +41,15 @@ const Name = styled.span`
 
 const Logo = styled.span`
 
-    animation: move 3s infinite ease-in-out;
+    animation: ${Move} ease-in-out infinite;
     animation-duration: 2s;
-    transition: 1s ease-in-out;
+    transition: 3s ease-in-out;
     position: relative;
     font-size: 30px;
     color: #f83f67;
     left: 110px;
     font-family: monospace;
     font-weight: bold;
-
-    @keyframes move {
-        0% { transform: translate(0); }
-        50% { transform: translate(2px, 3px); }
-        100% { transform: translate(0); }
-    }
 `;
 
 function Header() {
