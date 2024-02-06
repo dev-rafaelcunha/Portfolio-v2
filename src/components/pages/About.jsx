@@ -11,7 +11,7 @@ const Section = styled.section`
     display: flex;
     align-items: center;
 
-    @media (max-width: 991px) {
+    @media (max-width: 992px) {
 
         height: auto;
         display: flex;
@@ -27,13 +27,14 @@ const Container = styled.div`
 
 const Photo = styled.img`
     
-    height: 500px;
+    height: 100%;
     width: 430px;
     max-width: 100%;
+    border: 2px solid #999;
 
-    @media (max-width: 991px) {
+    @media (max-width: 992px) {
         width: 320px;
-        height: 390px;
+        height: auto;
     }
 
     @media (max-width: 480px) {
@@ -51,6 +52,11 @@ const FirstColumn = styled.div`
         display: flex;
         justify-content: center;
     }
+
+    @media (max-width: 992px) {
+
+        width: 100%;
+    }
 `;
 
 const SecondColumn = styled.div`
@@ -58,12 +64,12 @@ const SecondColumn = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;
+    padding: 40px 0;
 
-    @media (max-width: 991px) {
+    @media (max-width: 992px) {
 
-        padding-bottom: 20px;
-        display: flex;
         align-items: center;
+        padding: 20px 0;
     }
 `;
 
@@ -73,7 +79,7 @@ const Title = styled.span`
     font-weight: 600;
     font-size: 22px;
 
-    @media (max-width: 991px) {
+    @media (max-width: 992px) {
 
         display: flex;
         justify-content: center;
@@ -85,7 +91,7 @@ const Name = styled.h1`
     font-size: 2.5rem;
     color: #444;
 
-    @media (max-width: 991px) {
+    @media (max-width: 992px) {
 
         display: flex;
         justify-content: center;
@@ -99,7 +105,7 @@ const Description = styled.span`
     color: #444;
     font-weight: 600;
 
-    @media (max-width: 991px) {
+    @media (max-width: 992px) {
 
         display: flex;
         justify-content: center;
@@ -116,10 +122,10 @@ const Text = styled.p`
     margin-bottom: 0 !important;
     padding-right: 20px;
 
-    @media (max-width: 991px) {
+    @media (max-width: 992px) {
 
         text-align: center;
-        padding: 0 20px;
+        padding: 0   20px;
     }
 `;
 
@@ -160,7 +166,7 @@ const socialLinks = [
     { href: "https://www.linkedin.com/in/devrafaelcunha/", icon: <FaLinkedinIn />, className: "rounded", Color: "#0a66c2", BorderHover: "#0a66c2" },
     { href: "https://www.instagram.com/dev.rafaelcunha/", icon: <FaInstagram />, className: "rounded ms-3", Color: "#d62976", BorderHover: "#d62976" },
     { href: "https://github.com/dev-rafaelcunha", icon: <TbBrandGithubFilled />, className: "rounded ms-3", Color: "#010101", BorderHover: "#010101" },
-    { href: "https://contate.me/rafaelcunha", icon: <FaWhatsapp />, className: "rounded ms-3", Color: "#25d366", BorderHover: "#25d366" }
+    { href: "https://contate.me/rafaelcunha", icon: <FaWhatsapp />, className: "rounded ms-3", Color: "#13b44e", BorderHover: "#25d366" }
 ];
 
 function About() {
@@ -170,10 +176,10 @@ function About() {
         <Section id="about" className="px-5">
             <GridLayout>
                 <Container className="row m-0">
-                    <FirstColumn className="col-lg-5">
+                    <FirstColumn className="col-5">
                         <Photo src={img} alt="Photo" className="rounded shadow" />
                     </FirstColumn>
-                    <SecondColumn className="col-lg">
+                    <SecondColumn className="col">
                         <Title>Sobre mim</Title>
                         <Name className="mt-2">Rafael Cunha</Name>
                         <Description className='mt-2'>Front-End Developer</Description>
