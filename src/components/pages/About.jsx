@@ -1,8 +1,10 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import { GridLayout } from '../../global/GridLayout';
 import img from '../../img/photo03.jpeg';
 import { FaLinkedinIn, FaInstagram, FaWhatsapp } from "react-icons/fa";
 import { TbBrandGithubFilled } from "react-icons/tb";
+import { useInView } from 'react-intersection-observer';
+import { FadeIn } from '../../global/FadeIn';
 
 const Section = styled.section`
     
@@ -31,6 +33,8 @@ const Photo = styled.img`
     width: 430px;
     max-width: 100%;
     border: 2px solid #999;
+    opacity: 0;
+    animation: ${FadeIn} 1s ease-in-out forwards;
 
     @media (max-width: 992px) {
         width: 320px;
@@ -78,6 +82,9 @@ const Title = styled.span`
     color: #f83f67;
     font-weight: 600;
     font-size: 22px;
+    opacity: 0;
+    animation: ${FadeIn} 1s ease-in-out forwards;
+    animation-delay: .3s;
 
     @media (max-width: 992px) {
 
@@ -90,6 +97,9 @@ const Name = styled.h1`
     
     font-size: 2.5rem;
     color: #444;
+    opacity: 0;
+    animation: ${FadeIn} 1s ease-in-out forwards;
+    animation-delay: .3s;
 
     @media (max-width: 992px) {
 
@@ -104,6 +114,9 @@ const Description = styled.span`
     font-size: 1.2rem;
     color: #444;
     font-weight: 600;
+    opacity: 0;
+    animation: ${FadeIn} 1s ease-in-out forwards;
+    animation-delay: .3s;
 
     @media (max-width: 992px) {
 
@@ -121,6 +134,9 @@ const Text = styled.p`
     margin-top: 40px;
     margin-bottom: 0 !important;
     padding-right: 20px;
+    opacity: 0;
+    animation: ${FadeIn} 1s ease-in-out forwards;
+    animation-delay: .6s;
 
     @media (max-width: 992px) {
 
@@ -148,6 +164,9 @@ const Card = styled.a`
     align-items: center;
     font-size: 1.7rem;
     color: ${props => props.Color};
+    opacity: 0;
+    animation: ${FadeIn} 1s ease-in-out forwards;
+    animation-delay: .9s;
 
     &:hover {
 
@@ -171,19 +190,24 @@ const socialLinks = [
 
 function About() {
 
+    const [ref, inView] = useInView({
+        triggerOnce: true, 
+        threshold: .5
+    });
+
     return (
 
         <Section id="about" className="px-5">
             <GridLayout>
                 <Container className="row m-0">
                     <FirstColumn className="col-5">
-                        <Photo src={img} alt="Photo" className="rounded shadow" />
+                        <Photo src={img} alt="Photo" className="rounded shadow" ref={ref} style={{ animationPlayState: inView ? 'running' : 'paused' }} />
                     </FirstColumn>
                     <SecondColumn className="col">
-                        <Title>Sobre mim</Title>
-                        <Name className="mt-2">Rafael Cunha</Name>
-                        <Description className='mt-2'>Front-End Developer</Description>
-                        <Text>
+                        <Title ref={ref} style={{ animationPlayState: inView ? 'running' : 'paused' }}>Sobre mim</Title>
+                        <Name className="mt-2" ref={ref} style={{ animationPlayState: inView ? 'running' : 'paused' }}>Rafael Cunha</Name>
+                        <Description className="mt-2" ref={ref} style={{ animationPlayState: inView ? 'running' : 'paused' }}>Front-End Developer</Description>
+                        <Text ref={ref} style={{ animationPlayState: inView ? 'running' : 'paused' }}>
                             Meu nome é <strong>Rafael Cunha</strong>, tenho 27 anos, atualmente estou trabalhando na empresa <strong>Tork Company</strong> como
                             <strong> Desenvolvedor Júnior</strong> e cursando <strong>Engenharia de Software</strong> pela <strong>UNINTER</strong>.<br /><br />
                             Passei minha vida buscando algo que realmente fizesse sentido,
@@ -192,7 +216,7 @@ function About() {
                         </Text>
                         <Social>
                             {socialLinks.map((link, index) => (
-                                <Card key={index} href={link.href} target="_blank" className={link.className} Color={link.Color}>
+                                <Card key={index} href={link.href} target="_blank" className={link.className} Color={link.Color} ref={ref} style={{ animationPlayState: inView ? 'running' : 'paused' }}>
                                     {link.icon}
                                 </Card>
                             ))}

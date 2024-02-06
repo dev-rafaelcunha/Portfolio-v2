@@ -1,15 +1,6 @@
-import styled, { keyframes } from "styled-components";
+import styled from "styled-components";
+import { FadeIn } from "../../global/FadeIn";
 
-const downBtn = keyframes`
-
-    from {
-        transform: translate3d(0, -8.75rem, 0);
-    }
-
-    to {
-        transform: translate3d(0, 0, 0);
-    }
-`;
 
 const Button = styled.a`
 
@@ -32,14 +23,15 @@ const Button = styled.a`
     align-items: center;
     justify-content: center;
     background-color: #f52754;
-    animation: ${downBtn};
-    animation-timing-function: ease-in-out;
-    animation-duration: 2s;
     border: none;
     margin: 0 10%;
     font-weight: bold;
     letter-spacing: 1px;
     margin-top: 40px;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: ${FadeIn} 1s ease-in-out forwards;
+    animation-delay: .3s;
     
     &:hover {
         background: transparent;

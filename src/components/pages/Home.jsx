@@ -3,6 +3,8 @@ import TypingAnimation from "../utils/TypingAnimation";
 import styled from "styled-components";
 import { GridLayout } from "../../global/GridLayout";
 import CustomButton02 from "../common/CustomButton02";
+import { FadeIn } from "../../global/FadeIn";
+import { useInView } from "react-intersection-observer";
 
 const Main = styled.main`
 
@@ -44,6 +46,7 @@ const Title = styled.span`
     color: #444;
     margin-bottom: 20px;
     display: block;
+    animation: ${FadeIn} 1s ease-in-out forwards;
 
     @media (max-width: 992px) {
 
@@ -103,6 +106,11 @@ function Home() {
 
     const logo = "";
 
+    const [ref, inView] = useInView({
+        triggerOnce: true,
+        threshold: .5
+    });
+
     return (
 
         <>
@@ -111,7 +119,7 @@ function Home() {
                 <GridLayout>
                     <Grid className="d-flex align-items-center justify-content-center">
                         <FirstColumn>
-                            <Title className="text-nowrap">Desenvolvedor Front-end</Title>
+                            <Title className="text-nowrap" ref={ref} style={{ animationPlayState: inView ? 'running' : 'paused' }}>Desenvolvedor Front-end</Title>
                             <SubTitle>Portfólio 2.0</SubTitle>
                             <TypingAnimation text={`Este portfólio é uma versão moderna, com as tecnologias atuais do mercado, responsivo e reativo para melhor experiência do usuário.`} />
                             <ContainerSocial>
