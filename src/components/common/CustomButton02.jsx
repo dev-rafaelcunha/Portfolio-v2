@@ -1,3 +1,4 @@
+import { useInView } from "react-intersection-observer";
 import styled from "styled-components";
 import { FadeIn } from "../../global/FadeIn";
 
@@ -31,7 +32,7 @@ const Button = styled.a`
     opacity: 0;
     transform: translateY(20px);
     animation: ${FadeIn} 1s ease-in-out forwards;
-    animation-delay: .3s;
+    animation-delay: .5s;
     
     &:hover {
         background: transparent;
@@ -101,10 +102,15 @@ const Button = styled.a`
 
 function CustomButton02({ href, target, className, text }) {
 
+    const [refButton, inViewButton] = useInView({
+        triggerOnce: true,
+        threshold: 0.1
+    });
+
     return (
 
         <>
-            <Button href={href} target={target} type="button" className={className}>{text}</Button>
+            <Button href={href} target={target} type="button" className={className} ref={refButton} style={{ animationPlayState: inViewButton ? 'running' : 'paused' }}>{text}</Button>
         </>
     )
 }

@@ -166,7 +166,7 @@ const Card = styled.a`
     color: ${props => props.Color};
     opacity: 0;
     animation: ${FadeIn} 1s ease-in-out forwards;
-    animation-delay: .9s;
+    animation-delay: .8s;
 
     &:hover {
 
@@ -190,9 +190,34 @@ const socialLinks = [
 
 function About() {
 
-    const [ref, inView] = useInView({
-        triggerOnce: true, 
-        threshold: .5
+    const [refPhoto, inViewPhoto] = useInView({
+        triggerOnce: true,
+        threshold: 0.1
+    });
+
+    const [refTitle, inViewTitle] = useInView({
+        triggerOnce: true,
+        threshold: 0.01
+    });
+
+    const [refName, inViewName] = useInView({
+        triggerOnce: true,
+        threshold: 0.01
+    });
+
+    const [refDescription, inViewDescription] = useInView({
+        triggerOnce: true,
+        threshold: 0.01
+    });
+
+    const [refText, inViewText] = useInView({
+        triggerOnce: true,
+        threshold: 0.01
+    });
+
+    const [refSocial, inViewSocial] = useInView({
+        triggerOnce: true,
+        threshold: 0.01
     });
 
     return (
@@ -201,13 +226,13 @@ function About() {
             <GridLayout>
                 <Container className="row m-0">
                     <FirstColumn className="col-5">
-                        <Photo src={img} alt="Photo" className="rounded shadow" ref={ref} style={{ animationPlayState: inView ? 'running' : 'paused' }} />
+                        <Photo src={img} alt="Photo" className="rounded shadow" ref={refPhoto} style={{ animationPlayState: inViewPhoto ? 'running' : 'paused' }} />
                     </FirstColumn>
                     <SecondColumn className="col">
-                        <Title ref={ref} style={{ animationPlayState: inView ? 'running' : 'paused' }}>Sobre mim</Title>
-                        <Name className="mt-2" ref={ref} style={{ animationPlayState: inView ? 'running' : 'paused' }}>Rafael Cunha</Name>
-                        <Description className="mt-2" ref={ref} style={{ animationPlayState: inView ? 'running' : 'paused' }}>Front-End Developer</Description>
-                        <Text ref={ref} style={{ animationPlayState: inView ? 'running' : 'paused' }}>
+                        <Title ref={refTitle} style={{ animationPlayState: inViewTitle ? 'running' : 'paused' }}>Sobre mim</Title>
+                        <Name className="mt-2" ref={refName} style={{ animationPlayState: inViewName ? 'running' : 'paused' }}>Rafael Cunha</Name>
+                        <Description className="mt-2" ref={refDescription} style={{ animationPlayState: inViewDescription ? 'running' : 'paused' }}>Front-End Developer</Description>
+                        <Text ref={refText} style={{ animationPlayState: inViewText ? 'running' : 'paused' }}>
                             Meu nome é <strong>Rafael Cunha</strong>, tenho 27 anos, atualmente estou trabalhando na empresa <strong>Tork Company</strong> como
                             <strong> Desenvolvedor Júnior</strong> e cursando <strong>Engenharia de Software</strong> pela <strong>UNINTER</strong>.<br /><br />
                             Passei minha vida buscando algo que realmente fizesse sentido,
@@ -216,7 +241,7 @@ function About() {
                         </Text>
                         <Social>
                             {socialLinks.map((link, index) => (
-                                <Card key={index} href={link.href} target="_blank" className={link.className} Color={link.Color} ref={ref} style={{ animationPlayState: inView ? 'running' : 'paused' }}>
+                                <Card key={index} href={link.href} target="_blank" className={link.className} Color={link.Color} ref={refSocial} style={{ animationPlayState: inViewSocial ? 'running' : 'paused' }}>
                                     {link.icon}
                                 </Card>
                             ))}

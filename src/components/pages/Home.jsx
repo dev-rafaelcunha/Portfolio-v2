@@ -106,9 +106,9 @@ function Home() {
 
     const logo = "";
 
-    const [ref, inView] = useInView({
+    const [refTitle, inViewTitle] = useInView({
         triggerOnce: true,
-        threshold: .5
+        threshold: 0.1
     });
 
     return (
@@ -119,7 +119,7 @@ function Home() {
                 <GridLayout>
                     <Grid className="d-flex align-items-center justify-content-center">
                         <FirstColumn>
-                            <Title className="text-nowrap" ref={ref} style={{ animationPlayState: inView ? 'running' : 'paused' }}>Desenvolvedor Front-end</Title>
+                            <Title className="text-nowrap" ref={refTitle} style={{ animationPlayState: inViewTitle ? 'running' : 'paused' }}>Desenvolvedor Front-end</Title>
                             <SubTitle>Portfólio 2.0</SubTitle>
                             <TypingAnimation text={`Este portfólio é uma versão moderna, com as tecnologias atuais do mercado, responsivo e reativo para melhor experiência do usuário.`} />
                             <ContainerSocial>
