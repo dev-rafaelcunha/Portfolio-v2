@@ -131,12 +131,12 @@ function Skills() {
         { icon: <FaCss3 />, title: "CSS3", description: "Estilização.", fontSize: "5rem", AnimationDelay: "1.3s" },
         { icon: <BsBootstrap />, title: "Bootstrap", description: "Framework para Estilização.", fontSize: "5rem", AnimationDelay: "1.6s" },
         { icon: <IoLogoJavascript />, title: "JavaScript", description: "Interatividade.", fontSize: "5rem", AnimationDelay: "1.9s" },
-        { icon: <FaReact />, title: "React", description: "Reatividade.", fontSize: "5rem", AnimationDelay: "2.1s" },
-        { icon: <SiStyledcomponents />, title: "Styled Components", description: "Biblioteca para Estilizar Components React.", fontSize: "8rem", AnimationDelay: "2.3s" },
-        { icon: <FaPhp />, title: "PHP", description: "Linguagem de Programação.", fontSize: "8rem", AnimationDelay: "2.5s" },
-        { icon: <FaDatabase />, title: "Banco de Dados", description: "MySQL e PostgreSQL", fontSize: "5rem", AnimationDelay: "2.7s" },
-        { icon: <IoMdGitMerge />, title: "Git", description: "Versionamento de Códigos.", fontSize: "5rem", AnimationDelay: "3.1s" },
-        { icon: <FiTrello />, title: "Trello", description: "Métodologias Ágeis", fontSize: "5rem", AnimationDelay: "3.4s" }
+        { icon: <FaReact />, title: "React", description: "Reatividade.", fontSize: "5rem", AnimationDelay: "2.2s" },
+        { icon: <SiStyledcomponents />, title: "Styled Components", description: "Biblioteca para Estilizar Components React.", fontSize: "8rem", AnimationDelay: "1.9s" },
+        { icon: <FaPhp />, title: "PHP", description: "Linguagem de Programação.", fontSize: "8rem", AnimationDelay: "2.2s" },
+        { icon: <FaDatabase />, title: "Banco de Dados", description: "MySQL e PostgreSQL", fontSize: "5rem", AnimationDelay: "2.5s" },
+        { icon: <IoMdGitMerge />, title: "Git", description: "Versionamento de Códigos.", fontSize: "5rem", AnimationDelay: "2.8s" },
+        { icon: <FiTrello />, title: "Trello", description: "Métodologias Ágeis", fontSize: "5rem", AnimationDelay: "3.1s" }
     ];
 
     const [refTitle, inViewTitle] = useInView({
