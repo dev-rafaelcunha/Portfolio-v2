@@ -6,6 +6,8 @@ import { IoLogoJavascript, IoMdGitMerge } from "react-icons/io";
 import { BsBootstrap } from "react-icons/bs";
 import { SiStyledcomponents } from "react-icons/si";
 import { FiTrello } from "react-icons/fi";
+import { useInView } from 'react-intersection-observer';
+import { FadeIn } from '../../global/FadeIn';
 
 const Section = styled.section`
     
@@ -25,6 +27,7 @@ const Title = styled.h1`
     color: #444;
     padding: 60px 0;
     margin: 0;
+    animation: ${FadeIn} 1s ease-in-out forwards;
 `;
 
 const Container = styled.div`
@@ -68,6 +71,9 @@ const Card = styled.a`
     align-items: center;
     justify-content: center;
     position: relative;
+    animation: ${FadeIn} 1s ease-in-out forwards;
+    animation-delay: ${props => props.AnimationDelay};
+    opacity: 0;
 
     &:hover {
         border: 2px solid #f83f67;
@@ -118,29 +124,114 @@ const DescriptionSkills = styled.span`
     }
 `;
 
-const skillsData = [
-    { icon: <AiOutlineHtml5 />, title: "HTML5", description: "Marcação de Texto.", fontSize: "5rem" },
-    { icon: <FaCss3 />, title: "CSS3", description: "Estilização.", fontSize: "5rem" },
-    { icon: <BsBootstrap />, title: "Bootstrap", description: "Framework para Estilização.", fontSize: "5rem" },
-    { icon: <IoLogoJavascript />, title: "JavaScript", description: "Interatividade.", fontSize: "5rem" },
-    { icon: <FaReact />, title: "React", description: "Reatividade.", fontSize: "5rem" },
-    { icon: <SiStyledcomponents />, title: "Styled Components", description: "Biblioteca para Estilizar Components React.", fontSize: "8rem" },
-    { icon: <FaPhp />, title: "PHP", description: "Linguagem de Programação.", fontSize: "8rem" },
-    { icon: <FaDatabase />, title: "Banco de Dados", description: "MySQL e PostgreSQL", fontSize: "5rem" },
-    { icon: <IoMdGitMerge />, title: "Git", description: "Versionamento de Códigos.", fontSize: "5rem" },
-    { icon: <FiTrello />, title: "Trello", description: "Métodologias Ágeis", fontSize: "5rem" }
-];
-
 function Skills() {
+
+    const skillsData = [
+        { icon: <AiOutlineHtml5 />, title: "HTML5", description: "Marcação de Texto.", fontSize: "5rem", AnimationDelay: "1s" },
+        { icon: <FaCss3 />, title: "CSS3", description: "Estilização.", fontSize: "5rem", AnimationDelay: "1.3s" },
+        { icon: <BsBootstrap />, title: "Bootstrap", description: "Framework para Estilização.", fontSize: "5rem", AnimationDelay: "1.6s" },
+        { icon: <IoLogoJavascript />, title: "JavaScript", description: "Interatividade.", fontSize: "5rem", AnimationDelay: "1.9s" },
+        { icon: <FaReact />, title: "React", description: "Reatividade.", fontSize: "5rem", AnimationDelay: "2.1s" },
+        { icon: <SiStyledcomponents />, title: "Styled Components", description: "Biblioteca para Estilizar Components React.", fontSize: "8rem", AnimationDelay: "2.3s" },
+        { icon: <FaPhp />, title: "PHP", description: "Linguagem de Programação.", fontSize: "8rem", AnimationDelay: "2.5s" },
+        { icon: <FaDatabase />, title: "Banco de Dados", description: "MySQL e PostgreSQL", fontSize: "5rem", AnimationDelay: "2.7s" },
+        { icon: <IoMdGitMerge />, title: "Git", description: "Versionamento de Códigos.", fontSize: "5rem", AnimationDelay: "3.1s" },
+        { icon: <FiTrello />, title: "Trello", description: "Métodologias Ágeis", fontSize: "5rem", AnimationDelay: "3.4s" }
+    ];
+
+    const [refTitle, inViewTitle] = useInView({
+        triggerOnce: true,
+        threshold: 1
+    });
+
+    const [refHtml, inViewHtml] = useInView({
+        triggerOnce: true,
+        threshold: 0.1
+    });
+
+    const [refCss, inViewCss] = useInView({
+        triggerOnce: true,
+        threshold: 0.1
+    });
+
+    const [refBootstrap, inViewBootstrap] = useInView({
+        triggerOnce: true,
+        threshold: 0.1
+    });
+
+    const [refJavascript, inViewJavascript] = useInView({
+        triggerOnce: true,
+        threshold: 0.1
+    });
+
+    const [refReact, inViewReact] = useInView({
+        triggerOnce: true,
+        threshold: 0.1
+    });
+
+    const [refStyledComponents, inViewStyledComponents] = useInView({
+        triggerOnce: true,
+        threshold: 0.1
+    });
+
+    const [refPhp, inViewPhp] = useInView({
+        triggerOnce: true,
+        threshold: 0.1
+    });
+
+    const [refDatabase, inViewDatabase] = useInView({
+        triggerOnce: true,
+        threshold: 0.1
+    });
+
+    const [refGit, inViewGit] = useInView({
+        triggerOnce: true,
+        threshold: 0.1
+    });
+
+    const [refTrello, inViewTrello] = useInView({
+        triggerOnce: true,
+        threshold: 0.1
+    });
+
+    skillsData[0].ref = refHtml;
+    skillsData[0].style = { animationPlayState: inViewHtml ? 'running' : 'paused' };
+
+    skillsData[1].ref = refCss;
+    skillsData[1].style = { animationPlayState: inViewCss ? 'running' : 'paused' };
+
+    skillsData[2].ref = refBootstrap;
+    skillsData[2].style = { animationPlayState: inViewBootstrap ? 'running' : 'paused' };
+
+    skillsData[3].ref = refJavascript;
+    skillsData[3].style = { animationPlayState: inViewJavascript ? 'running' : 'paused' };
+
+    skillsData[4].ref = refReact;
+    skillsData[4].style = { animationPlayState: inViewReact ? 'running' : 'paused' };
+
+    skillsData[5].ref = refStyledComponents;
+    skillsData[5].style = { animationPlayState: inViewStyledComponents ? 'running' : 'paused' };
+
+    skillsData[6].ref = refPhp;
+    skillsData[6].style = { animationPlayState: inViewPhp ? 'running' : 'paused' };
+
+    skillsData[7].ref = refDatabase;
+    skillsData[7].style = { animationPlayState: inViewDatabase ? 'running' : 'paused' };
+
+    skillsData[8].ref = refGit;
+    skillsData[8].style = { animationPlayState: inViewGit ? 'running' : 'paused' };
+
+    skillsData[9].ref = refTrello;
+    skillsData[9].style = { animationPlayState: inViewTrello ? 'running' : 'paused' };
 
     return (
         <Section id="skills">
             <GridLayout>
-                <Title>Habilidades<Point> .</Point></Title>
+                <Title ref={refTitle} style={{ animationPlayState: inViewTitle ? 'running' : 'paused' }}>Habilidades<Point> .</Point></Title>
                 <Container>
                     <CardSkills>
                         {skillsData.map((skill, index) => (
-                            <Card key={index} fontSize={skill.fontSize} className="rounded">
+                            <Card key={index} fontSize={skill.fontSize} AnimationDelay={skill.AnimationDelay} className="rounded" ref={skill.ref} style={skill.style}>
                                 {skill.icon}
                                 <TitleSkills>{skill.title}</TitleSkills>
                                 <DescriptionSkills>{skill.description}</DescriptionSkills>
