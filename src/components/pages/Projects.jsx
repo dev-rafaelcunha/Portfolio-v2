@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
+import { useInView } from "react-intersection-observer";
 import styled from "styled-components";
+import { FadeIn } from "../../global/FadeIn";
 import { GridLayout } from "../../global/GridLayout";
 import project01 from "../../img/project01.png";
 import project02 from "../../img/project02.png";
@@ -54,6 +56,9 @@ const Card = styled.div`
     display: flex;
     align-items: center;
     position: relative;
+    animation: ${FadeIn} 1s ease-in-out forwards;
+    animation-delay: ${props => props.AnimationDelay};
+    opacity: 0;
 
     &:hover {
         background: #fff;
@@ -161,7 +166,8 @@ function Projects() {
             borderColor: "#dc3545",
             image: project01,
             link: "http://localhost/portfolio/",
-            backgroundColor: "#dc3545"
+            backgroundColor: "#dc3545",
+            AnimationDelay: "1s"
         },
         {
             title: "Netflix Clone",
@@ -169,7 +175,8 @@ function Projects() {
             borderColor: "#e50914",
             image: project02,
             link: "http://localhost/estudos/netflix-clone/",
-            backgroundColor: "#e50914"
+            backgroundColor: "#e50914",
+            AnimationDelay: "1.3s"
         },
         {
             title: "WhatsApp Web Clone",
@@ -177,7 +184,8 @@ function Projects() {
             borderColor: "#09d261",
             image: project03,
             link: "http://localhost/estudos/hcode-bootstrap/Whatsapp/",
-            backgroundColor: "#09d261"
+            backgroundColor: "#09d261",
+            AnimationDelay: "1.6s"
         },
         {
             title: "Calculadora Hcode",
@@ -185,7 +193,8 @@ function Projects() {
             borderColor: "#f88a3f",
             image: project04,
             link: "http://localhost/estudos/calculadora-clone/",
-            backgroundColor: "#f88a3f"
+            backgroundColor: "#f88a3f",
+            AnimationDelay: "1.6s"
         },
 
         {
@@ -194,7 +203,8 @@ function Projects() {
             borderColor: "#a9dae5",
             image: project05,
             link: "http://localhost/sistema-php/index.php",
-            backgroundColor: "#a9dae5"
+            backgroundColor: "#a9dae5",
+            AnimationDelay: "1.9s"
         },
 
         {
@@ -203,9 +213,59 @@ function Projects() {
             borderColor: "#ffbb33",
             image: project06,
             link: "http://localhost:3001/",
-            backgroundColor: "#ffbb33"
+            backgroundColor: "#ffbb33",
+            AnimationDelay: "2.2s"
         }
     ];
+
+    const [refPortfolio, inViewPortfolio] = useInView({
+        triggerOnce: true,
+        threshold: 0.1
+    });
+
+    const [refNetflix, inViewNetflix] = useInView({
+        triggerOnce: true,
+        threshold: 0.1
+    });
+
+    const [refWpp, inViewWpp] = useInView({
+        triggerOnce: true,
+        threshold: 0.1
+    });
+
+    const [refCalc, inViewCalc] = useInView({
+        triggerOnce: true,
+        threshold: 0.1
+    });
+
+    const [refSystem, inViewSystem] = useInView({
+        triggerOnce: true,
+        threshold: 0.1
+    });
+
+    const [refCosts, inViewCosts] = useInView({
+        triggerOnce: true,
+        threshold: 0.1
+    });
+
+    myProjects[0].ref = refPortfolio;
+    myProjects[0].style = { animationPlayState: inViewPortfolio ? 'running' : 'paused' };
+
+    myProjects[1].ref = refNetflix;
+    myProjects[1].style = { animationPlayState: inViewNetflix ? 'running' : 'paused' };
+
+    myProjects[2].ref = refWpp;
+    myProjects[2].style = { animationPlayState: inViewWpp ? 'running' : 'paused' };
+
+    myProjects[3].ref = refCalc;
+    myProjects[3].style = { animationPlayState: inViewCalc ? 'running' : 'paused' };
+
+    myProjects[4].ref = refSystem;
+    myProjects[4].style = { animationPlayState: inViewSystem ? 'running' : 'paused' };
+
+    myProjects[5].ref = refCosts;
+    myProjects[5].style = { animationPlayState: inViewCosts ? 'running' : 'paused' };
+
 
     return (
         <Section id="projects">
@@ -221,6 +281,9 @@ function Projects() {
                                 backGroundImage={myProject.image}
                                 onMouseOver={() => handleMouseOver(index)}
                                 onMouseOut={handleMouseOut}
+                                AnimationDelay={myProject.AnimationDelay}
+                                ref={myProject.ref}
+                                style={myProject.style}
                             >
                                 {(hovered === index || window.matchMedia("(max-width: 480px)").matches) && (
                                     <div>
