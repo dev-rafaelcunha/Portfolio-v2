@@ -35,6 +35,7 @@ const Title = styled.h1`
     color: #444;
     padding: 60px 0;
     margin: 0;
+    animation: ${FadeIn} 1s ease-in-out forwards;
 `;
 
 const Point = styled.span`
@@ -228,6 +229,11 @@ function Projects() {
         }
     ];
 
+    const [refTitle, inViewTitle] = useInView({
+        triggerOnce: true,
+        threshold: 1
+    });
+
     const [refPortfolio, inViewPortfolio] = useInView({
         triggerOnce: true,
         threshold: 0.1
@@ -285,7 +291,7 @@ function Projects() {
     return (
         <Section id="projects">
             <GridLayout>
-                <Title>Projetos<Point> .</Point></Title>
+                <Title ref={refTitle} style={{ animationPlayState: inViewTitle ? 'running' : 'paused' }}>Projetos<Point> .</Point></Title>
                 <Container>
                     <CardProjects>
                         {myProjects.map((myProject, index) => (
