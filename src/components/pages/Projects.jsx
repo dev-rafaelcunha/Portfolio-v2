@@ -260,7 +260,7 @@ function Projects() {
 
     const [refRepository, inViewRepository] = useInView({
         triggerOnce: true,
-        threshold: 1
+        threshold: 0.1
     });
 
     myProjects[0].ref = refPortfolio;
