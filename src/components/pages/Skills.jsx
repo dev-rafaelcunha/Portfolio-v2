@@ -90,6 +90,7 @@ const Card = styled.a`
         height: 155px;
         width: 46.6%;
         white-space: nowrap;
+        animation-delay: ${props => props.DelayMobile}
     }
 `;
 
@@ -127,16 +128,16 @@ const DescriptionSkills = styled.span`
 function Skills() {
 
     const skillsData = [
-        { icon: <AiOutlineHtml5 />, title: "HTML5", description: "Marcação de Texto.", fontSize: "5rem", AnimationDelay: "1s" },
-        { icon: <FaCss3 />, title: "CSS3", description: "Estilização.", fontSize: "5rem", AnimationDelay: "1.3s" },
-        { icon: <BsBootstrap />, title: "Bootstrap", description: "Framework para Estilização.", fontSize: "5rem", AnimationDelay: "1.6s" },
-        { icon: <IoLogoJavascript />, title: "JavaScript", description: "Interatividade.", fontSize: "5rem", AnimationDelay: "1.9s" },
-        { icon: <FaReact />, title: "React", description: "Reatividade.", fontSize: "5rem", AnimationDelay: "2.2s" },
-        { icon: <SiStyledcomponents />, title: "Styled Components", description: "Biblioteca para Estilizar Components React.", fontSize: "8rem", AnimationDelay: "1.9s" },
-        { icon: <FaPhp />, title: "PHP", description: "Linguagem de Programação.", fontSize: "8rem", AnimationDelay: "2.2s" },
-        { icon: <FaDatabase />, title: "Banco de Dados", description: "MySQL e PostgreSQL", fontSize: "5rem", AnimationDelay: "2.5s" },
-        { icon: <IoMdGitMerge />, title: "Git", description: "Versionamento de Códigos.", fontSize: "5rem", AnimationDelay: "2.8s" },
-        { icon: <FiTrello />, title: "Trello", description: "Métodologias Ágeis", fontSize: "5rem", AnimationDelay: "3.1s" }
+        { icon: <AiOutlineHtml5 />, title: "HTML5", description: "Marcação de Texto.", fontSize: "5rem", AnimationDelay: "1s", DelayMobile: "1s" },
+        { icon: <FaCss3 />, title: "CSS3", description: "Estilização.", fontSize: "5rem", AnimationDelay: "1.3s", DelayMobile: "1.3s" },
+        { icon: <BsBootstrap />, title: "Bootstrap", description: "Framework para Estilização.", fontSize: "5rem", AnimationDelay: "1.6s", DelayMobile: "1s" },
+        { icon: <IoLogoJavascript />, title: "JavaScript", description: "Interatividade.", fontSize: "5rem", AnimationDelay: "1.9s", DelayMobile: "1.3s" },
+        { icon: <FaReact />, title: "React", description: "Reatividade.", fontSize: "5rem", AnimationDelay: "2.2s", DelayMobile: "1s" },
+        { icon: <SiStyledcomponents />, title: "Styled Components", description: "Biblioteca para Estilizar Components React.", fontSize: "8rem", AnimationDelay: "1.9s", DelayMobile: "1.3s" },
+        { icon: <FaPhp />, title: "PHP", description: "Linguagem de Programação.", fontSize: "8rem", AnimationDelay: "2.2s", DelayMobile: "1s" },
+        { icon: <FaDatabase />, title: "Banco de Dados", description: "MySQL e PostgreSQL", fontSize: "5rem", AnimationDelay: "2.5s", DelayMobile: "1.3s" },
+        { icon: <IoMdGitMerge />, title: "Git", description: "Versionamento de Códigos.", fontSize: "5rem", AnimationDelay: "2.8s", DelayMobile: "1s" },
+        { icon: <FiTrello />, title: "Trello", description: "Métodologias Ágeis", fontSize: "5rem", AnimationDelay: "3.1s", DelayMobile: "1.3s" }
     ];
 
     const [refTitle, inViewTitle] = useInView({
@@ -231,7 +232,7 @@ function Skills() {
                 <Container>
                     <CardSkills>
                         {skillsData.map((skill, index) => (
-                            <Card key={index} fontSize={skill.fontSize} AnimationDelay={skill.AnimationDelay} className="rounded" ref={skill.ref} style={skill.style}>
+                            <Card key={index} fontSize={skill.fontSize} AnimationDelay={skill.AnimationDelay} DelayMobile={skill.DelayMobile} className="rounded" ref={skill.ref} style={skill.style}>
                                 {skill.icon}
                                 <TitleSkills>{skill.title}</TitleSkills>
                                 <DescriptionSkills>{skill.description}</DescriptionSkills>
