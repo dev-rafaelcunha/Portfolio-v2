@@ -95,6 +95,10 @@ const Repository = styled.a`
     width: fit-content;
     font-weight: 600;
     text-decoration: none;
+    animation: ${FadeIn} 1s ease-in-out forwards;
+    animation-delay: .6s;
+    opacity: 0;
+
 
     &:hover {
         
@@ -194,7 +198,7 @@ function Projects() {
             image: project04,
             link: "http://localhost/estudos/calculadora-clone/",
             backgroundColor: "#f88a3f",
-            AnimationDelay: "1.6s"
+            AnimationDelay: "1.3s"
         },
 
         {
@@ -204,7 +208,7 @@ function Projects() {
             image: project05,
             link: "http://localhost/sistema-php/index.php",
             backgroundColor: "#a9dae5",
-            AnimationDelay: "1.9s"
+            AnimationDelay: "1.6s"
         },
 
         {
@@ -214,7 +218,7 @@ function Projects() {
             image: project06,
             link: "http://localhost:3001/",
             backgroundColor: "#ffbb33",
-            AnimationDelay: "2.2s"
+            AnimationDelay: "1.9s"
         }
     ];
 
@@ -246,6 +250,11 @@ function Projects() {
     const [refCosts, inViewCosts] = useInView({
         triggerOnce: true,
         threshold: 0.1
+    });
+
+    const [refRepository, inViewRepository] = useInView({
+        triggerOnce: true,
+        threshold: 1
     });
 
     myProjects[0].ref = refPortfolio;
@@ -305,7 +314,11 @@ function Projects() {
                     </CardProjects>
                 </Container>
                 <div className="d-flex justify-content-center">
-                    <Repository href="https://github.com/dev-rafaelcunha?tab=repositories" target="_blank">
+                    <Repository
+                        href="https://github.com/dev-rafaelcunha?tab=repositories"
+                        target="_blank"
+                        ref={refRepository} style={{ animationPlayState: inViewRepository ? 'running' : 'paused' }}
+                    >
                         Repositórios no GitHub.
                     </Repository>
                 </div>
