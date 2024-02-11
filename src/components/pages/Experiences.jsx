@@ -2,6 +2,8 @@ import { useState } from 'react';
 import styled from 'styled-components';
 import { GridLayout } from '../../global/GridLayout';
 import moment from 'moment';
+import { useInView } from 'react-intersection-observer';
+import { FadeIn } from '../../global/FadeIn';
 
 
 const Section = styled.section`
@@ -19,6 +21,7 @@ const Container = styled.div`
     
     display: flex;
     justify-content: space-between;
+    animation: ${FadeIn} 1s ease-in-out forwards;
 
     @media (max-width: 1199px) {
 
@@ -35,6 +38,7 @@ const Title = styled.h1`
     color: #fff;
     padding: 60px 0;
     margin: 0;
+    animation: ${FadeIn} 1s ease-in-out forwards;
 `;
 
 const Point = styled.span`
@@ -161,11 +165,22 @@ function Experiences() {
         return Math.round(months) + ' Meses';
     };
 
+    // Estado para ativar a animação somente quando estiver na seção.
+    const [refTitle, inViewTitle] = useInView({
+        triggerOnce: true,
+        threshold: 1
+    });
+
+    const [refContainer, inViewContainer] = useInView({
+        triggerOnce: true,
+        threshold: 1
+    });
+
     return (
         <Section id="experiences">
             <GridLayout>
-                <Title>Experiências<Point> .</Point></Title>
-                <Container>
+                <Title ref={refTitle} style={{ animationPlayState: inViewTitle ? 'running' : 'paused' }}>Experiências<Point> .</Point></Title>
+                <Container ref={refContainer} style={{ animationPlayState: inViewContainer ? 'running' : 'paused' }}>
                     <Card>
                         <TitleCard
                             className={`${activeTitleCard === 'Tork Company' ? 'active' : ''}`}
