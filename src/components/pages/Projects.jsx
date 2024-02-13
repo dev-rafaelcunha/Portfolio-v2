@@ -65,11 +65,20 @@ const Card = styled.div`
         background: #fff;
     }
 
+    @media (min-width: 810px) and (max-width: 1182px) {
+
+        animation-delay: ${props => props.DelayLarge}; 
+    }
+    
+    @media (min-width: 810px) and (max-width: 1182px) {
+
+        animation-delay: ${props => props.DelayMobile};
+    }
+
     @media (max-width: 480px) {
 
         background-image: none;
         background-color: inherit;
-        animation-delay: ${props => props.DelayMobile};
     }
 `;
 
@@ -98,7 +107,7 @@ const Repository = styled.a`
     font-weight: 600;
     text-decoration: none;
     animation: ${FadeIn} 1s ease-in-out forwards;
-    animation-delay: .6s;
+    animation-delay: .8s;
     opacity: 0;
 
 
@@ -193,6 +202,7 @@ function Projects() {
             link: "http://localhost/estudos/hcode-bootstrap/Whatsapp/",
             backgroundColor: "#09d261",
             AnimationDelay: "1.6s",
+            DelayLarge: "1s",
             DelayMobile: "1s"
         },
         {
@@ -214,6 +224,7 @@ function Projects() {
             link: "http://localhost/sistema-php/index.php",
             backgroundColor: "#a9dae5",
             AnimationDelay: "1.6s",
+            DelayLarge: "1s",
             DelayMobile: "1s"
         },
 
@@ -225,6 +236,7 @@ function Projects() {
             link: "http://localhost:3001/",
             backgroundColor: "#ffbb33",
             AnimationDelay: "1.9s",
+            DelayLarge: "1.3s",
             DelayMobile: "1s"
         }
     ];
@@ -303,6 +315,7 @@ function Projects() {
                                 onMouseOver={() => handleMouseOver(index)}
                                 onMouseOut={handleMouseOut}
                                 AnimationDelay={myProject.AnimationDelay}
+                                DelayLarge={myProject.DelayLarge}
                                 DelayMobile={myProject.DelayMobile}
                                 ref={myProject.ref}
                                 style={myProject.style}
