@@ -1,6 +1,7 @@
+import styled, { ThemeProvider } from 'styled-components';
+import { LightTheme } from "../../global/Theme";
 import Header from "../layout/Header";
 import TypingAnimation from "../utils/TypingAnimation";
-import styled from "styled-components";
 import { GridLayout } from "../../global/GridLayout";
 import CustomButton02 from "../common/CustomButton02";
 import { FadeIn } from "../../global/FadeIn";
@@ -9,7 +10,7 @@ import { useInView } from "react-intersection-observer";
 const Main = styled.main`
 
     height: 89.5vh;
-    background-color: #fff;
+    background-color: ${props => props.theme.themeColor};
 
     @media (max-width: 992px) {
 
@@ -30,7 +31,7 @@ const Grid = styled.div`
 
 const FirstColumn = styled.div`
 
-    background-color: #fff;
+    background-color: ${props => props.theme.themeColor};
     z-index: 100;
 
     @media (max-width: 992px) {
@@ -59,7 +60,7 @@ const SubTitle = styled.span`
   
     font-size: 1.5rem;
     letter-spacing: .5px;
-    color: #f83f67;
+    color: ${props => props.theme.primaryColor};
     font-weight: 600;
 
     @media (max-width: 992px) {
@@ -114,24 +115,26 @@ function Home() {
     return (
 
         <>
-            <Header />
-            <Main className="px-5">
-                <GridLayout>
-                    <Grid className="d-flex align-items-center justify-content-center">
-                        <FirstColumn>
-                            <Title className="text-nowrap" ref={refTitle} style={{ animationPlayState: inViewTitle ? 'running' : 'paused' }}>Desenvolvedor Front-end</Title>
-                            <SubTitle>Portfólio 2.0</SubTitle>
-                            <TypingAnimation text={`Este portfólio é uma versão moderna, com as tecnologias atuais do mercado, responsivo e reativo para melhor experiência do usuário.`} />
-                            <ContainerSocial>
-                                <CustomButton02 href="https://www.linkedin.com/in/devrafaelcunha/" target="blank" className="mx-0" text="Linkedin"></CustomButton02>
-                            </ContainerSocial>
-                        </FirstColumn>
-                        {/* <SecondColumn className="position-absolute">
+            <ThemeProvider theme={LightTheme}>
+                <Header />
+                <Main className="px-5">
+                    <GridLayout>
+                        <Grid className="d-flex align-items-center justify-content-center">
+                            <FirstColumn>
+                                <Title className="text-nowrap" ref={refTitle} style={{ animationPlayState: inViewTitle ? 'running' : 'paused' }}>Desenvolvedor Front-end</Title>
+                                <SubTitle>Portfólio 2.0</SubTitle>
+                                <TypingAnimation text={`Este portfólio é uma versão moderna, com as tecnologias atuais do mercado, responsivo e reativo para melhor experiência do usuário.`} />
+                                <ContainerSocial>
+                                    <CustomButton02 href="https://www.linkedin.com/in/devrafaelcunha/" target="blank" className="mx-0" text="Linkedin"></CustomButton02>
+                                </ContainerSocial>
+                            </FirstColumn>
+                            {/* <SecondColumn className="position-absolute">
                             <Logo>{logo}</Logo>
                         </SecondColumn> */}
-                    </Grid>
-                </GridLayout>
-            </Main>
+                        </Grid>
+                    </GridLayout>
+                </Main>
+            </ThemeProvider>
         </>
     );
 }

@@ -1,4 +1,5 @@
-import styled from 'styled-components';
+import styled, { ThemeProvider } from 'styled-components';
+import { LightTheme } from "../../global/Theme";
 import { GridLayout } from '../../global/GridLayout';
 import { AiOutlineHtml5 } from "react-icons/ai";
 import { FaCss3, FaReact, FaPhp, FaDatabase } from "react-icons/fa";
@@ -11,7 +12,7 @@ import { FadeIn } from '../../global/FadeIn';
 
 const Section = styled.section`
     
-    background-color: #fff;
+    background-color: ${props => props.theme.themeColor};
     padding: 0 40px 80px;
 
     @media (max-width: 1199px) {
@@ -42,7 +43,7 @@ const Container = styled.div`
 
 const Point = styled.span`
     
-    color: #f83f67;
+    color: ${props => props.theme.primaryColor};
 `;
 
 const CardSkills = styled.div`
@@ -64,7 +65,7 @@ const Card = styled.a`
     font-size: ${props => props.fontSize};
     height: 210px;
     width: 210px;
-    color: #f83f67;
+    color: ${props => props.theme.primaryColor};
     background-color: #03172d;
     transition: 1s all ease;
     display: flex;
@@ -76,9 +77,9 @@ const Card = styled.a`
     opacity: 0;
 
     &:hover {
-        border: 2px solid #f83f67;
-        background-color: #f83f67;
-        color: #fff;
+        border: 2px solid ${props => props.theme.primaryColor};
+        background-color: ${props => props.theme.primaryColor};
+        color: ${props => props.theme.themeColor};
     }
 
     @media (min-width: 994px) and (max-width: 1225px) {
@@ -114,7 +115,7 @@ const TitleSkills = styled.span`
     
     font-size: 1rem;
     position: absolute;
-    color: #fff;
+    color: ${props => props.theme.themeColor};
     font-weight: bold;
     top: 3px;
     padding: 5px;
@@ -131,7 +132,7 @@ const DescriptionSkills = styled.span`
     position: absolute;
     bottom: 3px;
     text-align: center;
-    color: #fff;
+    color: ${props => props.theme.themeColor};
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     padding: 5px 14px;
 
@@ -242,32 +243,34 @@ function Skills() {
     skillsData[9].style = { animationPlayState: inViewTrello ? 'running' : 'paused' };
 
     return (
-        <Section id="skills">
-            <GridLayout>
-                <Title ref={refTitle} style={{ animationPlayState: inViewTitle ? 'running' : 'paused' }}>Habilidades<Point> .</Point></Title>
-                <Container>
-                    <CardSkills>
-                        {skillsData.map((skill, index) => (
-                            <Card
-                                key={index}
-                                fontSize={skill.fontSize}
-                                AnimationDelay={skill.AnimationDelay}
-                                DelayMobile={skill.DelayMobile}
-                                DelaySmall={skill.DelaySmall}
-                                DelayLarge={skill.DelayLarge}
-                                ref={skill.ref}
-                                style={skill.style}
-                                className="rounded"
-                            >
-                                {skill.icon}
-                                <TitleSkills>{skill.title}</TitleSkills>
-                                <DescriptionSkills>{skill.description}</DescriptionSkills>
-                            </Card>
-                        ))}
-                    </CardSkills>
-                </Container>
-            </GridLayout>
-        </Section>
+        <ThemeProvider theme={LightTheme}>
+            <Section id="skills">
+                <GridLayout>
+                    <Title ref={refTitle} style={{ animationPlayState: inViewTitle ? 'running' : 'paused' }}>Habilidades<Point> .</Point></Title>
+                    <Container>
+                        <CardSkills>
+                            {skillsData.map((skill, index) => (
+                                <Card
+                                    key={index}
+                                    fontSize={skill.fontSize}
+                                    AnimationDelay={skill.AnimationDelay}
+                                    DelayMobile={skill.DelayMobile}
+                                    DelaySmall={skill.DelaySmall}
+                                    DelayLarge={skill.DelayLarge}
+                                    ref={skill.ref}
+                                    style={skill.style}
+                                    className="rounded"
+                                >
+                                    {skill.icon}
+                                    <TitleSkills>{skill.title}</TitleSkills>
+                                    <DescriptionSkills>{skill.description}</DescriptionSkills>
+                                </Card>
+                            ))}
+                        </CardSkills>
+                    </Container>
+                </GridLayout>
+            </Section>
+        </ThemeProvider>
     );
 }
 

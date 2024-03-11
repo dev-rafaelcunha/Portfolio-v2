@@ -1,4 +1,5 @@
-import styled from "styled-components";
+import styled, { ThemeProvider } from 'styled-components';
+import { LightTheme } from "../../global/Theme";
 import { GridLayout } from "../../global/GridLayout";
 import { FaReact } from "react-icons/fa";
 import { SiStyledcomponents } from "react-icons/si";
@@ -30,34 +31,34 @@ const Container = styled.div`
 
 const Name = styled.span`
     
-    color: #f83f67;
+    color: ${props => props.theme.primaryColor};
     font-weight: 600;
 `;
 
 const React = styled.span`
     
-    color: #f83f67;
+    color: ${props => props.theme.primaryColor};
     display: flex;
     font-size: 1.2rem;
 `;
 
 const StyledComponents = styled.span`
     
-    color: #f83f67;
+    color: ${props => props.theme.primaryColor};
     font-size: 2.4rem;
     padding-left: 15px;
 `;
 
 const Bootstrap = styled.span`
     
-    color: #f83f67;
+    color: ${props => props.theme.primaryColor};
     font-size: 1.2rem;
     padding-left: 15px;
 `;
 
 const VersionNumber = styled.span`
     
-    color: #f83f67;
+    color: ${props => props.theme.primaryColor};
     font-size: 1rem;
     font-weight: 600;
     letter-spacing: 1px;
@@ -92,23 +93,25 @@ function Footer() {
 
     return (
 
-        <Foot>
-            <GridLayout>
-                <Container>
-                    <Tecs className="badge btn">
-                        <React><FaReact /></React>
-                        <StyledComponents><SiStyledcomponents /></StyledComponents>
-                        <Bootstrap><BsBootstrap /></Bootstrap>
-                    </Tecs>
-                    <div>
-                        <span className="text-light fw-normal">Copyright &copy; 2024 <Name>Rafael Cunha.</Name><span className="d-sm-inline-flex d-none ps-2 fw-normal">Todos os direitos reservados.</span></span>
-                    </div>
-                    <div>
-                        <VersionNumber><Version className="text-light pe-1 fw-normal">v</Version>2.0</VersionNumber>
-                    </div>
-                </Container>
-            </GridLayout>
-        </Foot>
+        <ThemeProvider theme={LightTheme}>
+            <Foot>
+                <GridLayout>
+                    <Container>
+                        <Tecs className="badge btn">
+                            <React><FaReact /></React>
+                            <StyledComponents><SiStyledcomponents /></StyledComponents>
+                            <Bootstrap><BsBootstrap /></Bootstrap>
+                        </Tecs>
+                        <div>
+                            <span className="text-light fw-normal">Copyright &copy; 2024 <Name>Rafael Cunha.</Name><span className="d-sm-inline-flex d-none ps-2 fw-normal">Todos os direitos reservados.</span></span>
+                        </div>
+                        <div>
+                            <VersionNumber><Version className="text-light pe-1 fw-normal">v</Version>2.0</VersionNumber>
+                        </div>
+                    </Container>
+                </GridLayout>
+            </Foot>
+        </ThemeProvider>
     );
 }
 

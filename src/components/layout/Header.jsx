@@ -12,7 +12,7 @@ const Move = keyframes`
 
 const Heading = styled.header`
 
-    background-color: #fff;
+    background-color: ${props => props.theme.themeColor};
     z-index: 101;
     padding: 25px;
 `;
@@ -46,7 +46,7 @@ const Logo = styled.span`
     transition: 3s ease-in-out;
     position: relative;
     font-size: 30px;
-    color: #f83f67;
+    color: ${props => props.theme.primaryColor};
     left: 110px;
     font-family: monospace;
     font-weight: bold;

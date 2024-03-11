@@ -1,4 +1,5 @@
-import styled, { keyframes } from 'styled-components';
+import styled, { ThemeProvider } from 'styled-components';
+import { LightTheme } from "../../global/Theme";
 import { GridLayout } from '../../global/GridLayout';
 import img from '../../img/photo03.jpeg';
 import { FaLinkedinIn, FaInstagram, FaWhatsapp } from "react-icons/fa";
@@ -9,7 +10,7 @@ import { FadeIn } from '../../global/FadeIn';
 const Section = styled.section`
     
     padding: 5rem;
-    background-color: #03172d;
+    background-color: ${props => props.theme.secondaryColor};
     display: flex;
     align-items: center;
 
@@ -23,7 +24,7 @@ const Section = styled.section`
 
 const Container = styled.div`
     
-    background-color: #fff;
+    background-color: ${props => props.theme.themeColor};
     border: 2px solid #444;
 `;
 
@@ -79,7 +80,7 @@ const SecondColumn = styled.div`
 
 const Title = styled.span`
     
-    color: #f83f67;
+    color: ${props => props.theme.primaryColor};
     font-weight: 600;
     font-size: 22px;
     opacity: 0;
@@ -163,14 +164,14 @@ const Card = styled.a`
     border: 2px solid #999;
     align-items: center;
     font-size: 1.7rem;
-    color: ${props => props.Color};
+    color: ${props => props.ColorDefined};
     opacity: 0;
     animation: ${FadeIn} 1s ease-in-out forwards;
     animation-delay: .8s;
 
     &:hover {
 
-        color: ${props => props.Color};
+        color: ${props => props.ColorDefined};
         border: 2px solid ${props => props.BorderHover};
     }
 
@@ -182,10 +183,10 @@ const Card = styled.a`
 `;
 
 const socialLinks = [
-    { href: "https://www.linkedin.com/in/devrafaelcunha/", icon: <FaLinkedinIn />, className: "rounded", Color: "#0a66c2", BorderHover: "#0a66c2" },
-    { href: "https://www.instagram.com/dev.rafaelcunha/", icon: <FaInstagram />, className: "rounded ms-3", Color: "#d62976", BorderHover: "#d62976" },
-    { href: "https://github.com/dev-rafaelcunha", icon: <TbBrandGithubFilled />, className: "rounded ms-3", Color: "#010101", BorderHover: "#010101" },
-    { href: "https://contate.me/rafaelcunha", icon: <FaWhatsapp />, className: "rounded ms-3", Color: "#13b44e", BorderHover: "#25d366" }
+    { href: "https://www.linkedin.com/in/devrafaelcunha/", icon: <FaLinkedinIn />, className: "rounded", ColorDefined: "#0a66c2", BorderHover: "#0a66c2" },
+    { href: "https://www.instagram.com/dev.rafaelcunha/", icon: <FaInstagram />, className: "rounded ms-3", ColorDefined: "#d62976", BorderHover: "#d62976" },
+    { href: "https://github.com/dev-rafaelcunha", icon: <TbBrandGithubFilled />, className: "rounded ms-3", ColorDefined: "#010101", BorderHover: "#010101" },
+    { href: "https://contate.me/rafaelcunha", icon: <FaWhatsapp />, className: "rounded ms-3", ColorDefined: "#13b44e", BorderHover: "#25d366" }
 ];
 
 function About() {
@@ -222,34 +223,36 @@ function About() {
 
     return (
 
-        <Section id="about" className="px-5">
-            <GridLayout>
-                <Container className="row m-0">
-                    <FirstColumn className="col-5">
-                        <Photo src={img} alt="Photo" className="rounded shadow" ref={refPhoto} style={{ animationPlayState: inViewPhoto ? 'running' : 'paused' }} />
-                    </FirstColumn>
-                    <SecondColumn className="col">
-                        <Title ref={refTitle} style={{ animationPlayState: inViewTitle ? 'running' : 'paused' }}>Sobre mim</Title>
-                        <Name className="mt-2" ref={refName} style={{ animationPlayState: inViewName ? 'running' : 'paused' }}>Rafael Cunha</Name>
-                        <Description className="mt-2" ref={refDescription} style={{ animationPlayState: inViewDescription ? 'running' : 'paused' }}>Front-End Developer</Description>
-                        <Text ref={refText} style={{ animationPlayState: inViewText ? 'running' : 'paused' }}>
-                            Meu nome é <strong>Rafael Cunha</strong>, tenho 27 anos, atualmente estou trabalhando na empresa <strong>Tork Company</strong> como
-                            <strong> Desenvolvedor Júnior</strong> e cursando <strong>Engenharia de Software</strong> pela <strong>UNINTER</strong>.<br /><br />
-                            Passei minha vida buscando algo que realmente fizesse sentido,
-                            até me deparar com o mundo de desenvolvimento, onde estou feliz, empolgado e totalmente focado, me aperfeiçoando
-                            e buscando novos desafios para carreira.
-                        </Text>
-                        <Social>
-                            {socialLinks.map((link, index) => (
-                                <Card key={index} href={link.href} target="_blank" className={link.className} Color={link.Color} ref={refSocial} style={{ animationPlayState: inViewSocial ? 'running' : 'paused' }}>
-                                    {link.icon}
-                                </Card>
-                            ))}
-                        </Social>
-                    </SecondColumn>
-                </Container>
-            </GridLayout>
-        </Section>
+        <ThemeProvider theme={LightTheme}>
+            <Section id="about" className="px-5">
+                <GridLayout>
+                    <Container className="row m-0">
+                        <FirstColumn className="col-5">
+                            <Photo src={img} alt="Photo" className="rounded shadow" ref={refPhoto} style={{ animationPlayState: inViewPhoto ? 'running' : 'paused' }} />
+                        </FirstColumn>
+                        <SecondColumn className="col">
+                            <Title ref={refTitle} style={{ animationPlayState: inViewTitle ? 'running' : 'paused' }}>Sobre mim</Title>
+                            <Name className="mt-2" ref={refName} style={{ animationPlayState: inViewName ? 'running' : 'paused' }}>Rafael Cunha</Name>
+                            <Description className="mt-2" ref={refDescription} style={{ animationPlayState: inViewDescription ? 'running' : 'paused' }}>Front-End Developer</Description>
+                            <Text ref={refText} style={{ animationPlayState: inViewText ? 'running' : 'paused' }}>
+                                Meu nome é <strong>Rafael Cunha</strong>, tenho 27 anos, atualmente estou trabalhando na empresa <strong>Tork Company</strong> como
+                                <strong> Desenvolvedor Júnior</strong> e cursando <strong>Engenharia de Software</strong> pela <strong>UNINTER</strong>.<br /><br />
+                                Passei minha vida buscando algo que realmente fizesse sentido,
+                                até me deparar com o mundo de desenvolvimento, onde estou feliz, empolgado e totalmente focado, me aperfeiçoando
+                                e buscando novos desafios para carreira.
+                            </Text>
+                            <Social>
+                                {socialLinks.map((link, index) => (
+                                    <Card key={index} href={link.href} target="_blank" className={link.className} ColorDefined={link.ColorDefined} ref={refSocial} style={{ animationPlayState: inViewSocial ? 'running' : 'paused' }}>
+                                        {link.icon}
+                                    </Card>
+                                ))}
+                            </Social>
+                        </SecondColumn>
+                    </Container>
+                </GridLayout>
+            </Section>
+        </ThemeProvider>
     );
 }
 

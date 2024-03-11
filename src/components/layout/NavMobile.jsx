@@ -84,11 +84,11 @@ const NavItem = styled.a`
   color: #444;
   font-size: 1.3rem;
   margin: 5px;
-  color: #fff;
+  color: ${props => props.theme.themeColor};
 
   &:hover {
 
-    color: #f83f67;
+    color: ${props => props.theme.primaryColor};
   }
 
   @media(max-width: 480px) {

@@ -1,5 +1,6 @@
+import styled, { ThemeProvider, keyframes } from 'styled-components';
+import { LightTheme } from "../../global/Theme";
 import React, { useEffect, useState } from "react";
-import styled, { keyframes } from 'styled-components';
 
 const blink = keyframes`
   from {
@@ -21,7 +22,7 @@ const Typing = styled.div`
     content: "|";
     opacity: 1;
     animation: ${blink} 1s infinite;
-    color: #f52754;
+    color: ${props => props.theme.primaryColor};
     font-weight: bold;
     padding: 0 10px;
     font-size: 19px;
@@ -51,7 +52,7 @@ function TypingAnimation({ text }) {
     });
   }, [text]);
 
-  return <Typing>{displayText}</Typing>;
+  return <ThemeProvider theme={LightTheme}><Typing>{displayText}</Typing></ThemeProvider>;
 }
 
 export default TypingAnimation;

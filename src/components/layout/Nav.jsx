@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { useState } from 'react';
 
 const Navbar = styled.nav`
     
@@ -17,7 +16,7 @@ const LinkNav = styled.a`
     letter-spacing: .5px;
     
     &:hover {
-        color: #f83f67 !important;
+        color: ${props => props.theme.primaryColor};
     }
 
     &:hover::after {
@@ -26,7 +25,7 @@ const LinkNav = styled.a`
     }
 
     &.active {
-        color: #f83f67 !important;
+        color: ${props => props.theme.primaryColor};
         font-weight: 600;
     }
 `;

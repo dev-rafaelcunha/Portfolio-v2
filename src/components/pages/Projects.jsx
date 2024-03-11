@@ -1,6 +1,7 @@
-import { useEffect, useState } from "react";
+import styled, { ThemeProvider } from 'styled-components';
+import { LightTheme } from "../../global/Theme";
+import { useState } from "react";
 import { useInView } from "react-intersection-observer";
-import styled from "styled-components";
 import { FadeIn } from "../../global/FadeIn";
 import { GridLayout } from "../../global/GridLayout";
 import project01 from "../../img/project01.png";
@@ -12,7 +13,7 @@ import project06 from "../../img/project06.png";
 
 const Section = styled.section`
     
-    background-color: #fff;
+    background-color: ${props => props.theme.themeColor};
     padding: 0 40px 80px;
 
     @media (max-width: 1199px) {
@@ -40,7 +41,7 @@ const Title = styled.h1`
 
 const Point = styled.span`
     
-    color: #f83f67;
+    color: ${props => props.theme.primaryColor};
 `;
 
 const Card = styled.div`
@@ -62,7 +63,7 @@ const Card = styled.div`
     opacity: 0;
 
     &:hover {
-        background: #fff;
+        background: ${props => props.theme.themeColor};
     }
 
     @media (min-width: 810px) and (max-width: 1182px) {
@@ -113,13 +114,13 @@ const Repository = styled.a`
 
     &:hover {
         
-        color: #f83f67;
+        color: ${props => props.theme.primaryColor};
         cursor: pointer;
     }
 
     @media (max-width: 480px) {
 
-        color: #f83f67;
+        color: ${props => props.theme.primaryColor};
     }
 `;
 
@@ -147,18 +148,18 @@ const ButtonCard = styled.a`
     font-size: .9rem;
     border-radius: 5px;
     border: none;
-    color: #fff;
+    color: ${props => props.theme.themeColor};
     position: absolute;
     bottom: 20px;
     text-decoration: none;
 
     &:hover {
-       background-color: ${props => props.hover}
+       background-color: ${props => props.hover};
     }
 
     @media (max-width: 480px) {
 
-        background-color: ${props => props.backGroundMobile}
+        background-color: ${props => props.backGroundMobile};
     }
 `;
 
@@ -301,55 +302,57 @@ function Projects() {
 
 
     return (
-        <Section id="projects">
-            <GridLayout>
-                <Title ref={refTitle} style={{ animationPlayState: inViewTitle ? 'running' : 'paused' }}>Projetos<Point> .</Point></Title>
-                <Container>
-                    <CardProjects>
-                        {myProjects.map((myProject, index) => (
-                            <Card
-                                key={index}
-                                className="rounded shadow"
-                                Border={`solid 2px ${myProject.borderColor}`}
-                                backGroundImage={myProject.image}
-                                onMouseOver={() => handleMouseOver(index)}
-                                onMouseOut={handleMouseOut}
-                                AnimationDelay={myProject.AnimationDelay}
-                                DelayLarge={myProject.DelayLarge}
-                                DelayMobile={myProject.DelayMobile}
-                                ref={myProject.ref}
-                                style={myProject.style}
-                            >
-                                {(hovered === index || window.matchMedia("(max-width: 480px)").matches) && (
-                                    <div>
-                                        <TitleCard>{myProject.title}</TitleCard>
-                                        <DescriptionCard>{myProject.description}</DescriptionCard>
-                                        <ButtonCard
-                                            href={myProject.link}
-                                            target="_blank"
-                                            backGroundColor={`${myProject.backgroundColor}c7`}
-                                            backGroundMobile={myProject.backgroundColor}
-                                            hover={myProject.backgroundColor}
-                                        >
-                                            Visualizar Projeto
-                                        </ButtonCard>
-                                    </div>
-                                )}
-                            </Card>
-                        ))}
-                    </CardProjects>
-                </Container>
-                <div className="d-flex justify-content-center">
-                    <Repository
-                        href="https://github.com/dev-rafaelcunha?tab=repositories"
-                        target="_blank"
-                        ref={refRepository} style={{ animationPlayState: inViewRepository ? 'running' : 'paused' }}
-                    >
-                        Repositórios no GitHub.
-                    </Repository>
-                </div>
-            </GridLayout>
-        </Section>
+        <ThemeProvider theme={LightTheme}>
+            <Section id="projects">
+                <GridLayout>
+                    <Title ref={refTitle} style={{ animationPlayState: inViewTitle ? 'running' : 'paused' }}>Projetos<Point> .</Point></Title>
+                    <Container>
+                        <CardProjects>
+                            {myProjects.map((myProject, index) => (
+                                <Card
+                                    key={index}
+                                    className="rounded shadow"
+                                    Border={`solid 2px ${myProject.borderColor}`}
+                                    backGroundImage={myProject.image}
+                                    onMouseOver={() => handleMouseOver(index)}
+                                    onMouseOut={handleMouseOut}
+                                    AnimationDelay={myProject.AnimationDelay}
+                                    DelayLarge={myProject.DelayLarge}
+                                    DelayMobile={myProject.DelayMobile}
+                                    ref={myProject.ref}
+                                    style={myProject.style}
+                                >
+                                    {(hovered === index || window.matchMedia("(max-width: 480px)").matches) && (
+                                        <div>
+                                            <TitleCard>{myProject.title}</TitleCard>
+                                            <DescriptionCard>{myProject.description}</DescriptionCard>
+                                            <ButtonCard
+                                                href={myProject.link}
+                                                target="_blank"
+                                                backGroundColor={`${myProject.backgroundColor}c7`}
+                                                backGroundMobile={myProject.backgroundColor}
+                                                hover={myProject.backgroundColor}
+                                            >
+                                                Visualizar Projeto
+                                            </ButtonCard>
+                                        </div>
+                                    )}
+                                </Card>
+                            ))}
+                        </CardProjects>
+                    </Container>
+                    <div className="d-flex justify-content-center">
+                        <Repository
+                            href="https://github.com/dev-rafaelcunha?tab=repositories"
+                            target="_blank"
+                            ref={refRepository} style={{ animationPlayState: inViewRepository ? 'running' : 'paused' }}
+                        >
+                            Repositórios no GitHub.
+                        </Repository>
+                    </div>
+                </GridLayout>
+            </Section>
+        </ThemeProvider>
     );
 }
 

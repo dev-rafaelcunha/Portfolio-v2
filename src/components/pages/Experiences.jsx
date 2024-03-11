@@ -1,10 +1,10 @@
+import styled, { ThemeProvider } from 'styled-components';
+import { LightTheme } from "../../global/Theme";
 import { useState } from 'react';
-import styled from 'styled-components';
 import { GridLayout } from '../../global/GridLayout';
 import moment from 'moment';
 import { useInView } from 'react-intersection-observer';
 import { FadeIn } from '../../global/FadeIn';
-
 
 const Section = styled.section`
     
@@ -35,7 +35,7 @@ const Container = styled.div`
 const Title = styled.h1`
 
     text-align: center;
-    color: #fff;
+    color: ${props => props.theme.themeColor};
     padding: 60px 0;
     margin: 0;
     animation: ${FadeIn} 1s ease-in-out forwards;
@@ -43,7 +43,7 @@ const Title = styled.h1`
 
 const Point = styled.span`
     
-    color: #f83f67;
+    color: ${props => props.theme.primaryColor};
 `;
 
 const Card = styled.div`
@@ -76,7 +76,7 @@ const CardData = styled.div`
 
 const TitleCard = styled.a`
     
-    color: #fff;
+    color: ${props => props.theme.themeColor};
     text-decoration: none;
     font-size: 1.1rem;
     font-weight: 600;
@@ -87,15 +87,15 @@ const TitleCard = styled.a`
 
     &.active {
 
-        border-left: 4px solid #f83f67;
+        border-left: 4px solid ${props => props.theme.primaryColor};
         padding: 1rem 1.750rem;
-        color: #f83f67;
+        color: ${props => props.theme.primaryColor};
     }
 `;
 
 const TitleCardData = styled.span`
     
-    color: #fff;
+    color: ${props => props.theme.themeColor};
     font-size: 1.7rem;
     position: relative;
     display: block;
@@ -126,7 +126,7 @@ const Date = styled.span`
 
 const SubtitleCardData = styled.span`
     
-    color: #f83f67;
+    color: ${props => props.theme.primaryColor};
     font-size: 1.2rem;
     padding: 1rem 0;
     position: relative;
@@ -177,42 +177,44 @@ function Experiences() {
     });
 
     return (
-        <Section id="experiences">
-            <GridLayout>
-                <Title ref={refTitle} style={{ animationPlayState: inViewTitle ? 'running' : 'paused' }}>Experiências<Point> .</Point></Title>
-                <Container ref={refContainer} style={{ animationPlayState: inViewContainer ? 'running' : 'paused' }}>
-                    <Card>
-                        <TitleCard
-                            className={`${activeTitleCard === 'Tork Company' ? 'active' : ''}`}
-                            onClick={() => handleLinkClick('Tork Company')}>
-                            Tork Company
-                        </TitleCard>
-                        <TitleCard
-                            className={`${activeTitleCard === 'Sem Registro' ? 'active' : ''}`}
-                            onClick={() => handleLinkClick('Sem Registro')}>
-                            Sem Registro
-                        </TitleCard>
-                    </Card>
-                    {activeTitleCard === 'Tork Company' && (
-                        <CardData>
-                            <TitleCardData>Desenvolvedor <span className="ps-1">FullStack</span></TitleCardData>
-                            <Date>{`Atualmente (${calculateWorkPeriod('10/04/2023')})`}</Date>
-                            <SubtitleCardData>Tork Company</SubtitleCardData>
-                            <TextCardData>
-                                Desenvolvo aplicações web, manutenção nos softwares existentes e dashboards utilizando bibliotecas JavaScript. <br /><br />
-                                <span className="fs-6 fw-semibold text-light">Linguagens utilizadas: <br /></span>
-                                <span className="fs-6 d-block mt-1">HTML - CSS - Bootstrap - JavaScript - PHP - PostgreSQL</span>
-                            </TextCardData>
-                        </CardData>
-                    )}
-                    {activeTitleCard === 'Sem Registro' && (
-                        <CardData>
-                            {/* Conteúdo para o card Sem Registro */}
-                        </CardData>
-                    )}
-                </Container>
-            </GridLayout>
-        </Section>
+        <ThemeProvider theme={LightTheme}>
+            <Section id="experiences">
+                <GridLayout>
+                    <Title ref={refTitle} style={{ animationPlayState: inViewTitle ? 'running' : 'paused' }}>Experiências<Point> .</Point></Title>
+                    <Container ref={refContainer} style={{ animationPlayState: inViewContainer ? 'running' : 'paused' }}>
+                        <Card>
+                            <TitleCard
+                                className={`${activeTitleCard === 'Tork Company' ? 'active' : ''}`}
+                                onClick={() => handleLinkClick('Tork Company')}>
+                                Tork Company
+                            </TitleCard>
+                            <TitleCard
+                                className={`${activeTitleCard === 'Sem Registro' ? 'active' : ''}`}
+                                onClick={() => handleLinkClick('Sem Registro')}>
+                                Sem Registro
+                            </TitleCard>
+                        </Card>
+                        {activeTitleCard === 'Tork Company' && (
+                            <CardData>
+                                <TitleCardData>Desenvolvedor <span className="ps-1">FullStack</span></TitleCardData>
+                                <Date>{`Atualmente (${calculateWorkPeriod('10/04/2023')})`}</Date>
+                                <SubtitleCardData>Tork Company</SubtitleCardData>
+                                <TextCardData>
+                                    Desenvolvo aplicações web, manutenção nos softwares existentes e dashboards utilizando bibliotecas JavaScript. <br /><br />
+                                    <span className="fs-6 fw-semibold text-light">Linguagens utilizadas: <br /></span>
+                                    <span className="fs-6 d-block mt-1">HTML - CSS - Bootstrap - JavaScript - PHP - PostgreSQL</span>
+                                </TextCardData>
+                            </CardData>
+                        )}
+                        {activeTitleCard === 'Sem Registro' && (
+                            <CardData>
+                                {/* Conteúdo para o card Sem Registro */}
+                            </CardData>
+                        )}
+                    </Container>
+                </GridLayout>
+            </Section>
+        </ThemeProvider>
     );
 }
 
