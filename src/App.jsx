@@ -19,7 +19,7 @@ function App() {
       <Projects />
       <Footer />
     </>
-  )
+  );
 }
 
 export default App;
