@@ -211,7 +211,7 @@ function Projects() {
             description: "Calculadora feita em JavaScript junto com a escola Hcode Treinamentos.",
             borderColor: "#f88a3f",
             image: project04,
-            link: "http://localhost/estudos/calculadora-clone/",
+            link: "https://calculadora-c.vercel.app/",
             backgroundColor: "#f88a3f",
             AnimationDelay: "1.3s",
             DelayMobile: "1s"
