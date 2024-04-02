@@ -234,7 +234,7 @@ function Projects() {
             description: "Sistema para criar Projetos, feito com ReactJS e Bootstrap, junto com o treinamento Hora de Codar.",
             borderColor: "#ffbb33",
             image: project06,
-            link: "http://localhost:3001/",
+            link: "https://costs-seven-teal.vercel.app/",
             backgroundColor: "#ffbb33",
             AnimationDelay: "1.9s",
             DelayLarge: "1.3s",
