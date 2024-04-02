@@ -200,7 +200,7 @@ function Projects() {
             description: "Clone do WhatsApp feito em HTML, CSS e Bootstrap, junto com a escola Hcode Treinamentos.",
             borderColor: "#09d261",
             image: project03,
-            link: "http://localhost/estudos/hcode-bootstrap/Whatsapp/",
+            link: "https://whatsappweb-clone-zeta.vercel.app/",
             backgroundColor: "#09d261",
             AnimationDelay: "1.6s",
             DelayLarge: "1s",
