@@ -235,7 +235,7 @@ function About() {
                             <Name className="mt-2" ref={refName} style={{ animationPlayState: inViewName ? 'running' : 'paused' }}>Rafael Cunha</Name>
                             <Description className="mt-2" ref={refDescription} style={{ animationPlayState: inViewDescription ? 'running' : 'paused' }}>Front-End Developer</Description>
                             <Text ref={refText} style={{ animationPlayState: inViewText ? 'running' : 'paused' }}>
-                                Meu nome é <strong>Rafael Cunha</strong>, tenho 27 anos, atualmente estou trabalhando na empresa <strong>Tork Company</strong> como
+                                Meu nome é <strong>Rafael Cunha</strong>, tenho 28 anos, atualmente estou trabalhando na empresa <strong>Tork Company</strong> como
                                 <strong> Desenvolvedor Júnior</strong> e cursando <strong>Engenharia de Software</strong> pela <strong>UNINTER</strong>.<br /><br />
                                 Passei minha vida buscando algo que realmente fizesse sentido,
                                 até me deparar com o mundo de desenvolvimento, onde estou feliz, empolgado e totalmente focado, me aperfeiçoando

@@ -190,7 +190,7 @@ function Projects() {
             description: "Clone da Netflix feito em HTML, CSS e Bootstrap, junto com a escola Hcode Treinamentos.",
             borderColor: "#e50914",
             image: project02,
-            link: "http://localhost/estudos/netflix-clone/",
+            link: "https://netflix-clone-nu-gules.vercel.app/",
             backgroundColor: "#e50914",
             AnimationDelay: "1.3s",
             DelayMobile: "1s"
