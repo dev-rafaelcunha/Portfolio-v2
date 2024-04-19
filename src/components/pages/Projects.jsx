@@ -157,6 +157,11 @@ const ButtonCard = styled.a`
        background-color: ${props => props.hover};
     }
 
+    &.disabled {
+        pointer-events: none;
+        opacity: 0.5; 
+    }
+
     @media (max-width: 480px) {
 
         background-color: ${props => props.backGroundMobile};
@@ -178,12 +183,14 @@ function Projects() {
     const myProjects = [
         {
             title: "Portfólio",
-            description: "Meu primeiro Portfólio, onde utilizei HTML, CSS, Bootstrap, JavaScript e PHP.",
+            // description: "Meu primeiro Portfólio, onde utilizei HTML, CSS, Bootstrap, JavaScript e PHP.",
+            description: "Link em Manutenção!",
             borderColor: "#dc3545",
             image: project01,
             link: "http://localhost/portfolio/",
             backgroundColor: "#dc3545",
-            AnimationDelay: "1s"
+            AnimationDelay: "1s",
+            disabled: true
         },
         {
             title: "Netflix Clone",
@@ -219,14 +226,16 @@ function Projects() {
 
         {
             title: "Sistema",
-            description: "Sistema básico para treinar conceitos de back-end, feito por mim com HTML, Bootstrap, PHP e MySQL",
+            // description: "Sistema básico para treinar conceitos de back-end, feito por mim com HTML, Bootstrap, PHP e MySQL",
+            description: "Link em Manutenção!",
             borderColor: "#a9dae5",
             image: project05,
             link: "http://localhost/sistema-php/index.php",
             backgroundColor: "#a9dae5",
             AnimationDelay: "1.6s",
             DelayLarge: "1s",
-            DelayMobile: "1s"
+            DelayMobile: "1s",
+            disabled: true
         },
 
         {
@@ -332,6 +341,7 @@ function Projects() {
                                                 backGroundColor={`${myProject.backgroundColor}c7`}
                                                 backGroundMobile={myProject.backgroundColor}
                                                 hover={myProject.backgroundColor}
+                                                className={myProject.disabled ? "disabled" : ""}
                                             >
                                                 Visualizar Projeto
                                             </ButtonCard>
