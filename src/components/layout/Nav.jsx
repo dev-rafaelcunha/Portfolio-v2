@@ -1,100 +1,83 @@
 import styled from "styled-components";
+import HeaderFixed from "../utils/HeaderFixed";
 
 const Navbar = styled.nav`
-    
     @media(max-width: 992px) {
-
         display: none;
     }
 `;
 
+const Lista = styled.ul`
+    gap: 30px;
+`;
+
 const LinkNav = styled.a`
-
-    color: #444;
+    color: ${props => (props.fixedActive ? props.theme.secondaryColor : '#fff')};
     font-size: 1rem;
-    margin: 0 5px;
     letter-spacing: .5px;
-    
+    transition: .3s;
+    position: relative;
+
     &:hover {
+        color: ${props => props.theme.secondaryColor};
+    }
+
+    &.fixed-active:hover {
         color: ${props => props.theme.primaryColor};
     }
 
-    &:hover::after {
-        transform-origin: left;
-        transform: scaleX(1);
+    &::before {
+        content: '';
+        position: absolute;
+        height: 2px;
+        width: 0;
+        background-color: ${props => props.theme.secondaryColor};
+        bottom: 0;
+        right: 0;
+        transition: .3s;
     }
 
-    &.active {
-        color: ${props => props.theme.primaryColor};
-        font-weight: 600;
+    &.fixed-active::before {
+        background-color: ${props => props.theme.primaryColor};
+    }
+
+    &:hover::before {
+        width: 100%;
+        left: 0;
     }
 `;
 
+const navItems = [
+    { href: "#", label: "Início" },
+    { href: "#about", label: "Sobre mim" },
+    { href: "#skills", label: "Habilidades" },
+    { href: "#experiences", label: "Experiências" },
+    { href: "#projects", label: "Projetos" },
+];
+
 function Nav() {
-
-    // const [activeLink, setActiveLink] = useState('Início');
-
-    // const handleLinkClick = (link) => {
-
-    //     setActiveLink(link);
-    // };
+    const headerFixed = HeaderFixed();
 
     return (
-
         <Navbar className="navbar navbar-expand-lg p-0">
             <div className="container-fluid p-0">
                 <div className="collapse navbar-collapse" id="navbarNav">
-                    <ul className="navbar-nav">
-                        <li className="nav-item">
-                            <LinkNav
-                                // className={`nav-link shadow-none ${activeLink === 'Início' ? 'active' : ''}`}
-                                // onClick={() => handleLinkClick('Início')}
-                                className="nav-link shadow-none"
-                                href="#">
-                                Início
-                            </LinkNav>
-                        </li>
-                        <li className="nav-item">
-                            <LinkNav
-                                // className={`nav-link shadow-none ${activeLink === 'Sobre mim' ? 'active' : ''}`}
-                                // onClick={() => handleLinkClick('Sobre mim')}
-                                className="nav-link shadow-none"
-                                href="#about">
-                                Sobre mim
-                            </LinkNav>
-                        </li>
-                        <li className="nav-item">
-                            <LinkNav
-                                // className={`nav-link shadow-none ${activeLink === 'Habilidades' ? 'active' : ''}`}
-                                // onClick={() => handleLinkClick('Habilidades')}
-                                className="nav-link shadow-none"
-                                href="#skills">
-                                Habilidades
-                            </LinkNav>
-                        </li>
-                        <li className="nav-item">
-                            <LinkNav
-                                // className={`nav-link shadow-none ${activeLink === 'Experiências' ? 'active' : ''}`}
-                                // onClick={() => handleLinkClick('Experiências')}
-                                className="nav-link shadow-none"
-                                href="#experiences">
-                                Experiências
-                            </LinkNav>
-                        </li>
-                        <li className="nav-item">
-                            <LinkNav
-                                // className={`nav-link shadow-none ${activeLink === 'Projetos' ? 'active' : ''}`}
-                                // onClick={() => handleLinkClick('Projetos')}
-                                className="nav-link shadow-none"
-                                href="#projects">
-                                Projetos
-                            </LinkNav>
-                        </li>
-                    </ul>
+                    <Lista className="navbar-nav align-items-center">
+                        {navItems.map((item, index) => (
+                            <li className="nav-item" key={index}>
+                                <LinkNav
+                                    fixedActive={headerFixed}
+                                    className={`nav-link shadow-none p-0 ${headerFixed ? 'fixed-active' : ''}`}
+                                    href={item.href}>
+                                    {item.label}
+                                </LinkNav>
+                            </li>
+                        ))}
+                    </Lista>
                 </div>
             </div>
         </Navbar>
-    )
+    );
 }
 
 export default Nav;

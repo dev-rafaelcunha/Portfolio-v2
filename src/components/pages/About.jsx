@@ -1,7 +1,7 @@
 import styled, { ThemeProvider } from 'styled-components';
 import { LightTheme } from "../../global/Theme";
 import { GridLayout } from '../../global/GridLayout';
-import img from '../../img/photo03.jpeg';
+import img from '../../img/photo.jpeg';
 import { FaLinkedinIn, FaInstagram, FaWhatsapp } from "react-icons/fa";
 import { TbBrandGithubFilled } from "react-icons/tb";
 import { useInView } from 'react-intersection-observer';
@@ -168,6 +168,7 @@ const Card = styled.a`
     opacity: 0;
     animation: ${FadeIn} 1s ease-in-out forwards;
     animation-delay: .8s;
+    transition: .3s;
 
     &:hover {
 
