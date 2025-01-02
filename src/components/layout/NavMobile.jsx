@@ -7,7 +7,7 @@ const NavIcon = styled.div`
   right: 25px;
   top: 29px;
   
-  @media(min-width: 993px) {
+  @media(min-width: 1025px) {
     display: none;
   }
 `;

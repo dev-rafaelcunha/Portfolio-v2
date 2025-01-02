@@ -16,7 +16,7 @@ const Section = styled.section`
     background-color: ${props => props.theme.themeColor};
     padding: 0 40px 80px;
 
-    @media (max-width: 1199px) {
+    @media (max-width: 1280px) {
 
         height: auto;
     }
@@ -24,7 +24,7 @@ const Section = styled.section`
 
 const Container = styled.div`
     
-    @media (max-width: 1199px) {
+    @media (max-width: 1280px) {
 
         height: auto;
     }
@@ -91,7 +91,7 @@ const CardProjects = styled.div`
     justify-content: space-between;
     align-items: center;
 
-    @media (max-width: 1199px) {
+    @media (max-width: 1280px) {
 
         justify-content: center;
     }
@@ -225,7 +225,7 @@ function Projects() {
         },
 
         {
-            title: "Sistema",
+            title: "Sistema em PHP",
             // description: "Sistema básico para treinar conceitos de back-end, feito por mim com HTML, Bootstrap, PHP e MySQL",
             description: "Link em Manutenção!",
             borderColor: "#a9dae5",

@@ -11,7 +11,7 @@ const Section = styled.section`
     background-color: #03172d;
     padding: 0 40px 80px;
 
-    @media (max-width: 1199px) {
+    @media (max-width: 1280px) {
 
         height: auto;
     }
@@ -23,7 +23,7 @@ const Container = styled.div`
     justify-content: space-between;
     animation: ${FadeIn} 1s ease-in-out forwards;
 
-    @media (max-width: 1199px) {
+    @media (max-width: 1280px) {
 
         height: auto;
         justify-content: center;
@@ -52,7 +52,7 @@ const Card = styled.div`
     width: 300px;
     background-color: #00000050;
 
-    @media (max-width: 1199px) {
+    @media (max-width: 1280px) {
 
         margin: 0 0 2rem 0;
         height: auto;
@@ -68,7 +68,7 @@ const CardData = styled.div`
     position: relative;
     padding: 1rem 2rem;
 
-    @media (max-width: 1199px) {
+    @media (max-width: 1280px) {
 
         height: auto;
     }
@@ -116,7 +116,7 @@ const Date = styled.span`
     right: 0;
     top: 0;
 
-    @media (max-width: 688px) {
+    @media (max-width: 768px) {
 
         position: inherit;
         padding: 1rem 0;
@@ -133,7 +133,7 @@ const SubtitleCardData = styled.span`
     display: block;
     font-weight: 600;
 
-    @media (max-width: 688px) {
+    @media (max-width: 768px) {
 
         padding: 0 0 1rem 0;
     }

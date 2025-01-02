@@ -2,7 +2,7 @@ import styled from "styled-components";
 import HeaderFixed from "../utils/HeaderFixed";
 
 const Navbar = styled.nav`
-    @media(max-width: 992px) {
+    @media(max-width: 1024px) {
         display: none;
     }
 `;
@@ -12,17 +12,13 @@ const Lista = styled.ul`
 `;
 
 const LinkNav = styled.a`
-    color: ${props => (props.fixedActive ? props.theme.secondaryColor : '#fff')};
+    color: ${props => props.theme.secondaryColor};
     font-size: 1rem;
     letter-spacing: .5px;
     transition: .3s;
     position: relative;
 
     &:hover {
-        color: ${props => props.theme.secondaryColor};
-    }
-
-    &.fixed-active:hover {
         color: ${props => props.theme.primaryColor};
     }
 
@@ -31,14 +27,10 @@ const LinkNav = styled.a`
         position: absolute;
         height: 2px;
         width: 0;
-        background-color: ${props => props.theme.secondaryColor};
+        background-color: ${props => props.theme.primaryColor};
         bottom: 0;
         right: 0;
         transition: .3s;
-    }
-
-    &.fixed-active::before {
-        background-color: ${props => props.theme.primaryColor};
     }
 
     &:hover::before {

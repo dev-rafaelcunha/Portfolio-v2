@@ -11,7 +11,7 @@ const Foot = styled.div`
     background-color: #03172d;
     white-space: nowrap;
 
-    @media (max-width: 767px) {
+    @media (max-width: 768px) {
 
         padding: 2rem 40px;
     }
@@ -23,7 +23,7 @@ const Container = styled.div`
     justify-content: space-between;
     align-items: center;
 
-    @media (max-width: 767px) {
+    @media (max-width: 768px) {
 
         justify-content: center;
     }
@@ -63,7 +63,7 @@ const VersionNumber = styled.span`
     font-weight: 600;
     letter-spacing: 1px;
 
-    @media (max-width: 767px) {
+    @media (max-width: 768px) {
 
         display: none;
     }
@@ -83,7 +83,7 @@ const Tecs = styled.div`
     padding: 0 30px;
     line-height: 0;
 
-    @media (max-width: 767px) {
+    @media (max-width: 768px) {
 
         display: none;
     }

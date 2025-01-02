@@ -14,7 +14,7 @@ const Section = styled.section`
     display: flex;
     align-items: center;
 
-    @media (max-width: 992px) {
+    @media (max-width: 1024px) {
 
         height: auto;
         display: flex;
@@ -37,7 +37,7 @@ const Photo = styled.img`
     opacity: 0;
     animation: ${FadeIn} 1s ease-in-out forwards;
 
-    @media (max-width: 992px) {
+    @media (max-width: 1024px) {
         width: 320px;
         height: auto;
     }
@@ -52,13 +52,13 @@ const FirstColumn = styled.div`
     
     padding: 1.5rem 2rem;
 
-    @media (max-width: 1199px) {
+    @media (max-width: 1280px) {
 
         display: flex;
         justify-content: center;
     }
 
-    @media (max-width: 992px) {
+    @media (max-width: 1024px) {
 
         width: 100%;
     }
@@ -71,7 +71,7 @@ const SecondColumn = styled.div`
     justify-content: center;
     padding: 40px 0;
 
-    @media (max-width: 992px) {
+    @media (max-width: 1024px) {
 
         align-items: center;
         padding: 20px 0;
@@ -87,7 +87,7 @@ const Title = styled.span`
     animation: ${FadeIn} 1s ease-in-out forwards;
     animation-delay: .3s;
 
-    @media (max-width: 992px) {
+    @media (max-width: 1024px) {
 
         display: flex;
         justify-content: center;
@@ -102,7 +102,7 @@ const Name = styled.h1`
     animation: ${FadeIn} 1s ease-in-out forwards;
     animation-delay: .3s;
 
-    @media (max-width: 992px) {
+    @media (max-width: 1024px) {
 
         display: flex;
         justify-content: center;
@@ -119,7 +119,7 @@ const Description = styled.span`
     animation: ${FadeIn} 1s ease-in-out forwards;
     animation-delay: .3s;
 
-    @media (max-width: 992px) {
+    @media (max-width: 1024px) {
 
         display: flex;
         justify-content: center;
@@ -139,7 +139,7 @@ const Text = styled.p`
     animation: ${FadeIn} 1s ease-in-out forwards;
     animation-delay: .6s;
 
-    @media (max-width: 992px) {
+    @media (max-width: 1024px) {
 
         text-align: center;
         padding: 0   20px;
@@ -234,9 +234,9 @@ function About() {
                         <SecondColumn className="col">
                             <Title ref={refTitle} style={{ animationPlayState: inViewTitle ? 'running' : 'paused' }}>Sobre mim</Title>
                             <Name className="mt-2" ref={refName} style={{ animationPlayState: inViewName ? 'running' : 'paused' }}>Rafael Cunha</Name>
-                            <Description className="mt-2" ref={refDescription} style={{ animationPlayState: inViewDescription ? 'running' : 'paused' }}>Front-End Developer</Description>
+                            <Description ref={refDescription} style={{ animationPlayState: inViewDescription ? 'running' : 'paused' }}>Desenvolvedor Front-end</Description>
                             <Text ref={refText} style={{ animationPlayState: inViewText ? 'running' : 'paused' }}>
-                                Meu nome é <strong>Rafael Cunha</strong>, tenho 28 anos, atualmente estou trabalhando na empresa <strong>Tork Company</strong> como
+                                Meu nome é <strong>Rafael Cunha</strong>, tenho 28 anos, atualmente estou trabalhando na empresa <strong>Convertr </strong> como
                                 <strong> Desenvolvedor Júnior</strong> e cursando <strong>Engenharia de Software</strong> pela <strong>UNINTER</strong>.<br /><br />
                                 Passei minha vida buscando algo que realmente fizesse sentido,
                                 até me deparar com o mundo de desenvolvimento, onde estou feliz, empolgado e totalmente focado, me aperfeiçoando

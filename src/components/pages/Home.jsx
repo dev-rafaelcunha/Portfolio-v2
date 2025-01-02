@@ -12,7 +12,7 @@ const Main = styled.main`
     height: 89.5vh;
     background-color: ${props => props.theme.themeColor};
 
-    @media (max-width: 992px) {
+    @media (max-width: 1024px) {
 
         padding: 0 !important;
     }
@@ -22,7 +22,7 @@ const Grid = styled.div`
 
     height: 89.5vh;
 
-    @media (max-width: 992px) {
+    @media (max-width: 1024px) {
 
         display: flex !important;
         padding: 0 30px;
@@ -34,7 +34,7 @@ const FirstColumn = styled.div`
     background-color: ${props => props.theme.themeColor};
     z-index: 100;
 
-    @media (max-width: 992px) {
+    @media (max-width: 1024px) {
 
         text-align: center !important;
         width: 100% !important;
@@ -49,7 +49,7 @@ const Title = styled.span`
     display: block;
     animation: ${FadeIn} 1s ease-in-out forwards;
 
-    @media (max-width: 992px) {
+    @media (max-width: 1024px) {
 
         font-size: 2.2rem;
         white-space: normal !important;
@@ -63,30 +63,9 @@ const SubTitle = styled.span`
     color: ${props => props.theme.primaryColor};
     font-weight: 600;
 
-    @media (max-width: 992px) {
+    @media (max-width: 1024px) {
 
         white-space: normal !important;
-    }
-`;
-
-const SecondColumn = styled.div`
-
-    right: 0;
-`;
-
-const Logo = styled.span`
-
-    font-size: 330px;
-    font-family: monospace;
-    font-weight: bold;
-    color: transparent;
-    background-image: linear-gradient(to left, transparent, #f52754);
-    -webkit-background-clip: text;
-    background-clip: text;
-
-    @media (max-width: 1200px) {
-        
-        display: none !important;
     }
 `;
 
@@ -95,7 +74,7 @@ const ContainerSocial = styled.div`
     width: 590px;
     display: flex;
 
-    @media (max-width: 992px) {
+    @media (max-width: 1024px) {
 
         justify-content: center !important;
         width: auto !important;
@@ -104,8 +83,6 @@ const ContainerSocial = styled.div`
 `;
 
 function Home() {
-
-    const logo = "";
 
     const [refTitle, inViewTitle] = useInView({
         triggerOnce: true,
@@ -128,9 +105,6 @@ function Home() {
                                     <CustomButton02 href="https://www.linkedin.com/in/devrafaelcunha/" target="blank" className="mx-0" text="Linkedin"></CustomButton02>
                                 </ContainerSocial>
                             </FirstColumn>
-                            {/* <SecondColumn className="position-absolute">
-                            <Logo>{logo}</Logo>
-                        </SecondColumn> */}
                         </Grid>
                     </GridLayout>
                 </Main>

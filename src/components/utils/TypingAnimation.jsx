@@ -28,11 +28,11 @@ const Typing = styled.div`
     font-size: 19px;
   }
 
-  @media (max-width: 1200px) {
+  @media (max-width: 1280px) {
     padding: 15 0px;
   }
 
-  @media (max-width: 993px) {
+  @media (max-width: 1024px) {
     width: inherit !important;
     padding: 15px;
   }

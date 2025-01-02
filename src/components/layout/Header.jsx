@@ -13,7 +13,7 @@ const Move = keyframes`
 
 const Heading = styled.header`
 
-    background-color: ${props => props.theme.primaryColor};
+    background-color: ${props => props.theme.themeColor};
     z-index: 101;
     padding: 0 40px;
     position: fixed;
@@ -21,12 +21,13 @@ const Heading = styled.header`
     left: 0;
     width: 100%;
     transition: .3s;
-    border-bottom: 2px solid ${props => props.theme.secondaryColor};
 
     &.fixed-active  {
-        background-color: ${props => props.theme.themeColor};
-        border: none;
-        padding: 25px;
+        padding: 25px 40px;
+    }
+
+    &:not(.fixed-active) {
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     }
 `;
 
@@ -36,7 +37,7 @@ const HeadingData = styled.div`
     justify-content: space-between;
     align-items: center;
 
-    @media (max-width: 993px) {
+    @media (max-width: 1024px) {
 
         display: inherit !important;
     }
@@ -45,7 +46,7 @@ const HeadingData = styled.div`
 const Name = styled.span`
 
     text-decoration: none;
-    color: ${props => (props.fixedActive ? props.theme.secondaryColor : '#fff')};
+    color: ${props => props.theme.secondaryColor};
     font-size: 30px;
     font-weight: bold;
     font-family:"Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
@@ -59,7 +60,7 @@ const Logo = styled.span`
     transition: 3s ease-in-out;
     position: relative;
     font-size: 30px;
-    color: ${props => (props.fixedActive ? props.theme.primaryColor : props.theme.secondaryColor)};
+    color: ${props => props.theme.primaryColor};
     left: 110px;
     font-family: monospace;
     font-weight: bold;

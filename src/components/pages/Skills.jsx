@@ -15,7 +15,7 @@ const Section = styled.section`
     background-color: ${props => props.theme.themeColor};
     padding: 0 40px 80px;
 
-    @media (max-width: 1199px) {
+    @media (max-width: 1280px) {
 
         height: auto;
         padding-bottom: 80px;
@@ -35,7 +35,7 @@ const Container = styled.div`
     
     display: flex;
 
-    @media (max-width: 1199px) {
+    @media (max-width: 1280px) {
 
         height: auto;
     }
@@ -54,7 +54,7 @@ const CardSkills = styled.div`
     justify-content: space-between;
     align-items: center;
 
-    @media (max-width: 1199px) {
+    @media (max-width: 1280px) {
 
         justify-content: center;
     }
@@ -92,7 +92,7 @@ const Card = styled.a`
         animation-delay: ${props => props.DelaySmall}
     } 
 
-    @media (max-width: 767px) {
+    @media (max-width: 768px) {
 
         height: 190px;
         width: 190px;
