@@ -27,6 +27,10 @@ const Title = styled.h1`
     padding: 60px 0;
     margin: 0;
     animation: ${FadeIn} 1s ease-in-out forwards;
+
+    & b {
+        color: ${props => props.theme.primaryColor};
+    }
 `;
 
 const Container = styled.div`
@@ -107,37 +111,40 @@ const DescriptionSkills = styled.span`
 
 function Skills() {
     const skillsData = [
-        { icon: <AiOutlineHtml5 />, title: "HTML5", description: "Marcação de Texto.", fontSize: "5rem", animationDelay: "1s" },
-        { icon: <FaCss3 />, title: "CSS3", description: "Estilização.", fontSize: "5rem", animationDelay: "1.3s" },
-        { icon: <BsBootstrap />, title: "Bootstrap", description: "Framework para Estilização.", fontSize: "5rem", animationDelay: "1.6s" },
-        { icon: <IoLogoJavascript />, title: "JavaScript", description: "Interatividade.", fontSize: "5rem", animationDelay: "1.9s" },
-        { icon: <FaVuejs />, title: "Vue", description: "Reatividade.", fontSize: "5rem", animationDelay: "2.2s" },
-        { icon: <FaReact />, title: "React", description: "Reatividade.", fontSize: "5rem", animationDelay: "1.9s" },
-        { icon: <SiStyledcomponents />, title: "Styled Components", description: "Biblioteca para Estilizar Components React.", fontSize: "8rem", animationDelay: "2.2s" },
-        { icon: <FaPhp />, title: "PHP", description: "Linguagem de Programação.", fontSize: "8rem", animationDelay: "2.6s" },
-        { icon: <FaDatabase />, title: "Banco de Dados", description: "MySQL e PostgreSQL", fontSize: "5rem", animationDelay: "2.9s" },
-        { icon: <IoMdGitMerge />, title: "Git", description: "Versionamento de Códigos.", fontSize: "5rem", animationDelay: "3.1s" },
-        { icon: <FiTrello />, title: "Trello", description: "Métodologias Ágeis", fontSize: "5rem", animationDelay: "3.4s" },
-        { icon: '?', title: "Nova Habilidade", description: "Aguarde...", fontSize: "5rem", animationDelay: "3.7s" },
-        { icon: '?', title: "Nova Habilidade", description: "Aguarde...", fontSize: "5rem", animationDelay: "4s" },
-        { icon: '?', title: "Nova Habilidade", description: "Aguarde...", fontSize: "5rem", animationDelay: "4.3s" },
-        { icon: '?', title: "Nova Habilidade", description: "Aguarde...", fontSize: "5rem", animationDelay: "4.6s" }
+        { icon: <AiOutlineHtml5 />, title: "HTML5", description: "Marcação de Texto.", fontSize: "5rem", animationDelay: "0" },
+        { icon: <FaCss3 />, title: "CSS3", description: "Estilização.", fontSize: "5rem", animationDelay: ".3s" },
+        { icon: <BsBootstrap />, title: "Bootstrap", description: "Framework para Estilização.", fontSize: "5rem", animationDelay: ".6s" },
+        { icon: <IoLogoJavascript />, title: "JavaScript", description: "Interatividade.", fontSize: "5rem", animationDelay: ".9s" },
+        { icon: <FaVuejs />, title: "Vue", description: "Reatividade.", fontSize: "5rem", animationDelay: "1.2s" },
+        { icon: <FaReact />, title: "React", description: "Reatividade.", fontSize: "5rem", animationDelay: "1.5s" },
+        { icon: <SiStyledcomponents />, title: "Styled Components", description: "Biblioteca para Estilizar Components React.", fontSize: "8rem", animationDelay: "1.8s" },
+        { icon: <FaPhp />, title: "PHP", description: "Linguagem de Programação.", fontSize: "8rem", animationDelay: "2.1s" },
+        { icon: <FaDatabase />, title: "Banco de Dados", description: "MySQL e PostgreSQL", fontSize: "5rem", animationDelay: "2.4s" },
+        { icon: <IoMdGitMerge />, title: "Git", description: "Versionamento de Códigos.", fontSize: "5rem", animationDelay: "2.7s" },
+        { icon: <FiTrello />, title: "Trello", description: "Métodologias Ágeis", fontSize: "5rem", animationDelay: "3s" },
+        { icon: '?', title: "Nova Habilidade", description: "Aguarde...", fontSize: "5rem", animationDelay: "3.3s" },
+        { icon: '?', title: "Nova Habilidade", description: "Aguarde...", fontSize: "5rem", animationDelay: "3.6s" },
+        { icon: '?', title: "Nova Habilidade", description: "Aguarde...", fontSize: "5rem", animationDelay: "3.9s" },
+        { icon: '?', title: "Nova Habilidade", description: "Aguarde...", fontSize: "5rem", animationDelay: "4.2s" }
     ];
 
-    const [inViewRefs, setInViewRefs] = React.useState(skillsData.map(() => React.createRef()));
-
-    const [refTitle, inViewTitle] = useInView({
+    const { ref: refTitle, inView: inViewTitle } = useInView({
         triggerOnce: true,
-        threshold: 1
+        threshold: .1,
     });
 
-    const getAnimationPlayState = (index) => inViewRefs[index]?.current ? 'running' : 'paused';
+    const { ref: refSkill, inView: inViewSkill } = useInView({
+        triggerOnce: true,
+        threshold: .1,
+    });
 
     return (
         <ThemeProvider theme={LightTheme}>
             <Section id="skills">
                 <GridLayout>
-                    <Title ref={refTitle} style={{ animationPlayState: inViewTitle ? 'running' : 'paused' }}>Habilidades</Title>
+                    <Title ref={refTitle} style={{ animationPlayState: inViewTitle ? 'running' : 'paused' }}>
+                        Habilidades <b>.</b>
+                    </Title>
                     <Container>
                         <CardSkills>
                             {skillsData.map((skill, index) => (
@@ -145,8 +152,10 @@ function Skills() {
                                     key={index}
                                     fontSize={skill.fontSize}
                                     animationDelay={skill.animationDelay}
-                                    ref={inViewRefs[index]}
-                                    style={{ animationPlayState: getAnimationPlayState(index) }}
+                                    ref={refSkill}
+                                    style={{
+                                        animationPlayState: inViewSkill ? 'running' : 'paused',
+                                    }}
                                     className="rounded"
                                 >
                                     {skill.icon}
