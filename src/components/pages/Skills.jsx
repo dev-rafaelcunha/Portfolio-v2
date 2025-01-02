@@ -128,14 +128,15 @@ function Skills() {
         { icon: '?', title: "Nova Habilidade", description: "Aguarde...", fontSize: "5rem", animationDelay: "4.2s" }
     ];
 
+    // Estado para ativar a animação somente quando estiver na seção.
     const { ref: refTitle, inView: inViewTitle } = useInView({
         triggerOnce: true,
-        threshold: .1,
+        threshold: 0.1,
     });
 
     const { ref: refSkill, inView: inViewSkill } = useInView({
         triggerOnce: true,
-        threshold: .1,
+        threshold: 0.1,
     });
 
     return (

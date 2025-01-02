@@ -48,7 +48,7 @@ const Point = styled.span`
 
 const Card = styled.div`
     
-    height: 300px;
+    
     width: 300px;
     background-color: #00000050;
 
@@ -62,17 +62,18 @@ const Card = styled.div`
 
 const CardData = styled.div`
     
-    height: 300px;
     width: 698px;
     background-color: #00000050;
     position: relative;
     padding: 1rem 2rem;
-
-    @media (max-width: 1280px) {
-
-        height: auto;
-    }
 `;
+
+const CardDataWrapper = styled.div`
+    
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+`
 
 const TitleCard = styled.a`
     
@@ -109,12 +110,8 @@ const TitleCardData = styled.span`
 const Date = styled.span`
     
     color: #ccc;
-    padding: 1.5rem 2rem;
     font-size: 1rem;
     letter-spacing: .5px;
-    position: absolute;
-    right: 0;
-    top: 0;
 
     @media (max-width: 768px) {
 
@@ -150,19 +147,26 @@ const TextCardData = styled.span`
 function Experiences() {
 
     // Ativar/Mostrar conteúdo ao clicar na empresa.
-    const [activeTitleCard, setActiveTitleCard] = useState('Tork Company');
+    const [activeTitleCard, setActiveTitleCard] = useState('Tork');
 
     const handleLinkClick = (card) => {
         setActiveTitleCard(card);
     };
 
     // Mostrar período da experiência de forma automática
-    const calculateWorkPeriod = (startDate) => {
+    const calculateWorkPeriod = (startDate, endDate) => {
         const start = moment(startDate, 'DD/MM/YYYY');
-        const end = moment(); // Data atual
-        const duration = moment.duration(end.diff(start));
-        const months = duration.asMonths();
-        return Math.round(months) + ' Meses';
+        const end = endDate ? moment(endDate, 'DD/MM/YYYY') : moment();
+
+        const years = end.diff(start, 'years');
+        start.add(years, 'years');
+
+        const months = end.diff(start, 'months');
+
+        const yearText = years > 0 ? `${years} ${years === 1 ? 'ano' : 'anos'}` : '';
+        const monthText = months > 0 ? `${months} ${months === 1 ? 'mês' : 'meses'}` : '';
+
+        return `${yearText}${yearText && monthText ? ' e ' : ''}${monthText}`;
     };
 
     // Estado para ativar a animação somente quando estiver na seção.
@@ -184,31 +188,42 @@ function Experiences() {
                     <Container ref={refContainer} style={{ animationPlayState: inViewContainer ? 'running' : 'paused' }}>
                         <Card>
                             <TitleCard
-                                className={`${activeTitleCard === 'Tork Company' ? 'active' : ''}`}
-                                onClick={() => handleLinkClick('Tork Company')}>
+                                className={`${activeTitleCard === 'Tork' ? 'active' : ''}`}
+                                onClick={() => handleLinkClick('Tork')}>
                                 Tork Company
                             </TitleCard>
                             <TitleCard
-                                className={`${activeTitleCard === 'Sem Registro' ? 'active' : ''}`}
-                                onClick={() => handleLinkClick('Sem Registro')}>
-                                Sem Registro
+                                className={`${activeTitleCard === 'Convertr' ? 'active' : ''}`}
+                                onClick={() => handleLinkClick('Convertr')}>
+                                Convertr
                             </TitleCard>
                         </Card>
-                        {activeTitleCard === 'Tork Company' && (
+                        {activeTitleCard === 'Tork' && (
                             <CardData>
-                                <TitleCardData>Desenvolvedor <span className="ps-1">FullStack</span></TitleCardData>
-                                <Date>{`Atualmente (${calculateWorkPeriod('10/04/2023')})`}</Date>
+                                <CardDataWrapper>
+                                    <TitleCardData>Desenvolvedor <span className="ps-1">FullStack</span></TitleCardData>
+                                    <Date>{`Contrato finalizado. (${calculateWorkPeriod('01/04/2023', '19/04/2024')})`}</Date>
+                                </CardDataWrapper>
                                 <SubtitleCardData>Tork Company</SubtitleCardData>
                                 <TextCardData>
-                                    Desenvolvo aplicações web, manutenção nos softwares existentes e dashboards utilizando bibliotecas JavaScript. <br /><br />
+                                    Desenvolvimento de aplicações web, manutenção de softwares existentes e criação de dashboards utilizando bibliotecas JavaScript. <br /><br />
                                     <span className="fs-6 fw-semibold text-light">Linguagens utilizadas: <br /></span>
                                     <span className="fs-6 d-block mt-1">HTML - CSS - Bootstrap - JavaScript - PHP - PostgreSQL</span>
                                 </TextCardData>
                             </CardData>
                         )}
-                        {activeTitleCard === 'Sem Registro' && (
+                        {activeTitleCard === 'Convertr' && (
                             <CardData>
-                                {/* Conteúdo para o card Sem Registro */}
+                                <CardDataWrapper>
+                                    <TitleCardData>Desenvolvedor <span className="ps-1">Front-end</span></TitleCardData>
+                                    <Date>{`Atualmente (${calculateWorkPeriod('26/03/2024')})`}</Date>
+                                </CardDataWrapper>
+                                <SubtitleCardData>Convertr Commerce</SubtitleCardData>
+                                <TextCardData>
+                                    Desenvolvimento de e-commerces do zero, replicando fielmente os designs criados no Figma e implementando novas funcionalidades solicitadas pelos clientes em lojas existentes. <br /><br />
+                                    <span className="fs-6 fw-semibold text-light">Linguagens utilizadas: <br /></span>
+                                    <span className="fs-6 d-block mt-1">Vue - CSS</span>
+                                </TextCardData>
                             </CardData>
                         )}
                     </Container>
