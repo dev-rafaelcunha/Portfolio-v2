@@ -195,7 +195,7 @@ function Experiences() {
                             <TitleCard
                                 className={`${activeTitleCard === 'Convertr' ? 'active' : ''}`}
                                 onClick={() => handleLinkClick('Convertr')}>
-                                Convertr
+                                Convertr Commerce
                             </TitleCard>
                         </Card>
                         {activeTitleCard === 'Tork' && (
