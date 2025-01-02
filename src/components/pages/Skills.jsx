@@ -1,8 +1,10 @@
+import React from 'react';
 import styled, { ThemeProvider } from 'styled-components';
 import { LightTheme } from "../../global/Theme";
 import { GridLayout } from '../../global/GridLayout';
 import { AiOutlineHtml5 } from "react-icons/ai";
 import { FaCss3, FaReact, FaPhp, FaDatabase } from "react-icons/fa";
+import { FaVuejs } from "react-icons/fa6";
 import { IoLogoJavascript, IoMdGitMerge } from "react-icons/io";
 import { BsBootstrap } from "react-icons/bs";
 import { SiStyledcomponents } from "react-icons/si";
@@ -11,19 +13,15 @@ import { useInView } from 'react-intersection-observer';
 import { FadeIn } from '../../global/FadeIn';
 
 const Section = styled.section`
-    
     background-color: ${props => props.theme.themeColor};
     padding: 0 40px 80px;
-
     @media (max-width: 1280px) {
-
         height: auto;
         padding-bottom: 80px;
     }
 `;
 
 const Title = styled.h1`
-
     text-align: center;
     color: #444;
     padding: 60px 0;
@@ -32,30 +30,19 @@ const Title = styled.h1`
 `;
 
 const Container = styled.div`
-    
     display: flex;
-
     @media (max-width: 1280px) {
-
         height: auto;
     }
 `;
 
-const Point = styled.span`
-    
-    color: ${props => props.theme.primaryColor};
-`;
-
 const CardSkills = styled.div`
-    
     display: flex;
     flex-wrap: wrap;
     gap: 22px;
     justify-content: space-between;
     align-items: center;
-
     @media (max-width: 1280px) {
-
         justify-content: center;
     }
 `;
@@ -73,7 +60,7 @@ const Card = styled.a`
     justify-content: center;
     position: relative;
     animation: ${FadeIn} 1s ease-in-out forwards;
-    animation-delay: ${props => props.AnimationDelay};
+    animation-delay: ${props => props.animationDelay};
     opacity: 0;
 
     &:hover {
@@ -82,29 +69,11 @@ const Card = styled.a`
         color: ${props => props.theme.themeColor};
     }
 
-    @media (min-width: 994px) and (max-width: 1225px) {
-
-        animation-delay: ${props => props.DelayLarge}
-    }
-    
-    @media (min-width: 702px) and (max-width: 994px) {
-
-        animation-delay: ${props => props.DelaySmall}
-    } 
-
     @media (max-width: 768px) {
-
         height: 190px;
         width: 190px;
     }
-
-    @media (max-width: 702px) {
-
-        animation-delay: ${props => props.DelayMobile}
-    }
-
     @media (max-width: 480px) {
-
         height: 155px;
         width: 46.6%;
         white-space: nowrap;
@@ -112,153 +81,72 @@ const Card = styled.a`
 `;
 
 const TitleSkills = styled.span`
-    
     font-size: 1rem;
     position: absolute;
     color: ${props => props.theme.themeColor};
     font-weight: bold;
     top: 3px;
     padding: 5px;
-
     @media (max-width: 480px) {
-        
         display: none;
     }
 `;
 
 const DescriptionSkills = styled.span`
-    
     font-size: .8rem;
     position: absolute;
     bottom: 3px;
     text-align: center;
     color: ${props => props.theme.themeColor};
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-family: 'Lucida Sans', sans-serif;
     padding: 5px 14px;
-
     @media (max-width: 480px) {
-        
         display: none;
     }
 `;
 
 function Skills() {
-
     const skillsData = [
-        { icon: <AiOutlineHtml5 />, title: "HTML5", description: "Marcação de Texto.", fontSize: "5rem", AnimationDelay: "1s" },
-        { icon: <FaCss3 />, title: "CSS3", description: "Estilização.", fontSize: "5rem", AnimationDelay: "1.3s" },
-        { icon: <BsBootstrap />, title: "Bootstrap", description: "Framework para Estilização.", fontSize: "5rem", AnimationDelay: "1.6s", DelayMobile: "1s" },
-        { icon: <IoLogoJavascript />, title: "JavaScript", description: "Interatividade.", fontSize: "5rem", AnimationDelay: "1.9s", DelaySmall: "1.3s", DelayMobile: "1.3s" },
-        { icon: <FaReact />, title: "React", description: "Reatividade.", fontSize: "5rem", AnimationDelay: "2.2s", DelayLarge: "1.6s", DelaySmall: "1.6s", DelayMobile: "1s" },
-        { icon: <SiStyledcomponents />, title: "Styled Components", description: "Biblioteca para Estilizar Components React.", fontSize: "8rem", AnimationDelay: "1.9s", DelayMobile: "1.3s" },
-        { icon: <FaPhp />, title: "PHP", description: "Linguagem de Programação.", fontSize: "8rem", AnimationDelay: "2.2s", DelaySmall: "1.6s", DelayMobile: "1s" },
-        { icon: <FaDatabase />, title: "Banco de Dados", description: "MySQL e PostgreSQL", fontSize: "5rem", AnimationDelay: "2.5s", DelaySmall: "1.9s", DelayMobile: "1.3s" },
-        { icon: <IoMdGitMerge />, title: "Git", description: "Versionamento de Códigos.", fontSize: "5rem", AnimationDelay: "2.8s", DelaySmall: "2.2s", DelayLarge: "2.2s", DelayMobile: "1s" },
-        { icon: <FiTrello />, title: "Trello", description: "Métodologias Ágeis", fontSize: "5rem", AnimationDelay: "3.1s", DelayLarge: "2.5s", DelaySmall: "1.9s", DelayMobile: "1.3s" }
+        { icon: <AiOutlineHtml5 />, title: "HTML5", description: "Marcação de Texto.", fontSize: "5rem", animationDelay: "1s" },
+        { icon: <FaCss3 />, title: "CSS3", description: "Estilização.", fontSize: "5rem", animationDelay: "1.3s" },
+        { icon: <BsBootstrap />, title: "Bootstrap", description: "Framework para Estilização.", fontSize: "5rem", animationDelay: "1.6s" },
+        { icon: <IoLogoJavascript />, title: "JavaScript", description: "Interatividade.", fontSize: "5rem", animationDelay: "1.9s" },
+        { icon: <FaVuejs />, title: "Vue", description: "Reatividade.", fontSize: "5rem", animationDelay: "2.2s" },
+        { icon: <FaReact />, title: "React", description: "Reatividade.", fontSize: "5rem", animationDelay: "1.9s" },
+        { icon: <SiStyledcomponents />, title: "Styled Components", description: "Biblioteca para Estilizar Components React.", fontSize: "8rem", animationDelay: "2.2s" },
+        { icon: <FaPhp />, title: "PHP", description: "Linguagem de Programação.", fontSize: "8rem", animationDelay: "2.6s" },
+        { icon: <FaDatabase />, title: "Banco de Dados", description: "MySQL e PostgreSQL", fontSize: "5rem", animationDelay: "2.9s" },
+        { icon: <IoMdGitMerge />, title: "Git", description: "Versionamento de Códigos.", fontSize: "5rem", animationDelay: "3.1s" },
+        { icon: <FiTrello />, title: "Trello", description: "Métodologias Ágeis", fontSize: "5rem", animationDelay: "3.4s" },
+        { icon: '?', title: "Nova Habilidade", description: "Aguarde...", fontSize: "5rem", animationDelay: "3.7s" },
+        { icon: '?', title: "Nova Habilidade", description: "Aguarde...", fontSize: "5rem", animationDelay: "4s" },
+        { icon: '?', title: "Nova Habilidade", description: "Aguarde...", fontSize: "5rem", animationDelay: "4.3s" },
+        { icon: '?', title: "Nova Habilidade", description: "Aguarde...", fontSize: "5rem", animationDelay: "4.6s" }
     ];
+
+    const [inViewRefs, setInViewRefs] = React.useState(skillsData.map(() => React.createRef()));
 
     const [refTitle, inViewTitle] = useInView({
         triggerOnce: true,
         threshold: 1
     });
 
-    const [refHtml, inViewHtml] = useInView({
-        triggerOnce: true,
-        threshold: 0.1
-    });
-
-    const [refCss, inViewCss] = useInView({
-        triggerOnce: true,
-        threshold: 0.1
-    });
-
-    const [refBootstrap, inViewBootstrap] = useInView({
-        triggerOnce: true,
-        threshold: 0.1
-    });
-
-    const [refJavascript, inViewJavascript] = useInView({
-        triggerOnce: true,
-        threshold: 0.1
-    });
-
-    const [refReact, inViewReact] = useInView({
-        triggerOnce: true,
-        threshold: 0.1
-    });
-
-    const [refStyledComponents, inViewStyledComponents] = useInView({
-        triggerOnce: true,
-        threshold: 0.1
-    });
-
-    const [refPhp, inViewPhp] = useInView({
-        triggerOnce: true,
-        threshold: 0.1
-    });
-
-    const [refDatabase, inViewDatabase] = useInView({
-        triggerOnce: true,
-        threshold: 0.1
-    });
-
-    const [refGit, inViewGit] = useInView({
-        triggerOnce: true,
-        threshold: 0.1
-    });
-
-    const [refTrello, inViewTrello] = useInView({
-        triggerOnce: true,
-        threshold: 0.1
-    });
-
-    skillsData[0].ref = refHtml;
-    skillsData[0].style = { animationPlayState: inViewHtml ? 'running' : 'paused' };
-
-    skillsData[1].ref = refCss;
-    skillsData[1].style = { animationPlayState: inViewCss ? 'running' : 'paused' };
-
-    skillsData[2].ref = refBootstrap;
-    skillsData[2].style = { animationPlayState: inViewBootstrap ? 'running' : 'paused' };
-
-    skillsData[3].ref = refJavascript;
-    skillsData[3].style = { animationPlayState: inViewJavascript ? 'running' : 'paused' };
-
-    skillsData[4].ref = refReact;
-    skillsData[4].style = { animationPlayState: inViewReact ? 'running' : 'paused' };
-
-    skillsData[5].ref = refStyledComponents;
-    skillsData[5].style = { animationPlayState: inViewStyledComponents ? 'running' : 'paused' };
-
-    skillsData[6].ref = refPhp;
-    skillsData[6].style = { animationPlayState: inViewPhp ? 'running' : 'paused' };
-
-    skillsData[7].ref = refDatabase;
-    skillsData[7].style = { animationPlayState: inViewDatabase ? 'running' : 'paused' };
-
-    skillsData[8].ref = refGit;
-    skillsData[8].style = { animationPlayState: inViewGit ? 'running' : 'paused' };
-
-    skillsData[9].ref = refTrello;
-    skillsData[9].style = { animationPlayState: inViewTrello ? 'running' : 'paused' };
+    const getAnimationPlayState = (index) => inViewRefs[index]?.current ? 'running' : 'paused';
 
     return (
         <ThemeProvider theme={LightTheme}>
             <Section id="skills">
                 <GridLayout>
-                    <Title ref={refTitle} style={{ animationPlayState: inViewTitle ? 'running' : 'paused' }}>Habilidades<Point> .</Point></Title>
+                    <Title ref={refTitle} style={{ animationPlayState: inViewTitle ? 'running' : 'paused' }}>Habilidades</Title>
                     <Container>
                         <CardSkills>
                             {skillsData.map((skill, index) => (
                                 <Card
                                     key={index}
                                     fontSize={skill.fontSize}
-                                    AnimationDelay={skill.AnimationDelay}
-                                    DelayMobile={skill.DelayMobile}
-                                    DelaySmall={skill.DelaySmall}
-                                    DelayLarge={skill.DelayLarge}
-                                    ref={skill.ref}
-                                    style={skill.style}
+                                    animationDelay={skill.animationDelay}
+                                    ref={inViewRefs[index]}
+                                    style={{ animationPlayState: getAnimationPlayState(index) }}
                                     className="rounded"
                                 >
                                     {skill.icon}
