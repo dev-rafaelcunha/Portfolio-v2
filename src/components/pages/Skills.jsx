@@ -122,10 +122,10 @@ function Skills() {
         { icon: <FaDatabase />, title: "Banco de Dados", description: "MySQL e PostgreSQL", fontSize: "5rem", animationDelay: "2.4s" },
         { icon: <IoMdGitMerge />, title: "Git", description: "Versionamento de Códigos.", fontSize: "5rem", animationDelay: "2.7s" },
         { icon: <FiTrello />, title: "Trello", description: "Métodologias Ágeis", fontSize: "5rem", animationDelay: "3s" },
-        { icon: '?', title: "Nova Habilidade", description: "Aguarde...", fontSize: "5rem", animationDelay: "3.3s" },
-        { icon: '?', title: "Nova Habilidade", description: "Aguarde...", fontSize: "5rem", animationDelay: "3.6s" },
-        { icon: '?', title: "Nova Habilidade", description: "Aguarde...", fontSize: "5rem", animationDelay: "3.9s" },
-        { icon: '?', title: "Nova Habilidade", description: "Aguarde...", fontSize: "5rem", animationDelay: "4.2s" }
+        { icon: '?', title: "Nova Habilidade", description: "Disponível em breve...", fontSize: "5rem", animationDelay: "3.3s" },
+        { icon: '?', title: "Nova Habilidade", description: "Disponível em breve...", fontSize: "5rem", animationDelay: "3.6s" },
+        { icon: '?', title: "Nova Habilidade", description: "Disponível em breve...", fontSize: "5rem", animationDelay: "3.9s" },
+        { icon: '?', title: "Nova Habilidade", description: "Disponível em breve...", fontSize: "5rem", animationDelay: "4.2s" }
     ];
 
     // Estado para ativar a animação somente quando estiver na seção.
