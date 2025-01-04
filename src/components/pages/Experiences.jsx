@@ -216,7 +216,7 @@ function Experiences() {
                             <CardData>
                                 <CardDataWrapper>
                                     <TitleCardData>Desenvolvedor <span className="ps-1">Front-end</span></TitleCardData>
-                                    <Date>{`Atualmente (${calculateWorkPeriod('26/03/2024')})`}</Date>
+                                    <Date>{`Atualmente (${calculateWorkPeriod('22/04/2024')})`}</Date>
                                 </CardDataWrapper>
                                 <SubtitleCardData>Convertr Commerce</SubtitleCardData>
                                 <TextCardData>

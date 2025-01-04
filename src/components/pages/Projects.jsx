@@ -37,11 +37,10 @@ const Title = styled.h1`
     padding: 60px 0;
     margin: 0;
     animation: ${FadeIn} 1s ease-in-out forwards;
-`;
 
-const Point = styled.span`
-    
-    color: ${props => props.theme.primaryColor};
+    & b {
+        color: ${props => props.theme.primaryColor};
+    }
 `;
 
 const Card = styled.div`
@@ -52,7 +51,7 @@ const Card = styled.div`
     background-repeat: no-repeat;
     background-size: cover;
     border: ${props => props.Border};
-    transition: 1s all ease;
+    transition: .3s;
     background-color: #444;
     padding: 0 2rem;
     display: flex;
@@ -99,23 +98,44 @@ const CardProjects = styled.div`
 
 const Repository = styled.a`
     
-    color: #444;
-    margin: 30px 0 0;
-    display: flex;
+    color: ${props => props.theme.primaryColor};
+    margin: 40px auto 0;
     font-size: 1.2rem;
-    justify-content: center;
     width: fit-content;
     font-weight: 600;
     text-decoration: none;
     animation: ${FadeIn} 1s ease-in-out forwards;
     animation-delay: .8s;
     opacity: 0;
+    cursor: pointer;
+    overflow: hidden;
+    border: 1px solid;
+    padding: 6px 8px;
+    min-width: 240px;
+    text-align: center;
 
+    &::before {
+        content: 'Ir para o GitHub >>';
+        position: absolute;
+        height: 100%;
+        width: 0;
+        background-color: ${props => props.theme.primaryColor};
+        left: 0;
+        top: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: .3s;
+        color: #fff;
+        visibility: hidden;
+        opacity: 0;
+        text-wrap: nowrap;
+    }
 
-    &:hover {
-        
-        color: ${props => props.theme.primaryColor};
-        cursor: pointer;
+    &:hover::before {
+        width: 100%;
+        visibility: visible;
+        opacity: 1;
     }
 
     @media (max-width: 480px) {
@@ -152,6 +172,7 @@ const ButtonCard = styled.a`
     position: absolute;
     bottom: 20px;
     text-decoration: none;
+    transition: .3s;
 
     &:hover {
        background-color: ${props => props.hover};
@@ -189,7 +210,7 @@ function Projects() {
             image: project01,
             link: "http://localhost/portfolio/",
             backgroundColor: "#dc3545",
-            AnimationDelay: "1s",
+            AnimationDelay: ".3s",
             disabled: true
         },
         {
@@ -199,7 +220,7 @@ function Projects() {
             image: project02,
             link: "https://netflix-clone-nu-gules.vercel.app/",
             backgroundColor: "#e50914",
-            AnimationDelay: "1.3s",
+            AnimationDelay: ".6s",
             DelayMobile: "1s"
         },
         {
@@ -209,7 +230,7 @@ function Projects() {
             image: project03,
             link: "https://whatsappweb-clone-zeta.vercel.app/",
             backgroundColor: "#09d261",
-            AnimationDelay: "1.6s",
+            AnimationDelay: ".9s",
             DelayLarge: "1s",
             DelayMobile: "1s"
         },
@@ -220,7 +241,7 @@ function Projects() {
             image: project04,
             link: "https://calculadora-c.vercel.app/",
             backgroundColor: "#f88a3f",
-            AnimationDelay: "1.3s",
+            AnimationDelay: "1.2s",
             DelayMobile: "1s"
         },
 
@@ -232,7 +253,7 @@ function Projects() {
             image: project05,
             link: "http://localhost/sistema-php/index.php",
             backgroundColor: "#a9dae5",
-            AnimationDelay: "1.6s",
+            AnimationDelay: "1.5s",
             DelayLarge: "1s",
             DelayMobile: "1s",
             disabled: true
@@ -245,7 +266,7 @@ function Projects() {
             image: project06,
             link: "https://costs-seven-teal.vercel.app/",
             backgroundColor: "#ffbb33",
-            AnimationDelay: "1.9s",
+            AnimationDelay: "1.8s",
             DelayLarge: "1.3s",
             DelayMobile: "1s"
         }
@@ -314,7 +335,7 @@ function Projects() {
         <ThemeProvider theme={LightTheme}>
             <Section id="projects">
                 <GridLayout>
-                    <Title ref={refTitle} style={{ animationPlayState: inViewTitle ? 'running' : 'paused' }}>Projetos<Point> .</Point></Title>
+                    <Title ref={refTitle} style={{ animationPlayState: inViewTitle ? 'running' : 'paused' }}>Projetos <b>.</b></Title>
                     <Container>
                         <CardProjects>
                             {myProjects.map((myProject, index) => (
@@ -357,7 +378,7 @@ function Projects() {
                             target="_blank"
                             ref={refRepository} style={{ animationPlayState: inViewRepository ? 'running' : 'paused' }}
                         >
-                            Repositórios no GitHub.
+                            Repositórios.
                         </Repository>
                     </div>
                 </GridLayout>
