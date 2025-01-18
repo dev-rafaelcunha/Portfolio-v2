@@ -1,11 +1,17 @@
 import React, { useState } from 'react';
 import styled from "styled-components";
+import HeaderFixed from "../utils/HeaderFixed";
 
 const NavIcon = styled.div`
 
   position: absolute;
-  right: 25px;
+  right: 32px;
   top: 29px;
+  transition: .3s;
+
+  &:not(.fixed-active) {
+    top: 7px;
+  }
   
   @media(min-width: 1025px) {
     display: none;
@@ -67,7 +73,7 @@ const NavContent = styled.nav`
     background: #03172d;
     padding: 150px 0;
 
-  @media(min-width: 993px) {
+  @media(min-width: 1025px) {
     display: none;
   }
 `;
@@ -108,9 +114,11 @@ function NavMobile() {
     setIsActive(false);
   };
 
+  const headerFixed = HeaderFixed();
+
   return (
     <>
-      <NavIcon onClick={toggleActive}>
+      <NavIcon className={headerFixed ? 'fixed-active' : ''} onClick={toggleActive}>
         <Line1 active={isActive} />
         <Line2 active={isActive} />
         <Line3 active={isActive} />
