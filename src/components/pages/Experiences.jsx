@@ -9,7 +9,6 @@ import { FadeIn } from '../../global/FadeIn';
 const Section = styled.section`
     
     background-color: #03172d;
-    padding: 0 40px 80px;
 
     @media (max-width: 1280px) {
 
@@ -22,6 +21,7 @@ const Container = styled.div`
     display: flex;
     justify-content: space-between;
     animation: ${FadeIn} 1s ease-in-out forwards;
+    padding: 0 40px 80px;
 
     @media (max-width: 1280px) {
 
@@ -29,6 +29,10 @@ const Container = styled.div`
         justify-content: center;
         align-items: center;
         flex-wrap: wrap;
+    }
+
+    @media (max-width: 768px) {
+        padding: 20px 3%;
     }
 `;
 
@@ -39,11 +43,14 @@ const Title = styled.h1`
     padding: 60px 0;
     margin: 0;
     animation: ${FadeIn} 1s ease-in-out forwards;
-`;
 
-const Point = styled.span`
-    
-    color: ${props => props.theme.primaryColor};
+    & b {
+        color: ${props => props.theme.primaryColor};
+    }
+
+    @media (max-width: 768px) {
+        padding: 20px 3%;
+    }
 `;
 
 const Card = styled.div`
@@ -54,7 +61,7 @@ const Card = styled.div`
 
     @media (max-width: 1280px) {
 
-        margin: 0 0 2rem 0;
+        margin: 0 0 20px 0;
         height: auto;
         width: 698px;
     }
@@ -66,6 +73,10 @@ const CardData = styled.div`
     background-color: #00000050;
     position: relative;
     padding: 1rem 2rem;
+
+    @media (max-width: 768px) {
+        padding: 20px;
+    }
 `;
 
 const CardDataWrapper = styled.div`
@@ -73,6 +84,11 @@ const CardDataWrapper = styled.div`
     display: flex;
     align-items: center;
     justify-content: space-between;
+
+    @media (max-width: 768px) {
+        flex-direction: column;
+        align-items: flex-start;
+    }
 `
 
 const TitleCard = styled.a`
@@ -184,7 +200,7 @@ function Experiences() {
         <ThemeProvider theme={LightTheme}>
             <Section id="experiences">
                 <GridLayout>
-                    <Title ref={refTitle} style={{ animationPlayState: inViewTitle ? 'running' : 'paused' }}>Experiências<Point> .</Point></Title>
+                    <Title ref={refTitle} style={{ animationPlayState: inViewTitle ? 'running' : 'paused' }}>Experiências<b> .</b></Title>
                     <Container ref={refContainer} style={{ animationPlayState: inViewContainer ? 'running' : 'paused' }}>
                         <Card>
                             <TitleCard

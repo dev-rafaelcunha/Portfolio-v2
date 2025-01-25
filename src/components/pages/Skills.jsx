@@ -14,10 +14,9 @@ import { FadeIn } from '../../global/FadeIn';
 
 const Section = styled.section`
     background-color: ${props => props.theme.themeColor};
-    padding: 0 40px 80px;
+
     @media (max-width: 1280px) {
         height: auto;
-        padding-bottom: 80px;
     }
 `;
 
@@ -31,12 +30,22 @@ const Title = styled.h1`
     & b {
         color: ${props => props.theme.primaryColor};
     }
+
+    @media (max-width: 768px) {
+        padding: 20px 3%;
+    }
 `;
 
 const Container = styled.div`
     display: flex;
+    padding: 0 0 80px;
+    
     @media (max-width: 1280px) {
         height: auto;
+    }
+
+    @media (max-width: 768px) {
+        padding: 3% 3% 20px;
     }
 `;
 
@@ -44,10 +53,15 @@ const CardSkills = styled.div`
     display: flex;
     flex-wrap: wrap;
     gap: 22px;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
+
     @media (max-width: 1280px) {
         justify-content: center;
+    }
+
+    @media (max-width: 768px) {
+        gap: 11px;
     }
 `;
 
@@ -74,13 +88,9 @@ const Card = styled.a`
     }
 
     @media (max-width: 768px) {
-        height: 190px;
-        width: 190px;
-    }
-    @media (max-width: 480px) {
-        height: 155px;
-        width: 46.6%;
-        white-space: nowrap;
+        width: calc(100% / 2 - 11px);
+        max-height: 180px;
+        font-size: 3rem;
     }
 `;
 
@@ -91,8 +101,9 @@ const TitleSkills = styled.span`
     font-weight: bold;
     top: 3px;
     padding: 5px;
-    @media (max-width: 480px) {
-        display: none;
+
+    @media (max-width: 768px) {
+        font-size: .9rem;
     }
 `;
 
@@ -104,9 +115,6 @@ const DescriptionSkills = styled.span`
     color: ${props => props.theme.themeColor};
     font-family: 'Lucida Sans', sans-serif;
     padding: 5px 14px;
-    @media (max-width: 480px) {
-        display: none;
-    }
 `;
 
 function Skills() {

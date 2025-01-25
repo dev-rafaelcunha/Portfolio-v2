@@ -13,7 +13,7 @@ const Foot = styled.div`
 
     @media (max-width: 768px) {
 
-        padding: 2rem 40px;
+        padding: 2rem 3%;
     }
 `;
 

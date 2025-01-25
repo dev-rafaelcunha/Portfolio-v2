@@ -27,6 +27,12 @@ const Grid = styled.div`
         display: flex !important;
         padding: 0 30px;
     }
+
+    @media (max-width: 1024px) {
+
+        display: flex !important;
+        padding: 0 3%;
+    }
 `;
 
 const FirstColumn = styled.div`

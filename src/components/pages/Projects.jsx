@@ -14,7 +14,6 @@ import project06 from "../../img/project06.png";
 const Section = styled.section`
     
     background-color: ${props => props.theme.themeColor};
-    padding: 0 40px 80px;
 
     @media (max-width: 1280px) {
 
@@ -23,7 +22,9 @@ const Section = styled.section`
 `;
 
 const Container = styled.div`
-    
+
+    padding: 0;
+
     @media (max-width: 1280px) {
 
         height: auto;
@@ -40,6 +41,10 @@ const Title = styled.h1`
 
     & b {
         color: ${props => props.theme.primaryColor};
+    }
+
+    @media (max-width: 768px) {
+        padding: 20px 3%;
     }
 `;
 
@@ -113,6 +118,7 @@ const Repository = styled.a`
     padding: 6px 8px;
     min-width: 240px;
     text-align: center;
+    margin: 40px 0 80px;
 
     &::before {
         content: 'Ir para o GitHub >>';
@@ -138,9 +144,10 @@ const Repository = styled.a`
         opacity: 1;
     }
 
-    @media (max-width: 480px) {
+    @media (max-width: 768px) {
 
         color: ${props => props.theme.primaryColor};
+        margin: 40px 0 20px;
     }
 `;
 

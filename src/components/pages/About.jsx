@@ -9,7 +9,6 @@ import { FadeIn } from '../../global/FadeIn';
 
 const Section = styled.section`
     
-    padding: 5rem;
     background-color: ${props => props.theme.secondaryColor};
     display: flex;
     align-items: center;
@@ -24,8 +23,22 @@ const Section = styled.section`
 
 const Container = styled.div`
     
+    padding: 5rem;
+
+    @media (max-width: 768px) {
+        padding: 3% !important;
+    }
+`;
+
+const Wrapper = styled.div`
+    
+    display: flex;
     background-color: ${props => props.theme.themeColor};
     border: 2px solid #444;
+
+    @media (max-width: 1024px) {
+        flex-direction: column;
+    }
 `;
 
 const Photo = styled.img`
@@ -45,6 +58,7 @@ const Photo = styled.img`
     @media (max-width: 480px) {
 
         height: 300px;
+        object-fit: cover;
     }
 `;
 
@@ -74,7 +88,7 @@ const SecondColumn = styled.div`
     @media (max-width: 1024px) {
 
         align-items: center;
-        padding: 20px 0;
+        padding: 0 0 20px;
     }
 `;
 
@@ -225,31 +239,33 @@ function About() {
     return (
 
         <ThemeProvider theme={LightTheme}>
-            <Section id="about" className="px-5">
+            <Section id="about">
                 <GridLayout>
-                    <Container className="row m-0">
-                        <FirstColumn className="col-5">
-                            <Photo src={img} alt="Photo" className="rounded shadow" ref={refPhoto} style={{ animationPlayState: inViewPhoto ? 'running' : 'paused' }} />
-                        </FirstColumn>
-                        <SecondColumn className="col">
-                            <Title ref={refTitle} style={{ animationPlayState: inViewTitle ? 'running' : 'paused' }}>Sobre mim</Title>
-                            <Name className="mt-2" ref={refName} style={{ animationPlayState: inViewName ? 'running' : 'paused' }}>Rafael Cunha</Name>
-                            <Description ref={refDescription} style={{ animationPlayState: inViewDescription ? 'running' : 'paused' }}>Desenvolvedor Front-end</Description>
-                            <Text ref={refText} style={{ animationPlayState: inViewText ? 'running' : 'paused' }}>
-                                Meu nome é <strong>Rafael Cunha</strong>, tenho 28 anos, atualmente estou trabalhando na empresa <strong>Convertr </strong> como
-                                <strong> Desenvolvedor Júnior</strong> e cursando <strong>Engenharia de Software</strong> pela <strong>UNINTER</strong>.<br /><br />
-                                Passei minha vida buscando algo que realmente fizesse sentido,
-                                até me deparar com o mundo de desenvolvimento, onde estou feliz, empolgado e totalmente focado, me aperfeiçoando
-                                e buscando novos desafios para carreira.
-                            </Text>
-                            <Social>
-                                {socialLinks.map((link, index) => (
-                                    <Card key={index} href={link.href} target="_blank" className={link.className} ColorDefined={link.ColorDefined} ref={refSocial} style={{ animationPlayState: inViewSocial ? 'running' : 'paused' }}>
-                                        {link.icon}
-                                    </Card>
-                                ))}
-                            </Social>
-                        </SecondColumn>
+                    <Container className="row m-0 px-5">
+                        <Wrapper>
+                            <FirstColumn className="col-5">
+                                <Photo src={img} alt="Photo" className="rounded shadow" ref={refPhoto} style={{ animationPlayState: inViewPhoto ? 'running' : 'paused' }} />
+                            </FirstColumn>
+                            <SecondColumn className="col">
+                                <Title ref={refTitle} style={{ animationPlayState: inViewTitle ? 'running' : 'paused' }}>Sobre mim</Title>
+                                <Name className="mt-2" ref={refName} style={{ animationPlayState: inViewName ? 'running' : 'paused' }}>Rafael Cunha</Name>
+                                <Description ref={refDescription} style={{ animationPlayState: inViewDescription ? 'running' : 'paused' }}>Desenvolvedor Front-end</Description>
+                                <Text ref={refText} style={{ animationPlayState: inViewText ? 'running' : 'paused' }}>
+                                    Meu nome é <strong>Rafael Cunha</strong>, tenho 28 anos, atualmente estou trabalhando na empresa <strong>Convertr </strong> como
+                                    <strong> Desenvolvedor Júnior</strong> e cursando <strong>Engenharia de Software</strong> pela <strong>UNINTER</strong>.<br /><br />
+                                    Passei minha vida buscando algo que realmente fizesse sentido,
+                                    até me deparar com o mundo de desenvolvimento, onde estou feliz, empolgado e totalmente focado, me aperfeiçoando
+                                    e buscando novos desafios para carreira.
+                                </Text>
+                                <Social>
+                                    {socialLinks.map((link, index) => (
+                                        <Card key={index} href={link.href} target="_blank" className={link.className} ColorDefined={link.ColorDefined} ref={refSocial} style={{ animationPlayState: inViewSocial ? 'running' : 'paused' }}>
+                                            {link.icon}
+                                        </Card>
+                                    ))}
+                                </Social>
+                            </SecondColumn>
+                        </Wrapper>
                     </Container>
                 </GridLayout>
             </Section>
